@@ -188,4 +188,6 @@ function tabla(nombre, cabeceras, filas, clase = '') {
 }
 
 const relleno = (filas, minimo, columnas) => [...filas, ...Array.from({ length: Math.max(0, minimo - filas.length) }, () => Array(columnas).fill(''))];
-const pie = () => h('footer', { class: 'h-pie' }, 'Hoja generada con el Generador de PJ (herramienta de aficionados, no oficial) · Against the Darkmaster');
+const pie = () => h('footer', { class: 'h-pie' },
+  h('span', null, 'Herramienta de aficionados, no oficial, desarrollada gracias al blog ', h('b', null, 'anotacionesrol.blogspot.com'), ' · '),
+  h('span', null, 'Juego de rol ', h('i', null, 'Against the Darkmaster'), ': ', h('b', null, 'other-selves.com/vsdm')));

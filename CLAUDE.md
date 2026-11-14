@@ -152,6 +152,11 @@ confianza (las cuentas están bien), ganas de jugar.
   no se cuela ningún PDF de REF.
 - Única excepción: el **PDF de la hoja de personaje**, que es de libre
   distribución según el usuario. Se publica como copia en `assets/hoja-pj.pdf`.
+- **Créditos obligatorios** (petición del usuario): el pie de la web y el pie de
+  cada página de la hoja imprimible/PDF dicen que la herramienta está desarrollada
+  gracias al blog https://anotacionesrol.blogspot.com/ y enlazan al juego en
+  https://www.other-selves.com/vsdm. No quitarlos al tocar el pie (`index.html` y
+  `pie()` en `js/ui/hoja.js`).
 - Objetivo declarado: que los autores no se sientan amenazados. Ante la duda,
   resumir más y remitir al libro.
 
