@@ -18,6 +18,8 @@ export function pintarResumen(el, ctx) {
     h('div', { class: 'res-cars', role: 'list', 'aria-label': 'Características' },
       CARACTERISTICAS.map((c) => h('div', { role: 'listitem' }, h('small', null, c), h('b', null, signo(hoja.caracteristicas[c].total))))),
     h('dl', { class: 'res-derivados' },
+      h('dt', null, 'Nivel'), h('dd', null, hoja.nivel),
+      h('dt', null, 'PX · próx. nivel'), h('dd', null, `${d.px.actual} · ${d.px.siguiente ?? '—'}`),
       h('dt', null, 'Puntos de golpe'), h('dd', null, d.pg),
       h('dt', null, 'Puntos de magia'), h('dd', null, d.pm.total),
       h('dt', null, 'Defensa c/c · proy.'), h('dd', null, `${d.defensa_cc} · ${d.defensa_proyectiles}`),

@@ -75,7 +75,7 @@ errores esperados y 400 PJ aleatorios válidos.
 - Escuelas sortílegas permitidas por vocación, rangos y sortilegios accesibles.
 - Atuendo cultural, equipo inicial, armas/armaduras con sus columnas de la hoja (Torpeza, Tabla de ataque, Críticos, AGI máx. en DEF, penalizadores…).
 
-### 5 · Subida de nivel — datos y motor ✅, interfaz pendiente
+### 5 · Subida de nivel — ✅ hecha
 - PD por nivel, PM por nivel, PX y Próx. nvl., TS que crecen con el nivel, historial de qué se compró en cada nivel.
 
 ### 6 · Salidas

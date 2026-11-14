@@ -1,7 +1,9 @@
 // Paso III · Vocación y habilidades (PD de nivel 1)
 import { h, signo } from '../dom.js';
-import { cabeceraPaso, problemasDelPaso, piePaso, botonDado, contador, selector, NOMBRE_CAT, ref } from '../comun.js';
-import { CATEGORIAS, bonoPorRangos, bonosCombateAleatorios, desarrolloNivel1Aleatorio } from '../../engine/index.js';
+import { cabeceraPaso, problemasDelPaso, piePaso, botonDado, contador, selector, segmentos, NOMBRE_CAT, ref } from '../comun.js';
+import { CATEGORIAS, bonoPorRangos, bonosCombateAleatorios, desarrolloNivelAleatorio, subirNivel, bajarNivel, pxParaNivel } from '../../engine/index.js';
+
+let nivelVista = 0; // índice del nivel cuyo reparto se está viendo
 
 export default function pasoVocacion(ctx) {
   const { pj, D, hoja } = ctx;
@@ -27,8 +29,9 @@ export default function pasoVocacion(ctx) {
         })),
         voc ? fichaVocacion(voc, ctx) : h('p', { class: 'bloque-ayuda' }, 'Elige una vocación para repartir tus PD.'))),
     voc ? bloqueCombate(ctx, voc) : null,
-    voc ? bloqueDesarrollo(ctx, voc) : null,
-    voc ? bloqueTransferencias(ctx) : null,
+    voc ? bloqueNivel(ctx) : null,
+    voc ? bloqueDesarrollo(ctx, voc, nivelVista) : null,
+    voc ? bloqueTransferencias(ctx, nivelVista) : null,
     piePaso(ctx),
   ];
 }
@@ -63,43 +66,44 @@ function bloqueCombate(ctx, voc) {
     }))));
 }
 
-function bloqueDesarrollo(ctx, voc) {
+function bloqueDesarrollo(ctx, voc, idx) {
   const { pj, D, hoja, mesa } = ctx;
-  const n1 = hoja.pd.niveles[0] || { presupuesto: {}, gastado: {} };
-  const compras = pj.desarrollo?.[0]?.compras || {};
-  const pago = pj.desarrollo?.[0]?.pago || {};
+  const n1 = hoja.pd.niveles[idx] || { presupuesto: {}, gastado: {} };
+  const compras = pj.desarrollo?.[idx]?.compras || {};
+  const pago = pj.desarrollo?.[idx]?.pago || {};
   const filas = new Map([...hoja.habilidades, ...hoja.escuelas, ...hoja.especializadas].map((f) => [f.id, f]));
   const restante = (c) => (n1.presupuesto[c] || 0) - (n1.gastado[c] || 0);
   const costeRango = (id) => (D.tipo(id) === 'especializada' ? (D.especializadasCoste.rangos_por_pd[voc.id] ? 0.5 : 2) : 1);
   const comprar = (id, v) => ctx.actualizar((p) => {
-    const d = p.desarrollo[0] || (p.desarrollo[0] = { compras: {}, pago: {}, transferencias: [] });
+    const d = p.desarrollo[idx] || (p.desarrollo[idx] = { compras: {}, pago: {}, transferencias: [] });
     d.compras = { ...d.compras };
     if (v > 0) d.compras[id] = v; else delete d.compras[id];
   });
   const pagarCon = (id, cat) => ctx.actualizar((p) => {
-    const d = p.desarrollo[0];
+    const d = p.desarrollo[idx];
     d.pago = { ...(d.pago || {}) };
     if (cat && cat !== 'sortilegios') d.pago[id] = cat; else delete d.pago[id];
   });
 
   // Escuelas visibles: vocacionales, de linaje y las que ya tienen rangos; las comunes aparte
   const escLinaje = new Set([...(D.linajes.get(pj.linaje)?.escuelas_linaje?.escuelas || []), ...hoja.escuelas.filter((e) => e.acceso === 'linaje').map((e) => e.id)]);
-  const principales = [...new Set([...voc.escuelas_vocacionales, ...escLinaje, ...hoja.escuelas.map((e) => e.id)])];
-  const comunes = [...D.comunes].filter((e) => !principales.includes(e));
+  // Al subir de nivel solo se mejoran escuelas que ya se conocen
+  const principales = idx === 0 ? [...new Set([...voc.escuelas_vocacionales, ...escLinaje, ...hoja.escuelas.map((e) => e.id)])] : hoja.escuelas.map((e) => e.id);
+  const comunes = idx === 0 ? [...D.comunes].filter((e) => !principales.includes(e)) : [];
 
   const fila = (id, carId) => {
     const f = filas.get(id) || filaVacia(ctx, id, carId);
     const cat = pago[id] || D.categoria(id);
     const yaComprado = compras[id] || 0;
     const maxPorPD = Math.floor((restante(cat) + yaComprado * costeRango(id)) / costeRango(id));
-    const otros = f.rangos.total - (f.rangos.desarrollo || 0);
+    const otros = f.rangos.total - yaComprado; // rangos que ya tenía antes de este nivel
     const esLinaje = D.tipo(id) === 'escuela' && escLinaje.has(id);
     return h('tr', null,
       h('td', { class: 'nombre-hab' }, f.nombre, carId ? h('small', null, carId) : null,
         esLinaje ? h('select', { class: 'col-opc', style: 'min-height:28px;font-size:var(--t-xs);margin-top:4px;width:auto', 'aria-label': `Pagar ${f.nombre} con PD de`, onchange: (e) => pagarCon(id, e.target.value) },
           CATEGORIAS.map((c) => h('option', { value: c, selected: c === cat }, `pagar con ${NOMBRE_CAT[c]}`))) : null),
       h('td', { class: 'tenue col-opc' }, signo(f.car)),
-      h('td', { class: 'tenue', title: 'Rangos de cultura, linaje y trasfondos' }, otros || '·'),
+      h('td', { class: 'tenue', title: idx === 0 ? 'Rangos de cultura, linaje y trasfondos' : 'Rangos de antes de este nivel' }, otros || '·'),
       h('td', null, contador({ valor: yaComprado, min: 0, max: Math.min(2, maxPorPD), etiqueta: `rangos de ${f.nombre}`, foco: `pd-${id}`, alCambiar: (v) => comprar(id, v) })),
       h('td', { class: 'tenue col-opc' }, signo(bonoPorRangos(f.rangos.total))),
       h('td', { class: 'tenue col-opc' }, f.voc ? signo(f.voc) : '·'),
@@ -117,10 +121,12 @@ function bloqueDesarrollo(ctx, voc) {
   const cuerpo = [];
   for (const c of CATEGORIAS) {
     if (c === 'sortilegios') {
-      cuerpo.push(cabeceraCat(c, voc.escuelas_vocacionales.length ? '' : '(escuelas de linaje o comunes, con PD transferidos)'));
+      cuerpo.push(cabeceraCat(c, idx > 0 ? '(solo escuelas que ya conoces)' : voc.escuelas_vocacionales.length ? '' : '(escuelas de linaje o comunes, con PD transferidos)'));
       principales.forEach((id) => cuerpo.push(fila(id, D.escuelas.get(id).caracteristica)));
-      cuerpo.push(h('tr', { class: 'cat-cabecera' }, h('td', { colspan: 9, style: 'font-size:var(--t-s)' }, 'Escuelas comunes', h('span', { class: 'ref' }, ' — cualquiera las aprende, solo hasta la 5ª urdimbre'))));
-      comunes.forEach((id) => cuerpo.push(fila(id, D.escuelas.get(id).caracteristica)));
+      if (comunes.length) {
+        cuerpo.push(h('tr', { class: 'cat-cabecera' }, h('td', { colspan: 9, style: 'font-size:var(--t-s)' }, 'Escuelas comunes', h('span', { class: 'ref' }, ' — cualquiera las aprende, solo hasta la 5ª urdimbre'))));
+        comunes.forEach((id) => cuerpo.push(fila(id, D.escuelas.get(id).caracteristica)));
+      }
       continue;
     }
     cuerpo.push(cabeceraCat(c));
@@ -129,7 +135,7 @@ function bloqueDesarrollo(ctx, voc) {
   }
 
   return h('section', { class: 'bloque' },
-    h('h3', null, 'Desarrollo de nivel 1', h('button', { type: 'button', class: 'btn btn-pequeno dado', onclick: () => ctx.actualizar((p) => { p.desarrollo = [desarrolloNivel1Aleatorio(D, ctx.rng, p, mesa), ...p.desarrollo.slice(1)]; }) }, 'Repartir al azar')),
+    h('h3', null, `Desarrollo de nivel ${idx + 1}`, h('button', { type: 'button', class: 'btn btn-pequeno dado', onclick: () => ctx.actualizar((p) => { p.desarrollo[idx] = desarrolloNivelAleatorio(D, ctx.rng, p, mesa, idx); }) }, 'Repartir al azar')),
     h('p', { class: 'bloque-ayuda' }, '1 PD = 1 rango. Máximo 2 rangos por habilidad y nivel; los rangos de cultura no cuentan para ese límite. Los PD que sobren se pierden. ', ref(72, '[1.19]'),
       mesa.especializadas ? h('span', null, ' Especializadas: ', voc.id === 'guerrero' || voc.id === 'picaro' ? '1 PD = 2 rangos.' : '2 PD por rango.') : null),
     h('div', { class: 'tabla-scroll' }, h('table', { class: 'tabla-hoja' },
@@ -148,12 +154,12 @@ function filaVacia(ctx, id, carId) {
   return { id, nombre: D.nombre(id), car, rangos: { total: 0, desarrollo: 0 }, voc: v, lin: 0, esp: 0, obj: 0, total: car + v };
 }
 
-function bloqueTransferencias(ctx) {
+function bloqueTransferencias(ctx, idx) {
   const { pj, hoja } = ctx;
-  const trans = pj.desarrollo?.[0]?.transferencias || [];
-  const n1 = hoja.pd.niveles[0];
+  const trans = pj.desarrollo?.[idx]?.transferencias || [];
+  const n1 = hoja.pd.niveles[idx];
   let desde1 = CATEGORIAS.find((c) => n1.presupuesto[c] - n1.gastado[c] > 0) || 'combate', desde2 = desde1, hacia = 'corpulencia';
-  const cambiarTrans = (fn) => ctx.actualizar((p) => { const d = p.desarrollo[0]; d.transferencias = fn([...(d.transferencias || [])]); });
+  const cambiarTrans = (fn) => ctx.actualizar((p) => { const d = p.desarrollo[idx]; d.transferencias = fn([...(d.transferencias || [])]); });
   const opciones = (sel, alCambiar, conPM) => h('select', { onchange: (e) => alCambiar(e.target.value), style: 'width:auto' },
     CATEGORIAS.map((c) => h('option', { value: c, selected: c === sel }, NOMBRE_CAT[c])),
     conPM ? h('option', { value: 'pm' }, '1 punto de magia') : null);
@@ -167,4 +173,33 @@ function bloqueTransferencias(ctx) {
       h('span', { class: 'etiqueta' }, 'y'), opciones(desde2, (v) => { desde2 = v; }),
       h('span', { class: 'etiqueta' }, 'a'), opciones(hacia, (v) => { hacia = v; }, true),
       h('button', { type: 'button', class: 'btn btn-pequeno', onclick: () => cambiarTrans((a) => [...a, { desde: [desde1, desde2], hacia }]) }, 'Añadir')));
+}
+
+/** Experiencia, subida de nivel y pestañas para ver el reparto de cada nivel. */
+function bloqueNivel(ctx) {
+  const { pj, D, hoja } = ctx;
+  const niveles = pj.desarrollo?.length || 1;
+  nivelVista = Math.min(nivelVista, niveles - 1);
+  const px = hoja.derivados.px;
+  const maximo = D.tablas.progresion.nivel_maximo;
+  const necesarioSiguiente = pxParaNivel(D, niveles + 1);
+  const subir = () => { nivelVista = niveles; ctx.actualizar((p) => { Object.assign(p, subirNivel(p)); }); };
+  const bajar = () => { nivelVista = Math.max(0, niveles - 2); ctx.actualizar((p) => { Object.assign(p, bajarNivel(p)); }); };
+  return h('section', { class: 'bloque nivel-px' },
+    h('h3', null, 'Experiencia y nivel'),
+    h('div', { class: 'nivel-fila' },
+      h('label', { class: 'campo', style: 'max-width:9em' }, h('span', null, 'PX'),
+        h('input', { type: 'number', min: 0, step: 1, inputmode: 'numeric', value: px.actual, 'data-foco': 'px',
+          onchange: (e) => ctx.actualizar((p) => { p.px = Math.max(0, Number(e.target.value) || 0); }) })),
+      h('div', { class: 'nivel-dato' }, h('span', { class: 'etiqueta' }, 'Nivel'), h('b', null, niveles)),
+      h('div', { class: 'nivel-dato' }, h('span', { class: 'etiqueta' }, 'Próx. nivel'), h('b', null, px.siguiente ?? '—'), px.siguiente ? h('small', null, ' PX') : null),
+      h('div', { class: 'nivel-acciones' },
+        h('button', { type: 'button', class: `btn ${px.puede_subir ? 'btn-tinta' : ''}`, 'data-foco': 'subir-nivel', disabled: niveles >= maximo,
+          title: !px.puede_subir && necesarioSiguiente ? `Necesitas ${necesarioSiguiente} PX` : null, onclick: subir }, 'Subir de nivel'),
+        niveles > 1 ? h('button', { type: 'button', class: 'btn btn-texto', onclick: bajar }, 'Quitar el último nivel') : null)),
+    h('p', { class: 'bloque-ayuda' }, px.puede_subir
+      ? `Con ${px.actual} PX puedes llegar a nivel ${px.nivel_por_px}. `
+      : 'Se empieza en nivel 1 con 10 PX: +10 por nivel hasta el 5 y +20 después. ', ref(106, '[1.25]')),
+    niveles > 1 ? segmentos(Array.from({ length: niveles }, (_, i) => ({ valor: i, etiqueta: `Nivel ${i + 1}` })), nivelVista,
+      (v) => { nivelVista = v; ctx.actualizar(() => {}); }, 'Reparto de cada nivel', 'nivel-vista') : null);
 }

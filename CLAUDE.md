@@ -355,7 +355,7 @@ página del PDF de la Guía (pág. impresa 14 = página 3 del PDF).
     mi atuendo» (elige en las alternativas, conserva armas añadidas a mano);
     paso V con el Grimorio plegable por escuela (lanzable ya o a qué nivel,
     PM, parámetros, resumen y distorsiones).
-- [~] Fase 5 (subida de nivel): **datos y motor hechos** (Opus).
+- [x] Fase 5 (subida de nivel). Datos y motor con Opus; interfaz con Sonnet.
   - `tablas.json`: `progresion` (PX por nivel [1.25], nivel máx. 10, PX inicial 10,
     logros de ejemplo [1.26] resumidos) y `senda_heroica` (Hito cada 10 marcas,
     4 Revelaciones).
@@ -367,12 +367,13 @@ página del PDF de la Guía (pág. impresa 14 = página 3 del PDF).
   - `js/engine/progresion.js`: `subirNivel`, `bajarNivel`, `pxParaNivel`,
     `subirNivelesAleatorio`; `desarrolloNivelAleatorio(D, rng, pj, mesa, indice)`
     reparte PD de cualquier nivel (al subir solo escuelas ya conocidas).
-  - **Pendiente (Sonnet)**: interfaz → en el paso III, pestañas por nivel
-    (Nivel 1, 2…) con «Subir de nivel» / «Quitar el último», campo de PX con el
-    aviso de que puede subir y «Repartir al azar» por nivel; en el paso V, Senda
-    Heroica (marcas 0-100, Hitos, añadir Revelación eligiendo tipo y
-    característica) y la lista de logros como ayuda; en el resumen, Nivel y PX /
-    Próx. nivel.
+  - UI: paso III con «Experiencia y nivel» (PX, nivel, próximo nivel, «Subir de
+    nivel» / «Quitar el último nivel») y pestañas por nivel; el reparto, las
+    transferencias y «Repartir al azar» van por nivel, y a partir del 2 solo se
+    listan escuelas ya conocidas. Paso V con Senda Heroica (marcas, 10 hitos en
+    rombo como en la hoja, Revelaciones) y la lista de logros. Resumen con nivel y PX.
+  - `app.js` captura errores al pintar un paso y muestra un aviso en vez de
+    dejarlo en blanco.
 - [ ] Fase 6 en adelante: ver PLAN.md.
 
 Actualiza esta sección al cerrar cada fase.

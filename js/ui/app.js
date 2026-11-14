@@ -85,7 +85,13 @@ function pintar({ parcial = false } = {}) {
   const y = window.scrollY;
   const main = vaciar($('paso'));
   main.setAttribute('aria-labelledby', 'titulo-paso');
-  main.append(...[].concat(RENDER[ctx.paso](ctx)).filter(Boolean));
+  try {
+    main.append(...[].concat(RENDER[ctx.paso](ctx)).filter(Boolean));
+  } catch (e) {
+    console.error(e);
+    main.append(h('div', { class: 'problemas' }, h('p', { class: 'error', style: 'padding:12px' },
+      'Algo ha fallado al mostrar este paso. Tu personaje está a salvo: prueba otro paso o «Deshacer». Detalle: ', e.message)));
+  }
   if (foco) {
     const el = document.querySelector(`[data-foco="${CSS.escape(foco)}"]`);
     el?.focus({ preventScroll: true });

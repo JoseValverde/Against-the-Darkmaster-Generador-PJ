@@ -1,6 +1,7 @@
 // Paso V · Atributos derivados (solo lectura: se calculan solos)
 import { h, signo } from '../dom.js';
-import { cabeceraPaso, problemasDelPaso, piePaso, ref, NOMBRE_CAR } from '../comun.js';
+import { cabeceraPaso, problemasDelPaso, piePaso, ref, NOMBRE_CAR, contador, selector } from '../comun.js';
+import { CARACTERISTICAS } from '../../engine/index.js';
 
 export default function pasoDerivados(ctx) {
   const { hoja, D, pj, mesa } = ctx;
@@ -33,6 +34,7 @@ export default function pasoDerivados(ctx) {
         fila('Tamaño', d.tamano, 'Según el linaje', 99),
         fila('Determinación', d.determinacion, d.determinacion > 1 ? 'Inicial 1 + La fortuna favorece al osado' : 'Todos empiezan con 1', 102))))),
     bloqueGrimorio(ctx),
+    bloqueSenda(ctx),
     h('section', { class: 'bloque' },
       h('h3', null, 'Rasgos especiales'),
       hoja.rasgos.length ? h('ul', { class: 'rasgos' }, hoja.rasgos.map((r) => h('li', null, h('b', null, r.nombre), ' — ', r.resumen))) : h('p', { class: 'bloque-ayuda' }, 'Aparecerán al elegir linaje y trasfondos.')),
@@ -78,4 +80,52 @@ function itemSortilegio(ctx, g, s) {
       estado ? h('span', { class: 's-estado' }, estado) : null,
       s.distorsion?.length ? h('ul', { class: 'distorsiones', 'aria-label': 'Distorsión' },
         s.distorsion.map((o) => h('li', null, h('b', null, `+${o.urdimbre} urdimbre: `), o.texto))) : null));
+}
+
+let nuevaRevelacion = { tipo: 'caracteristica', car: null, texto: '' };
+
+/** Senda Heroica: marcas (Determinación gastada), Hitos y Revelaciones. */
+function bloqueSenda(ctx) {
+  const { pj, D, hoja } = ctx;
+  const sh = D.tablas.senda_heroica;
+  const marcas = Number(pj.senda_marcas) || 0;
+  const hitos = hoja.derivados.px.hitos;
+  const revs = pj.revelaciones || [];
+  const libres = hitos - revs.length;
+  const nombreRev = (t) => sh.revelaciones.find((r) => r.id === t)?.nombre || t;
+  const anadir = () => {
+    const r = { tipo: nuevaRevelacion.tipo };
+    if (r.tipo === 'caracteristica') { if (!nuevaRevelacion.car) return; r.car = nuevaRevelacion.car; }
+    if (r.tipo === 'objeto') r.texto = nuevaRevelacion.texto.trim();
+    nuevaRevelacion = { tipo: 'caracteristica', car: null, texto: '' };
+    ctx.actualizar((p) => { p.revelaciones = [...(p.revelaciones || []), r]; });
+  };
+  return h('section', { class: 'bloque' },
+    h('h3', null, 'Senda Heroica', h('span', { class: 'contador' }, `${marcas} marcas · ${hitos} Hito${hitos === 1 ? '' : 's'}${hitos ? ` · ${libres} sin usar` : ''}`)),
+    h('p', { class: 'bloque-ayuda' }, sh._regla, ' ', ref(sh.pagina)),
+    h('div', { style: 'display:flex;flex-wrap:wrap;gap:16px;align-items:center' },
+      h('span', { class: 'etiqueta' }, 'Marcas'),
+      contador({ valor: marcas, min: 0, max: sh.casillas, etiqueta: 'marcas de la Senda Heroica', foco: 'senda',
+        alCambiar: (v) => ctx.actualizar((p) => { p.senda_marcas = v; }) }),
+      h('div', { class: 'senda', 'aria-hidden': 'true' }, Array.from({ length: 10 }, (_, i) =>
+        h('span', { class: `hito${i < hitos ? ' lleno' : marcas > i * 10 ? ' medio' : ''}` }, String((i + 1) * 10))))),
+    revs.length ? h('ul', { class: 'rasgos', style: 'margin-top:12px' }, revs.map((r, i) => h('li', null,
+      h('b', null, nombreRev(r.tipo)), r.car ? ` — ${NOMBRE_CAR[r.car]}` : '', r.texto ? ` — ${r.texto}` : '', ' ',
+      h('button', { type: 'button', class: 'btn btn-texto btn-pequeno', onclick: () => ctx.actualizar((p) => { p.revelaciones = p.revelaciones.filter((_, k) => k !== i); }) }, 'quitar')))) : null,
+    libres > 0 ? h('div', { class: 'atuendo-equipo', style: 'margin-top:12px' },
+      h('p', null, h('b', null, 'Nueva Revelación. '), 'Solo en un momento adecuado y con el acuerdo de la mesa.'),
+      h('div', { class: 'fila-campos' },
+        selector({ etiqueta: 'Tipo', valor: nuevaRevelacion.tipo, vacio: null, foco: 'rev-tipo',
+          opciones: sh.revelaciones.map((r) => ({ valor: r.id, etiqueta: r.nombre })),
+          alCambiar: (v) => { nuevaRevelacion.tipo = v; ctx.actualizar(() => {}); } }),
+        nuevaRevelacion.tipo === 'caracteristica' ? selector({ etiqueta: 'Característica', valor: nuevaRevelacion.car, foco: 'rev-car',
+          opciones: CARACTERISTICAS.map((c) => ({ valor: c, etiqueta: NOMBRE_CAR[c] })), alCambiar: (v) => { nuevaRevelacion.car = v; } }) : null,
+        nuevaRevelacion.tipo === 'objeto' ? h('label', { class: 'campo' }, h('span', null, 'Qué mejora'),
+          h('input', { type: 'text', 'data-foco': 'rev-texto', value: nuevaRevelacion.texto, oninput: (e) => { nuevaRevelacion.texto = e.target.value; } })) : null),
+      h('p', { class: 'ref', style: 'font-style:normal' }, sh.revelaciones.find((r) => r.id === nuevaRevelacion.tipo)?.resumen),
+      h('button', { type: 'button', class: 'btn btn-tinta', onclick: anadir }, 'Añadir Revelación')) : null,
+    h('details', { class: 'logros' },
+      h('summary', null, 'Logros que dan PX (lista de ejemplo)'),
+      h('ul', { class: 'rasgos' }, D.tablas.progresion.logros.lista.map((l) => h('li', null, `${l.texto} `, h('b', null, `${l.px} PX`), l.siempre ? ' ★' : ''))),
+      h('p', { class: 'ref' }, '★ recomendados en cualquier campaña. ', ref(107, '[1.26]'))));
 }

@@ -407,3 +407,22 @@ select:hover, input[type="text"]:hover, textarea:hover { border-color: var(--tin
 .sortilegio .s-estado { font-size: var(--t-xs); color: var(--tinta-3); font-style: italic; }
 .distorsiones { margin: 2px 0 0; padding: 0; list-style: none; font-size: var(--t-xs); display: grid; gap: 1px; }
 .distorsiones b { font-weight: 700; color: var(--tinta); }
+
+/* Experiencia y nivel (fase 5) */
+.nivel-fila { display: flex; flex-wrap: wrap; gap: var(--space-md) var(--space-lg); align-items: end; margin-bottom: var(--space-sm); }
+.nivel-fila input[type="number"] { min-height: 40px; width: 100%; padding: var(--space-xs) var(--space-ms); border: 1px solid var(--linea-fuerte); border-radius: var(--radio); background: var(--papel); }
+.nivel-dato { display: grid; gap: 2px; }
+.nivel-dato b { font-size: var(--t-xl); line-height: 1; }
+.nivel-dato small { color: var(--tinta-3); }
+.nivel-acciones { display: flex; flex-wrap: wrap; gap: var(--space-sm); align-items: center; margin-left: auto; }
+.nivel-px .segmentos { margin-top: var(--space-sm); }
+
+/* Senda Heroica: diez hitos como en la hoja */
+.senda { display: flex; flex-wrap: wrap; gap: 4px; }
+.hito { position: relative; isolation: isolate; width: 2.4em; height: 2.4em; display: grid; place-items: center; font-size: 0.65rem; color: var(--tinta-3); }
+.hito::before { content: ''; position: absolute; inset: 5px; z-index: -1; transform: rotate(45deg); border: 1px solid var(--linea-fuerte); }
+.hito.medio::before { border-color: var(--tinta-2); border-style: dashed; }
+.hito.lleno { color: var(--sobre-rubrica); font-weight: 700; }
+.hito.lleno::before { background: var(--rubrica); border-color: var(--rubrica); }
+.logros { margin-top: var(--space-md); }
+.logros summary { cursor: pointer; font-size: var(--t-s); color: var(--tinta-2); margin-bottom: var(--space-sm); }
