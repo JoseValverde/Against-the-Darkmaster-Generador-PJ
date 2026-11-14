@@ -14,10 +14,10 @@ decisiones que no se deben volver a discutir.
 
 ## Usuario
 
-- Hispanohablante; responde siempre en español.
-- No es desarrollador ("no sé mucho de esto"): explica los pasos de git, GitHub
-  y publicación con instrucciones exactas, sin jerga innecesaria.
-- Las credenciales y logins (GitHub, etc.) los hace él; nunca se tocan.
+- Responde siempre en español.
+- Explica los pasos de git, GitHub y publicación con instrucciones exactas, sin
+  jerga innecesaria.
+- Las credenciales y logins (GitHub, etc.) los hace el usuario; nunca se tocan.
 
 ---
 
