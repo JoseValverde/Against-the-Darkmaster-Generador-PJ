@@ -1,0 +1,1166 @@
+{
+ "_fuente": "Manual del Jugador, cap. 7 (pág. 86-97), tabla [1.22]",
+ "_notas": {
+  "reglas": "Cada opción una sola vez. Grado menor o mayor; el mayor incluye el menor salvo que se diga lo contrario. Los PT sobrantes se pierden.",
+  "efectos": "Aplicables por el motor. 'eleccion:X' se refiere a lo que el jugador elige en 'elecciones'. columna = esp (especial) u obj (objeto) en la hoja.",
+  "vortice": "En Vórtice el grado mayor sustituye al menor (no se suman).",
+  "recordatorios": "Lo narrativo o condicional que la app solo muestra."
+ },
+ "trasfondos": [
+  {
+   "id": "adepto_religioso",
+   "nombre": "Adepto Religioso",
+   "pagina": 88,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Miembro de una orden religiosa o secta.",
+   "menor": {
+    "texto": "Símbolo sagrado; ayuda de tu fe; +20 a Carisma y Engañar contra correligionarios.",
+    "efectos": [
+     {
+      "tipo": "equipo",
+      "objeto": "Símbolo sagrado"
+     }
+    ],
+    "recordatorios": [
+     "Naturaleza o Lealtad ligada a tu credo",
+     "+20 a Carisma y Engañar contra fieles de tu fe (condicional)"
+    ]
+   },
+   "mayor": {
+    "texto": "Sacerdote: un sortilegio no ofensivo de hasta 5ª urdimbre, sin TS, una vez al día gratis y sin tirada. El clero rival te detesta.",
+    "elecciones": [
+     {
+      "id": "sortilegio",
+      "tipo": "texto",
+      "etiqueta": "Sortilegio diario (≤ 5ª urdimbre, sin TS, no ofensivo)"
+     }
+    ],
+    "recordatorios": [
+     "Sortilegio elegido 1/día sin PM ni tirada",
+     "Iniciados de tu fe te obedecen; el clero rival te odia"
+    ]
+   }
+  },
+  {
+   "id": "afinidad_magica",
+   "nombre": "Afinidad Mágica",
+   "pagina": 88,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Experto en una escuela de magia concreta.",
+   "menor": {
+    "texto": "Escuela vocacional predilecta: +10 a Taumaturgia y a ejecutar sus sortilegios.",
+    "elecciones": [
+     {
+      "id": "escuela",
+      "tipo": "escuela",
+      "filtro": "vocacional",
+      "etiqueta": "Escuela predilecta"
+     }
+    ],
+    "efectos": [
+     {
+      "tipo": "bono",
+      "objetivo": "eleccion:escuela",
+      "columna": "esp",
+      "valor": 10
+     }
+    ],
+    "recordatorios": [
+     "+10 a Taumaturgia relacionada con la escuela predilecta (condicional)"
+    ]
+   },
+   "mayor": {
+    "texto": "Cuentas como un nivel más al lanzar de esa escuela; +1 PM por nivel solo para ella. Tienes un rival académico.",
+    "efectos": [
+     {
+      "tipo": "pm_por_nivel",
+      "valor": 1,
+      "restringido": "eleccion:escuela"
+     }
+    ],
+    "recordatorios": [
+     "+1 nivel efectivo al lanzar sortilegios de la escuela predilecta",
+     "Rival académico"
+    ]
+   }
+  },
+  {
+   "id": "agorero",
+   "nombre": "Agorero",
+   "pagina": 88,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Visiones del futuro, siempre funestas.",
+   "menor": {
+    "texto": "Pasión sobre tus visiones; +5 a SAB.",
+    "efectos": [
+     {
+      "tipo": "caracteristica",
+      "car": "SAB",
+      "valor": 5
+     }
+    ],
+    "recordatorios": [
+     "Escribe una Pasión sobre tus visiones"
+    ]
+   },
+   "mayor": {
+    "texto": "Si un aliado gasta Determinación para repetir y vuelve a fallar, puedes tener una visión: acepta el fallo y recupera el punto."
+   }
+  },
+  {
+   "id": "antigua_reliquia",
+   "nombre": "Antigua Reliquia Familiar",
+   "pagina": 88,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Un objeto ancestral poderoso.",
+   "menor": {
+    "texto": "Un objeto del equipo inicial da +10 de objeto a una habilidad, o es foco mágico +1, o lanza un sortilegio de 1ª urdimbre 2/día. Dale nombre y origen.",
+    "elecciones": [
+     {
+      "id": "objeto",
+      "tipo": "texto",
+      "etiqueta": "Objeto, nombre y origen"
+     },
+     {
+      "id": "poder",
+      "tipo": "opcion",
+      "opciones": [
+       "+10 de objeto a una habilidad",
+       "Foco mágico +1",
+       "Sortilegio de 1ª urdimbre 2/día"
+      ]
+     }
+    ]
+   },
+   "mayor": {
+    "texto": "Además lanza un sortilegio de hasta 3ª urdimbre 2/día o de 5ª 1/día. Fue robado al Señor de las Tinieblas o él lo busca."
+   }
+  },
+  {
+   "id": "ascendencia_mixta",
+   "nombre": "Ascendencia Mixta",
+   "pagina": 88,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Padres de dos culturas, o criado en otra.",
+   "menor": {
+    "texto": "Segunda cultura: +1 rango en una habilidad no de combate en la que esa cultura dé 2+ rangos, y un objeto de su atuendo. Pasión sobre ello.",
+    "elecciones": [
+     {
+      "id": "cultura",
+      "tipo": "cultura",
+      "filtro": "distinta"
+     },
+     {
+      "id": "habilidad",
+      "tipo": "habilidad",
+      "filtro": "cultura_2_rangos_no_combate"
+     },
+     {
+      "id": "atuendo",
+      "tipo": "atuendo_de",
+      "de": "eleccion:cultura"
+     }
+    ],
+    "efectos": [
+     {
+      "tipo": "rangos",
+      "objetivo": "eleccion:habilidad",
+      "cantidad": 1
+     }
+    ],
+    "recordatorios": [
+     "Pasión sobre tu ascendencia mixta"
+    ]
+   },
+   "mayor": {
+    "texto": "Además, en otra habilidad con 2+ rangos en esa cultura, sustituye tus rangos culturales por los suyos.",
+    "elecciones": [
+     {
+      "id": "habilidad_cambio",
+      "tipo": "habilidad",
+      "filtro": "cultura_2_rangos"
+     }
+    ],
+    "efectos": [
+     {
+      "tipo": "rangos_culturales_de",
+      "objetivo": "eleccion:habilidad_cambio",
+      "cultura": "eleccion:cultura"
+     }
+    ]
+   }
+  },
+  {
+   "id": "asesino",
+   "nombre": "Asesino",
+   "pagina": 88,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Entrenado en las artes letales.",
+   "menor": {
+    "texto": "Lealtad hacia tu antiguo maestro; +1 rango en Sigilo; +20 a Naturaleza con venenos.",
+    "efectos": [
+     {
+      "tipo": "rangos",
+      "objetivo": "sigilo",
+      "cantidad": 1
+     }
+    ],
+    "recordatorios": [
+     "Lealtad hacia tu maestro asesino",
+     "+20 a Naturaleza para venenos (condicional)"
+    ]
+   },
+   "mayor": {
+    "texto": "Contra un objetivo Sorprendido en alcance base, tu arma a distancia cuenta como Apuñalar."
+   }
+  },
+  {
+   "id": "bardo_leyendas",
+   "nombre": "Bardo de Leyendas Ancestrales",
+   "pagina": 89,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Conoces las leyendas de tu linaje.",
+   "menor": {
+    "texto": "+10 a Canciones y Relatos; al ayudar, sumas tus rangos de Canciones y Relatos.",
+    "efectos": [
+     {
+      "tipo": "bono",
+      "objetivo": "canciones_relatos",
+      "columna": "esp",
+      "valor": 10
+     }
+    ]
+   },
+   "mayor": {
+    "texto": "En lugar seguro, un relato crea una ficha de inspiración: quien la gaste suma tus rangos de Canciones y Relatos a una tirada."
+   }
+  },
+  {
+   "id": "cambiaformas",
+   "nombre": "Cambiaformas",
+   "pagina": 89,
+   "coste": {
+    "menor": 2,
+    "mayor": 4
+   },
+   "resumen": "Tu tótem animal te da una furia transformadora.",
+   "menor": {
+    "texto": "Tótem Mediano: te transformas al quedar Magullado o al ganar Determinación por una Pasión. Furia bestial; sin hablar ni lanzar sortilegios; −50 a habilidades mentales.",
+    "elecciones": [
+     {
+      "id": "totem",
+      "tipo": "texto",
+      "etiqueta": "Animal totémico (Mediano)"
+     }
+    ]
+   },
+   "mayor": {
+    "texto": "Tótem Grande posible; puedes transformarte a voluntad gastando 1 Determinación y una acción completa."
+   }
+  },
+  {
+   "id": "canalla_adorable",
+   "nombre": "Canalla Adorable",
+   "pagina": 89,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Sinvergüenza encantador.",
+   "menor": {
+    "texto": "Naturaleza sobre tu encanto canalla; +5 a INT o POR.",
+    "elecciones": [
+     {
+      "id": "car",
+      "tipo": "caracteristica",
+      "opciones": [
+       "INT",
+       "POR"
+      ]
+     }
+    ],
+    "efectos": [
+     {
+      "tipo": "caracteristica",
+      "car": "eleccion:car",
+      "valor": 5
+     }
+    ]
+   },
+   "mayor": {
+    "texto": "Una vez por sesión, un número escandaloso: Engañar contra Percepción; si ganas, quedan Aturdidos y distraídos."
+   }
+  },
+  {
+   "id": "companero_leal",
+   "nombre": "Compañero Leal",
+   "pagina": 90,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Un animal que es parte de ti.",
+   "menor": {
+    "texto": "Animal leal Pequeño o Mediano que te obedece.",
+    "elecciones": [
+     {
+      "id": "animal",
+      "tipo": "texto",
+      "etiqueta": "Animal"
+     }
+    ],
+    "efectos": [
+     {
+      "tipo": "companero_animal"
+     }
+    ]
+   },
+   "mayor": {
+    "texto": "Puede ser Grande, o os comunicáis con conceptos básicos si os veis."
+   }
+  },
+  {
+   "id": "cosmopolita",
+   "nombre": "Cosmopolita",
+   "pagina": 90,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Has viajado por todo el mundo.",
+   "menor": {
+    "texto": "+1 rango en Vagabundear; una vez en la partida, revela un Refugio Seguro a 1d5 días.",
+    "efectos": [
+     {
+      "tipo": "rangos",
+      "objetivo": "vagabundear",
+      "cantidad": 1
+     }
+    ]
+   },
+   "mayor": {
+    "texto": "Una vez por sesión, el DJ te revela una ruta alternativa o secreta a tu destino."
+   }
+  },
+  {
+   "id": "defensor_juramentado",
+   "nombre": "Defensor Juramentado",
+   "pagina": 90,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Orden militar que jura proteger algo.",
+   "menor": {
+    "texto": "Lealtad a tu orden; +1 rango en Armadura y en Corpulencia; +10 a Carisma con quienes protege tu orden.",
+    "efectos": [
+     {
+      "tipo": "rangos",
+      "objetivo": "armadura",
+      "cantidad": 1
+     },
+     {
+      "tipo": "rangos",
+      "objetivo": "corpulencia",
+      "cantidad": 1
+     }
+    ],
+    "recordatorios": [
+     "Lealtad a tu orden"
+    ]
+   },
+   "mayor": {
+    "texto": "Inmune al miedo; +15 a TS contra influencia mental."
+   }
+  },
+  {
+   "id": "dotado",
+   "nombre": "Dotado",
+   "pagina": 90,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Famoso por tu fuerza, astucia o encanto.",
+   "menor": {
+    "texto": "+5 a una característica; añade un epíteto a tu nombre.",
+    "elecciones": [
+     {
+      "id": "car",
+      "tipo": "caracteristica"
+     }
+    ],
+    "efectos": [
+     {
+      "tipo": "caracteristica",
+      "car": "eleccion:car",
+      "valor": 5
+     }
+    ]
+   },
+   "mayor": {
+    "texto": "Otros +5 a una característica (puede ser la misma).",
+    "elecciones": [
+     {
+      "id": "car2",
+      "tipo": "caracteristica"
+     }
+    ],
+    "efectos": [
+     {
+      "tipo": "caracteristica",
+      "car": "eleccion:car2",
+      "valor": 5
+     }
+    ]
+   }
+  },
+  {
+   "id": "educacion_clandestina",
+   "nombre": "Educación Clandestina",
+   "pagina": 90,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Criado entre ladrones y rufianes.",
+   "menor": {
+    "texto": "Lealtad hacia tus contactos criminales; en el mercado negro tu NR cuenta 2 más (máx. 4).",
+    "recordatorios": [
+     "Lealtad hacia tus contactos del hampa"
+    ]
+   },
+   "mayor": {
+    "texto": "Una vez por sesión en un asentamiento, gasta 1 Determinación para tener un contacto del hampa útil."
+   }
+  },
+  {
+   "id": "educacion_heterodoxa",
+   "nombre": "Educación Heterodoxa",
+   "pagina": 91,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Empezaste en otra vocación.",
+   "menor": {
+    "texto": "+10 a una habilidad sin bonificador vocacional.",
+    "elecciones": [
+     {
+      "id": "habilidad",
+      "tipo": "habilidad",
+      "filtro": "sin_bono_vocacional"
+     }
+    ],
+    "efectos": [
+     {
+      "tipo": "bono",
+      "objetivo": "eleccion:habilidad",
+      "columna": "esp",
+      "valor": 10
+     }
+    ]
+   },
+   "mayor": {
+    "texto": "Cada nivel, −1 PD en tu mejor categoría y +1 PD en una categoría donde otra vocación tenga 2+ PD. Te ganaste un enemigo poderoso.",
+    "elecciones": [
+     {
+      "id": "vocacion",
+      "tipo": "vocacion",
+      "filtro": "distinta"
+     },
+     {
+      "id": "categoria",
+      "tipo": "categoria",
+      "filtro": "pd_2_en_vocacion"
+     },
+     {
+      "id": "categoria_menos",
+      "tipo": "categoria",
+      "filtro": "max_pd_propia"
+     }
+    ],
+    "efectos": [
+     {
+      "tipo": "pd",
+      "objetivo": "eleccion:categoria_menos",
+      "valor": -1
+     },
+     {
+      "tipo": "pd",
+      "objetivo": "eleccion:categoria",
+      "valor": 1
+     }
+    ],
+    "recordatorios": [
+     "Nombra a tu enemigo y escribe tu Lealtad hacia él"
+    ]
+   }
+  },
+  {
+   "id": "endurecido_batalla",
+   "nombre": "Endurecido en la Batalla",
+   "pagina": 91,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Veterano curtido y cicatrizado.",
+   "menor": {
+    "texto": "Una cicatriz impresionante; +15 PG iniciales y +10 al PG Máx del linaje.",
+    "efectos": [
+     {
+      "tipo": "pg",
+      "valor": 15
+     },
+     {
+      "tipo": "pg_max",
+      "valor": 10
+     }
+    ]
+   },
+   "mayor": {
+    "texto": "Nunca sufres el penalizador por Magullado."
+   }
+  },
+  {
+   "id": "entrenamiento_elfico",
+   "nombre": "Entrenamiento Élfico",
+   "pagina": 91,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Criado entre elfos.",
+   "menor": {
+    "texto": "Obtienes el rasgo Conocimiento de los Eones como un elfo argénteo; si ya lo tenías, 2 rangos más en tus escuelas de linaje.",
+    "efectos": [
+     {
+      "tipo": "escuelas_linaje",
+      "escuelas": [
+       "conocimiento_elfico",
+       "canciones_sortilegas"
+      ],
+      "rangos": 2
+     }
+    ]
+   },
+   "mayor": {
+    "texto": "Puedes usar AGI en vez de FUE para Filo con espada corta, larga o cimitarra."
+   }
+  },
+  {
+   "id": "entrenamiento_excepcional",
+   "nombre": "Entrenamiento Excepcional",
+   "pagina": 91,
+   "coste": {
+    "menor": 1,
+    "mayor": 2
+   },
+   "resumen": "Discípulo de un mentor famoso.",
+   "menor": {
+    "texto": "Nombra a tu mentor; +2 rangos en una habilidad (no escuelas) o +5 en una especializada.",
+    "elecciones": [
+     {
+      "id": "habilidad",
+      "tipo": "habilidad",
+      "filtro": "no_escuela_o_especializada"
+     }
+    ],
+    "efectos": [
+     {
+      "tipo": "rangos",
+      "objetivo": "eleccion:habilidad",
+      "cantidad": 2,
+      "cantidad_especializada": 5
+     }
+    ]
+   },
+   "mayor": {
+    "texto": "Además, un objeto suyo te da +10 de objeto a esa habilidad.",
+    "efectos": [
+     {
+      "tipo": "bono",
+      "objetivo": "eleccion:habilidad",
+      "columna": "obj",
+      "valor": 10
+     }
+    ]
+   }
+  },
+  {
+   "id": "entrenamiento_mistico",
+   "nombre": "Entrenamiento Místico",
+   "pagina": 91,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Monje de artes marciales místicas.",
+   "menor": {
+    "texto": "Naturaleza ligada a tu maestro; tus ataques desarmados son un tamaño mayor (máx. Colosal).",
+    "recordatorios": [
+     "Naturaleza sobre las enseñanzas de tu maestro"
+    ]
+   },
+   "mayor": {
+    "texto": "Desarmado y sin armadura, +20 a TS y defensa cuando estás en peligro."
+   }
+  },
+  {
+   "id": "estirpe_heroica",
+   "nombre": "Estirpe Heroica",
+   "pagina": 92,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Sangre de héroes legendarios.",
+   "menor": {
+    "texto": "Acción parcial: aliados en 6 m ganan +10 a TSV o +5 a ataque y defensa este asalto."
+   },
+   "mayor": {
+    "texto": "Revelar tu linaje: +10 a atacar a esa persona este asalto, o repetir Carisma/Engañar contra ella con +20."
+   }
+  },
+  {
+   "id": "excentrico",
+   "nombre": "Excéntrico",
+   "pagina": 92,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Raro entre los tuyos, y orgulloso de ello.",
+   "menor": {
+    "texto": "+5 a una característica en la que tu linaje tenga modificador negativo.",
+    "elecciones": [
+     {
+      "id": "car",
+      "tipo": "caracteristica",
+      "filtro": "mod_linaje_negativo"
+     }
+    ],
+    "efectos": [
+     {
+      "tipo": "caracteristica",
+      "car": "eleccion:car",
+      "valor": 5
+     }
+    ]
+   },
+   "mayor": {
+    "texto": "Ignoras uno de los rasgos de tu linaje; los tuyos te ven como antinatural.",
+    "elecciones": [
+     {
+      "id": "rasgo",
+      "tipo": "rasgo_linaje"
+     }
+    ],
+    "efectos": [
+     {
+      "tipo": "ignorar_rasgo",
+      "objetivo": "eleccion:rasgo"
+     }
+    ]
+   }
+  },
+  {
+   "id": "exterminador",
+   "nombre": "Exterminador",
+   "pagina": 92,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Odio jurado a un tipo de enemigo.",
+   "menor": {
+    "texto": "Enemigo aborrecido (no el linaje de un compañero) y una Pasión de odio; +10 a ataque, Caza, Culturas y Canciones y Relatos contra él.",
+    "elecciones": [
+     {
+      "id": "enemigo",
+      "tipo": "texto",
+      "etiqueta": "Enemigo aborrecido"
+     }
+    ],
+    "recordatorios": [
+     "Pasión sobre tu odio",
+     "+10 contra el enemigo aborrecido (condicional)"
+    ]
+   },
+   "mayor": {
+    "texto": "Fichas de odio al iniciar o ganar combates contra él: repetir ataques o sumar tu nivel al crítico."
+   }
+  },
+  {
+   "id": "gran_fortuna",
+   "nombre": "Gran Fortuna",
+   "pagina": 92,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Familia rica o fortuna propia.",
+   "menor": {
+    "texto": "+1 al NR inicial (máx. 4).",
+    "efectos": [
+     {
+      "tipo": "nr",
+      "valor": 1,
+      "max": 4
+     }
+    ]
+   },
+   "mayor": {
+    "texto": "Tienes tierras, hacienda o negocio: comprando lo que te podría dar, tu NR cuenta 2 más (máx. 5).",
+    "elecciones": [
+     {
+      "id": "propiedad",
+      "tipo": "texto",
+      "etiqueta": "Propiedad y lugar"
+     }
+    ]
+   }
+  },
+  {
+   "id": "guardian_conocimientos_ocultos",
+   "nombre": "Guardián de Conocimientos Ocultos",
+   "pagina": 92,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Iniciado en una tradición mágica secreta.",
+   "menor": {
+    "texto": "+2 rangos en una escuela de linaje, vocacional o común.",
+    "elecciones": [
+     {
+      "id": "escuela",
+      "tipo": "escuela",
+      "filtro": "accesible"
+     }
+    ],
+    "efectos": [
+     {
+      "tipo": "rangos",
+      "objetivo": "eleccion:escuela",
+      "cantidad": 2
+     }
+    ]
+   },
+   "mayor": {
+    "texto": "+1 PM por nivel (desde el 1). Los enemigos de tu facción quieren captarte.",
+    "efectos": [
+     {
+      "tipo": "pm_por_nivel",
+      "valor": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "ladron",
+   "nombre": "Ladrón",
+   "pagina": 93,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Ladrón profesional o cazatesoros.",
+   "menor": {
+    "texto": "+1 rango en Sigilo y en Cerraduras y Trampas; tasas objetos valiosos de un vistazo.",
+    "efectos": [
+     {
+      "tipo": "rangos",
+      "objetivo": "sigilo",
+      "cantidad": 1
+     },
+     {
+      "tipo": "rangos",
+      "objetivo": "cerraduras_trampas",
+      "cantidad": 1
+     }
+    ]
+   },
+   "mayor": {
+    "texto": "Al atacar desarmado o con arma de mano, tirada de Sigilo gratuita para birlar un objeto pequeño. Alguien te persigue por un robo."
+   }
+  },
+  {
+   "id": "maestro_conocimiento",
+   "nombre": "Maestro del Conocimiento",
+   "pagina": 93,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Académico, cronista o erudito.",
+   "menor": {
+    "texto": "+1 rango en Canciones y Relatos o en Culturas; en lugares nuevos, el DJ te da un rumor o dato.",
+    "elecciones": [
+     {
+      "id": "habilidad",
+      "tipo": "habilidad",
+      "opciones": [
+       "canciones_relatos",
+       "culturas"
+      ]
+     }
+    ],
+    "efectos": [
+     {
+      "tipo": "rangos",
+      "objetivo": "eleccion:habilidad",
+      "cantidad": 1
+     }
+    ]
+   },
+   "mayor": {
+    "texto": "En un campo de saber concreto, tus fallos en esas habilidades cuentan como éxitos parciales.",
+    "elecciones": [
+     {
+      "id": "campo",
+      "tipo": "texto",
+      "etiqueta": "Campo de conocimiento"
+     }
+    ]
+   }
+  },
+  {
+   "id": "mago_innato",
+   "nombre": "Mago Innato",
+   "pagina": 93,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Magia innata que no sabes explicar.",
+   "menor": {
+    "texto": "Pasión sobre tu don; una escuela cualquiera pasa a ser escuela de linaje.",
+    "elecciones": [
+     {
+      "id": "escuela",
+      "tipo": "escuela",
+      "filtro": "cualquiera"
+     }
+    ],
+    "efectos": [
+     {
+      "tipo": "escuela_linaje",
+      "objetivo": "eleccion:escuela"
+     }
+    ],
+    "recordatorios": [
+     "Una Pasión sobre tu capacidad mágica"
+    ]
+   },
+   "mayor": {
+    "texto": "Gasta 1 Determinación para lanzar de esa escuela sin PM durante una escena; luego quedas Cansado. Un PNJ poderoso te caza."
+   }
+  },
+  {
+   "id": "manos_curandero",
+   "nombre": "Manos de Curandero",
+   "pagina": 93,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Sanador excepcional.",
+   "menor": {
+    "texto": "+10 a Sanación; +10 a Naturaleza para encontrar hierbas.",
+    "efectos": [
+     {
+      "tipo": "bono",
+      "objetivo": "sanacion",
+      "columna": "esp",
+      "valor": 10
+     }
+    ],
+    "recordatorios": [
+     "+10 a Naturaleza para buscar hierbas (condicional)"
+    ]
+   },
+   "mayor": {
+    "texto": "Al tratar o dar una hierba: recupera PG igual a tus rangos de Sanación, o da bonificador a la TS, o acorta la recuperación de lesiones."
+   }
+  },
+  {
+   "id": "marca_destino",
+   "nombre": "Marca del Destino",
+   "pagina": 93,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Una marca que te avisa de algo.",
+   "menor": {
+    "texto": "La marca te avisa de siervos del Señor de las Tinieblas, magia o un tipo de criatura; −10 a otras Percepciones mientras está activa.",
+    "elecciones": [
+     {
+      "id": "marca",
+      "tipo": "texto",
+      "etiqueta": "Marca y qué detecta"
+     }
+    ]
+   },
+   "mayor": {
+    "texto": "Pasión extra «Destino», ligada a la marca e inmutable hasta cumplirlo.",
+    "efectos": [
+     {
+      "tipo": "pasion_extra",
+      "nombre": "Destino"
+     }
+    ]
+   }
+  },
+  {
+   "id": "mercader",
+   "nombre": "Mercader",
+   "pagina": 94,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Comerciante de oficio.",
+   "menor": {
+    "texto": "+10 a Engañar y Carisma al regatear o cerrar tratos.",
+    "recordatorios": [
+     "+10 a Engañar y Carisma al negociar (condicional)"
+    ]
+   },
+   "mayor": {
+    "texto": "Una vez por sesión, gasta 1 Determinación para que un PNJ nuevo sea un antiguo cliente o colega."
+   }
+  },
+  {
+   "id": "montaraz",
+   "nombre": "Montaraz",
+   "pagina": 94,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Vives en plena naturaleza.",
+   "menor": {
+    "texto": "Naturaleza sobre por qué prefieres lo salvaje; +10 a habilidades de Aventura al aire libre lejos de la civilización; viajas 1,5× solo y ligero.",
+    "recordatorios": [
+     "Naturaleza sobre tu vida salvaje",
+     "+10 a Aventura en tierras salvajes (condicional)"
+    ]
+   },
+   "mayor": {
+    "texto": "+30 a TS contra agotamiento e inanición; +20 a Sigilo y Percepción en regiones salvajes."
+   }
+  },
+  {
+   "id": "mundano",
+   "nombre": "Mundano",
+   "pagina": 94,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Un tipo corriente al que el destino elige.",
+   "menor": {
+    "texto": "Si acabas una sesión sin gastar Determinación, ganas 1."
+   },
+   "mayor": {
+    "texto": "+30 a TS y defensa contra la magia; −20 a sintonía y a ejecutar sortilegios."
+   }
+  },
+  {
+   "id": "nacido_silla",
+   "nombre": "Nacido en una Silla de Montar",
+   "pagina": 94,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Jinete famoso entre los tuyos.",
+   "menor": {
+    "texto": "Montura superior y +10 a Equitación.",
+    "elecciones": [
+     {
+      "id": "montura",
+      "tipo": "texto",
+      "etiqueta": "Nombre y tipo de montura"
+     }
+    ],
+    "efectos": [
+     {
+      "tipo": "bono",
+      "objetivo": "equitacion",
+      "columna": "esp",
+      "valor": 10
+     },
+     {
+      "tipo": "montura"
+     }
+    ]
+   },
+   "mayor": {
+    "texto": "Superas automáticamente las tiradas de Equitación en combate montado."
+   }
+  },
+  {
+   "id": "pasado_oscuro",
+   "nombre": "Pasado Oscuro",
+   "pagina": 95,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Antiguo siervo del Señor de las Tinieblas, ahora su enemigo.",
+   "menor": {
+    "texto": "Percibir la Oscuridad una vez al día gratis y sin tirada."
+   },
+   "mayor": {
+    "texto": "+20 a Vagabundear en Tierras Tenebrosas; una vez por sesión el DJ revela una debilidad de un siervo del Señor de las Tinieblas. Muchos desconfían de ti."
+   }
+  },
+  {
+   "id": "pies_ligeros",
+   "nombre": "Pies Ligeros",
+   "pagina": 95,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Corres como el viento.",
+   "menor": {
+    "texto": "+5 m de velocidad; viajas 1,5× solo y ligero.",
+    "efectos": [
+     {
+      "tipo": "velocidad",
+      "valor": 5
+     }
+    ]
+   },
+   "mayor": {
+    "texto": "Sin carga o con carga ligera, retirada gratuita y +20 a DEF el resto del asalto si te mueves."
+   }
+  },
+  {
+   "id": "preparado_aventura",
+   "nombre": "Preparado para la Aventura",
+   "pagina": 95,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Tu mochila lo tiene todo.",
+   "menor": {
+    "texto": "Añade dos objetos de precio 2 o menos, o uno de precio 3, al equipo inicial.",
+    "elecciones": [
+     {
+      "id": "objetos",
+      "tipo": "texto",
+      "etiqueta": "Objetos extra"
+     }
+    ]
+   },
+   "mayor": {
+    "texto": "Naturaleza sobre ir siempre preparado; una vez por sesión, 1 Determinación para sacar un objeto de precio 1 o menos."
+   }
+  },
+  {
+   "id": "temerario",
+   "nombre": "Temerario",
+   "pagina": 95,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "La fortuna favorece al osado.",
+   "menor": {
+    "texto": "Gastando Determinación en tareas extremadamente difíciles o más, +10 extra."
+   },
+   "mayor": {
+    "texto": "Una vez por sesión, un fallo crítico en una tirada heroica o demencial te da 1 Determinación."
+   }
+  },
+  {
+   "id": "vigilante",
+   "nombre": "Vigilante",
+   "pagina": 96,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Duermes con un ojo abierto.",
+   "menor": {
+    "texto": "Con 4 horas de descanso recuperas PM y dejas de estar Cansado."
+   },
+   "mayor": {
+    "texto": "Actúas con normalidad aunque estés Sorprendido. Alguien va a por ti: nómbralo y escribe tu Lealtad.",
+    "recordatorios": [
+     "Nombra a tu enemigo y escribe tu Lealtad hacia él"
+    ]
+   }
+  },
+  {
+   "id": "vinculo_inquebrantable",
+   "nombre": "Vínculo Inquebrantable",
+   "pagina": 96,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Un lazo fortísimo con un compañero.",
+   "menor": {
+    "texto": "Lealtad hacia un compañero; +10 a ayudarle; siempre sabes si está en peligro.",
+    "elecciones": [
+     {
+      "id": "companero",
+      "tipo": "texto",
+      "etiqueta": "Compañero"
+     }
+    ],
+    "recordatorios": [
+     "Lealtad hacia ese compañero"
+    ]
+   },
+   "mayor": {
+    "texto": "Mientras os veáis, ambos +5 a DEF y TS."
+   }
+  },
+  {
+   "id": "vortice",
+   "nombre": "Vórtice",
+   "pagina": 96,
+   "coste": {
+    "menor": 1,
+    "mayor": 3
+   },
+   "resumen": "Lo improbable te persigue.",
+   "menor": {
+    "texto": "Tiradas abiertas: repites hacia arriba con 95+ y hacia abajo con 06 o menos."
+   },
+   "mayor": {
+    "texto": "Tiradas abiertas: repites hacia arriba con 93+ y hacia abajo con 08 o menos."
+   }
+  }
+ ]
+}

@@ -1,0 +1,1673 @@
+{
+ "_fuente": "Manual del Jugador, cap. 13 Riqueza y equipo (pág. 138-171), tablas [2.12], [2.21], [2.22], [2.23], [2.24]",
+ "riqueza": {
+  "pagina": 138,
+  "niveles": [
+   {
+    "nr": 0,
+    "nombre": "Siervo o marginado"
+   },
+   {
+    "nr": 1,
+    "nombre": "Humilde"
+   },
+   {
+    "nr": 2,
+    "nombre": "Plebeyo"
+   },
+   {
+    "nr": 3,
+    "nombre": "Burgués"
+   },
+   {
+    "nr": 4,
+    "nombre": "Baja nobleza"
+   },
+   {
+    "nr": 5,
+    "nombre": "Alta nobleza o gobernante"
+   }
+  ],
+  "nr_inicial": {
+   "pagina": 139,
+   "regla": "NR linaje + NR cultura + trasfondos; entre 0 y 4 al empezar."
+  },
+  "nr_vs_precio": {
+   "_tabla": "[2.12]",
+   "pagina": 139,
+   "reglas": [
+    "NR > precio: puede comprarlo.",
+    "NR = precio: puede, pero su NR baja 1 (mín. 0).",
+    "NR < precio: no puede por sí solo."
+   ]
+  },
+  "nota": "El equipo inicial no depende del NR."
+ },
+ "precios_armas": {
+  "_tabla": "[2.21]",
+  "pagina": 144,
+  "categorias": [
+   {
+    "nombre": "Arma de mano, cuerpo a cuerpo",
+    "precio": 0,
+    "ejemplos": "Daga, porra"
+   },
+   {
+    "nombre": "Arma ligera, cuerpo a cuerpo",
+    "precio": 1,
+    "ejemplos": "Espada corta, maza"
+   },
+   {
+    "nombre": "Arma larga, cuerpo a cuerpo",
+    "precio": 1,
+    "ejemplos": "Espada larga, martillo de guerra, lucero del alba"
+   },
+   {
+    "nombre": "Arma pesada, cuerpo a cuerpo",
+    "precio": 2,
+    "ejemplos": "Armas a dos manos y de asta"
+   },
+   {
+    "nombre": "Arma pobre, de proyectiles",
+    "precio": 0,
+    "ejemplos": "Arco corto, honda"
+   },
+   {
+    "nombre": "Arma ligera, de proyectiles",
+    "precio": 1,
+    "ejemplos": "Ballesta ligera, arco compuesto"
+   },
+   {
+    "nombre": "Arma pesada, de proyectiles",
+    "precio": 2,
+    "ejemplos": "Arco largo, ballesta pesada"
+   }
+  ]
+ },
+ "armaduras": {
+  "_tabla": "[2.23]",
+  "pagina": 147,
+  "_notas": {
+   "tipo": "Columna de la tabla de ataque: Ninguna (SA), Ligera (AL), Media (AM), Pesada (AP).",
+   "pen_movimiento": "Se aplica a Acrobacias, Atletismo, Equitación, Sigilo y ejecución de sortilegios; la reduce la habilidad Armadura (mín. 0). Los penalizadores se suman entre piezas.",
+   "pen_bc": "No se puede compensar.",
+   "pen_percepcion": "No se puede compensar.",
+   "agi_max_def": "Tope de AGI aplicable a la DEF."
+  },
+  "lista": [
+   {
+    "id": "pieles_pelaje",
+    "nombre": "Pieles/Pelaje",
+    "categoria": "armadura",
+    "precio": 0,
+    "tipo": "Ligera",
+    "zonas": "Torso, brazos, piernas",
+    "cualidades": [],
+    "agi_max_def": 20,
+    "pen_movimiento": -20,
+    "pen_bc": null,
+    "pen_percepcion": null,
+    "def_cc": null,
+    "def_proy": null,
+    "notas": "Empapada: −40 al movimiento. +10 DEF y +10 a TS contra frío."
+   },
+   {
+    "id": "jubon_de_cuero",
+    "nombre": "Jubón de cuero",
+    "categoria": "armadura",
+    "precio": 1,
+    "tipo": "Ligera",
+    "zonas": "Torso",
+    "cualidades": [],
+    "agi_max_def": null,
+    "pen_movimiento": -10,
+    "pen_bc": null,
+    "pen_percepcion": null,
+    "def_cc": null,
+    "def_proy": null
+   },
+   {
+    "id": "armadura_de_cuero",
+    "nombre": "Armadura de cuero",
+    "categoria": "armadura",
+    "precio": 1,
+    "tipo": "Ligera",
+    "zonas": "Torso, brazos, piernas",
+    "cualidades": [],
+    "agi_max_def": 30,
+    "pen_movimiento": -20,
+    "pen_bc": -5,
+    "pen_percepcion": null,
+    "def_cc": null,
+    "def_proy": null
+   },
+   {
+    "id": "cuero_hervido",
+    "nombre": "Cuero hervido",
+    "categoria": "armadura",
+    "precio": 1,
+    "tipo": "Ligera",
+    "zonas": "Torso",
+    "cualidades": [
+     "Rígida"
+    ],
+    "agi_max_def": 30,
+    "pen_movimiento": -25,
+    "pen_bc": null,
+    "pen_percepcion": null,
+    "def_cc": null,
+    "def_proy": null
+   },
+   {
+    "id": "cuero_reforzado",
+    "nombre": "Cuero reforzado",
+    "categoria": "armadura",
+    "precio": 2,
+    "tipo": "Ligera",
+    "zonas": "Torso, brazos, piernas",
+    "cualidades": [
+     "Metal"
+    ],
+    "agi_max_def": 20,
+    "pen_movimiento": -30,
+    "pen_bc": -5,
+    "pen_percepcion": null,
+    "def_cc": null,
+    "def_proy": null
+   },
+   {
+    "id": "camisote_de_malla",
+    "nombre": "Camisote de malla",
+    "categoria": "armadura",
+    "precio": 2,
+    "tipo": "Media",
+    "zonas": "Torso",
+    "cualidades": [
+     "Metal"
+    ],
+    "agi_max_def": 30,
+    "pen_movimiento": -35,
+    "pen_bc": null,
+    "pen_percepcion": null,
+    "def_cc": null,
+    "def_proy": null
+   },
+   {
+    "id": "cota_de_malla",
+    "nombre": "Cota de malla",
+    "categoria": "armadura",
+    "precio": 2,
+    "tipo": "Media",
+    "zonas": "Torso, brazos, piernas",
+    "cualidades": [
+     "Metal"
+    ],
+    "agi_max_def": 20,
+    "pen_movimiento": -45,
+    "pen_bc": null,
+    "pen_percepcion": null,
+    "def_cc": null,
+    "def_proy": null
+   },
+   {
+    "id": "armadura_lamelar",
+    "nombre": "Armadura lamelar",
+    "categoria": "armadura",
+    "precio": 2,
+    "tipo": "Media",
+    "zonas": "Torso, brazos, piernas",
+    "cualidades": [
+     "Metal"
+    ],
+    "agi_max_def": 25,
+    "pen_movimiento": -45,
+    "pen_bc": -5,
+    "pen_percepcion": null,
+    "def_cc": 5,
+    "def_proy": 5
+   },
+   {
+    "id": "coraza",
+    "nombre": "Coraza",
+    "categoria": "armadura",
+    "precio": 2,
+    "tipo": "Media",
+    "zonas": "Torso",
+    "cualidades": [
+     "Metal",
+     "Rígida"
+    ],
+    "agi_max_def": 30,
+    "pen_movimiento": -40,
+    "pen_bc": null,
+    "pen_percepcion": null,
+    "def_cc": null,
+    "def_proy": null
+   },
+   {
+    "id": "cota_de_malla_larga",
+    "nombre": "Cota de malla larga",
+    "categoria": "armadura",
+    "precio": 2,
+    "tipo": "Pesada",
+    "zonas": "Torso, brazos, piernas",
+    "cualidades": [
+     "Metal"
+    ],
+    "agi_max_def": 10,
+    "pen_movimiento": -75,
+    "pen_bc": -10,
+    "pen_percepcion": null,
+    "def_cc": 10,
+    "def_proy": null
+   },
+   {
+    "id": "armadura_segmentada",
+    "nombre": "Armadura segmentada",
+    "categoria": "armadura",
+    "precio": 2,
+    "tipo": "Pesada",
+    "zonas": "Torso, piernas",
+    "cualidades": [
+     "Metal",
+     "Rígida"
+    ],
+    "agi_max_def": 20,
+    "pen_movimiento": -40,
+    "pen_bc": null,
+    "pen_percepcion": null,
+    "def_cc": null,
+    "def_proy": null
+   },
+   {
+    "id": "armadura_de_placas",
+    "nombre": "Armadura de placas",
+    "categoria": "armadura",
+    "precio": 2,
+    "tipo": "Pesada",
+    "zonas": "Torso, brazos, piernas",
+    "cualidades": [
+     "Metal",
+     "Rígida"
+    ],
+    "agi_max_def": 20,
+    "pen_movimiento": -60,
+    "pen_bc": -5,
+    "pen_percepcion": null,
+    "def_cc": 5,
+    "def_proy": 5
+   },
+   {
+    "id": "armadura_de_placas_completa",
+    "nombre": "Armadura de placas completa",
+    "categoria": "armadura",
+    "precio": 3,
+    "tipo": "Pesada",
+    "zonas": "Torso, brazos, piernas",
+    "cualidades": [
+     "Metal",
+     "Rígida"
+    ],
+    "agi_max_def": 15,
+    "pen_movimiento": -75,
+    "pen_bc": -10,
+    "pen_percepcion": null,
+    "def_cc": 15,
+    "def_proy": 15
+   },
+   {
+    "id": "yelmo_de_cuero",
+    "nombre": "Yelmo de cuero",
+    "categoria": "yelmo",
+    "precio": 0,
+    "tipo": null,
+    "zonas": "Cabeza",
+    "cualidades": [],
+    "agi_max_def": null,
+    "pen_movimiento": null,
+    "pen_bc": null,
+    "pen_percepcion": -5,
+    "def_cc": null,
+    "def_proy": null,
+    "notas": "Las caperuzas de pieles dan +10 DEF y +10 a TS contra frío en la cabeza."
+   },
+   {
+    "id": "yelmo_de_metal",
+    "nombre": "Yelmo de metal",
+    "categoria": "yelmo",
+    "precio": 1,
+    "tipo": null,
+    "zonas": "Cabeza",
+    "cualidades": [
+     "Metal",
+     "Rígida"
+    ],
+    "agi_max_def": null,
+    "pen_movimiento": null,
+    "pen_bc": null,
+    "pen_percepcion": -5,
+    "def_cc": null,
+    "def_proy": null
+   },
+   {
+    "id": "yelmo_completo",
+    "nombre": "Yelmo completo",
+    "categoria": "yelmo",
+    "precio": 1,
+    "tipo": null,
+    "zonas": "Cabeza, cara, cuello",
+    "cualidades": [
+     "Metal",
+     "Rígida"
+    ],
+    "agi_max_def": null,
+    "pen_movimiento": null,
+    "pen_bc": null,
+    "pen_percepcion": -15,
+    "def_cc": null,
+    "def_proy": null
+   },
+   {
+    "id": "grebas_de_cuero",
+    "nombre": "Grebas de cuero",
+    "categoria": "pieza",
+    "precio": 1,
+    "tipo": null,
+    "zonas": "Pantorrillas",
+    "cualidades": [],
+    "agi_max_def": null,
+    "pen_movimiento": null,
+    "pen_bc": null,
+    "pen_percepcion": null,
+    "def_cc": null,
+    "def_proy": null
+   },
+   {
+    "id": "grebas_de_metal",
+    "nombre": "Grebas de metal",
+    "categoria": "pieza",
+    "precio": 1,
+    "tipo": null,
+    "zonas": "Pantorrillas",
+    "cualidades": [
+     "Metal",
+     "Rígida"
+    ],
+    "agi_max_def": null,
+    "pen_movimiento": -5,
+    "pen_bc": null,
+    "pen_percepcion": null,
+    "def_cc": null,
+    "def_proy": null
+   },
+   {
+    "id": "brazales_de_cuero",
+    "nombre": "Brazales de cuero",
+    "categoria": "pieza",
+    "precio": 0,
+    "tipo": null,
+    "zonas": "Antebrazos",
+    "cualidades": [],
+    "agi_max_def": null,
+    "pen_movimiento": null,
+    "pen_bc": null,
+    "pen_percepcion": null,
+    "def_cc": null,
+    "def_proy": null
+   },
+   {
+    "id": "guanteletes_de_metal",
+    "nombre": "Guanteletes de metal",
+    "categoria": "pieza",
+    "precio": 1,
+    "tipo": null,
+    "zonas": "Antebrazos, manos",
+    "cualidades": [
+     "Metal",
+     "Rígida"
+    ],
+    "agi_max_def": null,
+    "pen_movimiento": null,
+    "pen_bc": -5,
+    "pen_percepcion": null,
+    "def_cc": null,
+    "def_proy": null
+   },
+   {
+    "id": "escudo_pequeno",
+    "nombre": "Escudo pequeño",
+    "categoria": "escudo",
+    "precio": 1,
+    "tipo": null,
+    "zonas": "Brazo del escudo",
+    "cualidades": [
+     "Rígida"
+    ],
+    "agi_max_def": null,
+    "pen_movimiento": null,
+    "pen_bc": null,
+    "pen_percepcion": null,
+    "def_cc": 15,
+    "def_proy": 5,
+    "notas": "Su DEF se aplica a un solo atacante por asalto."
+   },
+   {
+    "id": "escudo_grande",
+    "nombre": "Escudo grande",
+    "categoria": "escudo",
+    "precio": 1,
+    "tipo": null,
+    "zonas": "Brazo del escudo, torso",
+    "cualidades": [
+     "Rígida"
+    ],
+    "agi_max_def": null,
+    "pen_movimiento": -10,
+    "pen_bc": -5,
+    "pen_percepcion": null,
+    "def_cc": 25,
+    "def_proy": 25,
+    "notas": "Su DEF se aplica contra los atacantes de un flanco."
+   },
+   {
+    "id": "escudo_paves",
+    "nombre": "Escudo pavés",
+    "categoria": "escudo",
+    "precio": 1,
+    "tipo": null,
+    "zonas": "Brazo del escudo, torso",
+    "cualidades": [
+     "Rígida"
+    ],
+    "agi_max_def": null,
+    "pen_movimiento": -20,
+    "pen_bc": -15,
+    "pen_percepcion": null,
+    "def_cc": 40,
+    "def_proy": 50,
+    "notas": "Su DEF se aplica contra los atacantes frontales y de un flanco."
+   },
+   {
+    "id": "red",
+    "nombre": "Red",
+    "categoria": "escudo",
+    "precio": 0,
+    "tipo": null,
+    "zonas": "Brazo del escudo",
+    "cualidades": [],
+    "agi_max_def": null,
+    "pen_movimiento": null,
+    "pen_bc": null,
+    "pen_percepcion": null,
+    "def_cc": 5,
+    "def_proy": null,
+    "notas": "DEF contra un solo atacante; no para proyectiles; +20 a desarmar o apresar."
+   }
+  ]
+ },
+ "armas": {
+  "_tabla": "[2.24]",
+  "pagina": 152,
+  "_notas": {
+   "alcance": "Base: sin modificador. Medio (1-2×) −25, largo (2-3×) −50, extremo (3-4×) −75.",
+   "habilidades": "Algunas armas admiten varias habilidades; la secundaria puede tener penalizador al BC.",
+   "cualidades": "Alcance, Apuñalar, Inestable, Mano y Media, Marcial, Pesada, Poderosa, Recarga (#), Recarga Rápida: ver pág. 154."
+  },
+  "lista": [
+   {
+    "id": "alabarda",
+    "nombre": "Alabarda",
+    "manos": "2M",
+    "habilidades": [
+     {
+      "habilidad": "asta",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 6,
+    "longitud": "La más larga",
+    "tabla": "Filo",
+    "resultado_max": "150",
+    "critico": "Tajo",
+    "critico_alt": "Perfor.",
+    "alcance_base": null,
+    "cualidades": [
+     "Poderosa",
+     "Marcial"
+    ],
+    "pagina": 152
+   },
+   {
+    "id": "arco_compuesto",
+    "nombre": "Arco compuesto",
+    "manos": "2M",
+    "habilidades": [
+     {
+      "habilidad": "proyectiles",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 5,
+    "longitud": null,
+    "tabla": "Proyect.",
+    "resultado_max": "150",
+    "critico": "Perfor.",
+    "critico_alt": null,
+    "alcance_base": 25,
+    "cualidades": [
+     "Recarga (1)",
+     "Recarga Rápida"
+    ],
+    "pagina": 152
+   },
+   {
+    "id": "arco_corto",
+    "nombre": "Arco corto",
+    "manos": "2M",
+    "habilidades": [
+     {
+      "habilidad": "proyectiles",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 4,
+    "longitud": null,
+    "tabla": "Proyect.",
+    "resultado_max": "140",
+    "critico": "Perfor.",
+    "critico_alt": null,
+    "alcance_base": 20,
+    "cualidades": [
+     "Recarga (1)",
+     "Recarga Rápida"
+    ],
+    "pagina": 152
+   },
+   {
+    "id": "arco_largo",
+    "nombre": "Arco largo",
+    "manos": "2M",
+    "habilidades": [
+     {
+      "habilidad": "proyectiles",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 6,
+    "longitud": null,
+    "tabla": "Proyect.",
+    "resultado_max": "175",
+    "critico": "Perfor.",
+    "critico_alt": null,
+    "alcance_base": 35,
+    "cualidades": [
+     "Recarga (1)"
+    ],
+    "pagina": 152
+   },
+   {
+    "id": "ballesta_ligera",
+    "nombre": "Ballesta ligera",
+    "manos": "2M",
+    "habilidades": [
+     {
+      "habilidad": "proyectiles",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 3,
+    "longitud": null,
+    "tabla": "Proyect.",
+    "resultado_max": "150",
+    "critico": "Perfor.",
+    "critico_alt": null,
+    "alcance_base": 20,
+    "cualidades": [
+     "Recarga (1)"
+    ],
+    "pagina": 152
+   },
+   {
+    "id": "ballesta_pesada",
+    "nombre": "Ballesta pesada",
+    "manos": "2M",
+    "habilidades": [
+     {
+      "habilidad": "proyectiles",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 4,
+    "longitud": null,
+    "tabla": "Proyect.",
+    "resultado_max": "175",
+    "critico": "Perfor.",
+    "critico_alt": null,
+    "alcance_base": 30,
+    "cualidades": [
+     "Recarga (2)"
+    ],
+    "pagina": 152
+   },
+   {
+    "id": "bardiche",
+    "nombre": "Bardiche",
+    "manos": "2M",
+    "habilidades": [
+     {
+      "habilidad": "asta",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 7,
+    "longitud": "La más larga",
+    "tabla": "Filo",
+    "resultado_max": "175",
+    "critico": "Tajo",
+    "critico_alt": "Perfor.",
+    "alcance_base": null,
+    "cualidades": [
+     "Alcance",
+     "Poderosa"
+    ],
+    "pagina": 152
+   },
+   {
+    "id": "baston",
+    "nombre": "Bastón",
+    "manos": "2M",
+    "habilidades": [
+     {
+      "habilidad": "asta",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 6,
+    "longitud": "Larga",
+    "tabla": "Contund.",
+    "resultado_max": "130",
+    "critico": "Aplast.",
+    "critico_alt": null,
+    "alcance_base": null,
+    "cualidades": [],
+    "pagina": 152
+   },
+   {
+    "id": "bola_y_cadena",
+    "nombre": "Bola y cadena",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "contundentes",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 8,
+    "longitud": "Corta",
+    "tabla": "Contund.",
+    "resultado_max": "150",
+    "critico": "Aplast.",
+    "critico_alt": null,
+    "alcance_base": null,
+    "cualidades": [
+     "Inestable"
+    ],
+    "pagina": 152
+   },
+   {
+    "id": "cimitarra",
+    "nombre": "Cimitarra",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "filo",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 3,
+    "longitud": "Corta",
+    "tabla": "Filo",
+    "resultado_max": "140",
+    "critico": "Tajo",
+    "critico_alt": null,
+    "alcance_base": null,
+    "cualidades": [
+     "Marcial"
+    ],
+    "pagina": 152
+   },
+   {
+    "id": "daga",
+    "nombre": "Daga",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "pelea",
+      "penalizador": 0
+     },
+     {
+      "habilidad": "filo",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 1,
+    "longitud": "Mano",
+    "tabla": "Filo",
+    "resultado_max": "120",
+    "critico": "Perfor.",
+    "critico_alt": null,
+    "alcance_base": null,
+    "cualidades": [
+     "Apuñalar"
+    ],
+    "pagina": 152
+   },
+   {
+    "id": "daga_arrojadiza",
+    "nombre": "Daga arrojadiza",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "proyectiles",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 2,
+    "longitud": null,
+    "tabla": "Proyect.",
+    "resultado_max": "110",
+    "critico": "Perfor.",
+    "critico_alt": null,
+    "alcance_base": 3,
+    "cualidades": [],
+    "pagina": 152
+   },
+   {
+    "id": "destral",
+    "nombre": "Destral",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "contundentes",
+      "penalizador": 0
+     },
+     {
+      "habilidad": "filo",
+      "penalizador": -20
+     }
+    ],
+    "torpeza": 2,
+    "longitud": "Mano",
+    "tabla": "Contund.",
+    "resultado_max": "130",
+    "critico": "Tajo",
+    "critico_alt": "Aplast.",
+    "alcance_base": null,
+    "cualidades": [],
+    "pagina": 152
+   },
+   {
+    "id": "espada_corta",
+    "nombre": "Espada corta",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "filo",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 2,
+    "longitud": "Corta",
+    "tabla": "Filo",
+    "resultado_max": "130",
+    "critico": "Tajo",
+    "critico_alt": "Perfor.",
+    "alcance_base": null,
+    "cualidades": [
+     "Apuñalar"
+    ],
+    "pagina": 152
+   },
+   {
+    "id": "espada_de_guerra",
+    "nombre": "Espada de guerra",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "filo",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 3,
+    "longitud": "Larga",
+    "tabla": "Filo",
+    "resultado_max": "140",
+    "critico": "Tajo",
+    "critico_alt": null,
+    "alcance_base": null,
+    "cualidades": [
+     "Marcial"
+    ],
+    "pagina": 152
+   },
+   {
+    "id": "espada_larga",
+    "nombre": "Espada larga",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "filo",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 4,
+    "longitud": "Larga",
+    "tabla": "Filo",
+    "resultado_max": "150",
+    "critico": "Tajo",
+    "critico_alt": "Perfor.",
+    "alcance_base": null,
+    "cualidades": [
+     "Mano y Media",
+     "Marcial"
+    ],
+    "pagina": 152
+   },
+   {
+    "id": "espadon",
+    "nombre": "Espadón",
+    "manos": "2M",
+    "habilidades": [
+     {
+      "habilidad": "filo",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 6,
+    "longitud": "Larga",
+    "tabla": "Filo",
+    "resultado_max": "175",
+    "critico": "Tajo",
+    "critico_alt": "Perfor.",
+    "alcance_base": null,
+    "cualidades": [
+     "Pesada",
+     "Poderosa"
+    ],
+    "pagina": 152
+   },
+   {
+    "id": "estoque",
+    "nombre": "Estoque",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "filo",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 4,
+    "longitud": "Larga",
+    "tabla": "Filo",
+    "resultado_max": "130",
+    "critico": "Perfor.",
+    "critico_alt": "Tajo",
+    "alcance_base": null,
+    "cualidades": [
+     "Marcial"
+    ],
+    "pagina": 152
+   },
+   {
+    "id": "falcata",
+    "nombre": "Falcata",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "filo",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 5,
+    "longitud": "Corta",
+    "tabla": "Filo",
+    "resultado_max": "150",
+    "critico": "Tajo",
+    "critico_alt": null,
+    "alcance_base": null,
+    "cualidades": [
+     "Marcial"
+    ],
+    "pagina": 152
+   },
+   {
+    "id": "hacha_arrojadiza",
+    "nombre": "Hacha arrojadiza",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "proyectiles",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 4,
+    "longitud": null,
+    "tabla": "Proyect.",
+    "resultado_max": "120",
+    "critico": "Tajo",
+    "critico_alt": null,
+    "alcance_base": 3,
+    "cualidades": [],
+    "pagina": 152
+   },
+   {
+    "id": "hacha_de_guerra",
+    "nombre": "Hacha de guerra",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "contundentes",
+      "penalizador": 0
+     },
+     {
+      "habilidad": "filo",
+      "penalizador": -20
+     }
+    ],
+    "torpeza": 5,
+    "longitud": "Larga",
+    "tabla": "Filo",
+    "resultado_max": "150",
+    "critico": "Tajo",
+    "critico_alt": "Aplast.",
+    "alcance_base": null,
+    "cualidades": [
+     "Mano y Media"
+    ],
+    "pagina": 153
+   },
+   {
+    "id": "hacha_pesada",
+    "nombre": "Hacha pesada",
+    "manos": "2M",
+    "habilidades": [
+     {
+      "habilidad": "asta",
+      "penalizador": 0
+     },
+     {
+      "habilidad": "contundentes",
+      "penalizador": -10
+     }
+    ],
+    "torpeza": 6,
+    "longitud": "Larga",
+    "tabla": "Filo",
+    "resultado_max": "175",
+    "critico": "Tajo",
+    "critico_alt": "Aplast.",
+    "alcance_base": null,
+    "cualidades": [
+     "Pesada",
+     "Poderosa"
+    ],
+    "pagina": 153
+   },
+   {
+    "id": "honda",
+    "nombre": "Honda",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "proyectiles",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 7,
+    "longitud": null,
+    "tabla": "Proyect.",
+    "resultado_max": "110/130",
+    "critico": "Aplast.",
+    "critico_alt": null,
+    "alcance_base": 15,
+    "cualidades": [
+     "Recarga (1)"
+    ],
+    "pagina": 153
+   },
+   {
+    "id": "jabalina_arrojadiza",
+    "nombre": "Jabalina arrojadiza",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "proyectiles",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 3,
+    "longitud": null,
+    "tabla": "Proyect.",
+    "resultado_max": "140",
+    "critico": "Perfor.",
+    "critico_alt": null,
+    "alcance_base": 10,
+    "cualidades": [],
+    "pagina": 153
+   },
+   {
+    "id": "lanza_arrojadiza",
+    "nombre": "Lanza arrojadiza",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "proyectiles",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 3,
+    "longitud": null,
+    "tabla": "Proyect.",
+    "resultado_max": "130",
+    "critico": "Perfor.",
+    "critico_alt": null,
+    "alcance_base": 5,
+    "cualidades": [],
+    "pagina": 153
+   },
+   {
+    "id": "lanza_corta",
+    "nombre": "Lanza corta",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "asta",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 5,
+    "longitud": "Larga",
+    "tabla": "Filo",
+    "resultado_max": "140",
+    "critico": "Perfor.",
+    "critico_alt": null,
+    "alcance_base": null,
+    "cualidades": [
+     "Mano y Media"
+    ],
+    "pagina": 153
+   },
+   {
+    "id": "lanza_de_justa",
+    "nombre": "Lanza de justa",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "asta",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 8,
+    "longitud": "La más larga",
+    "tabla": "Filo",
+    "resultado_max": "175",
+    "critico": "Perfor.",
+    "critico_alt": null,
+    "alcance_base": null,
+    "cualidades": [
+     "Poderosa"
+    ],
+    "pagina": 153
+   },
+   {
+    "id": "lanza_larga",
+    "nombre": "Lanza larga",
+    "manos": "2M",
+    "habilidades": [
+     {
+      "habilidad": "asta",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 6,
+    "longitud": "La más larga",
+    "tabla": "Filo",
+    "resultado_max": "175",
+    "critico": "Perfor.",
+    "critico_alt": null,
+    "alcance_base": null,
+    "cualidades": [
+     "Alcance",
+     "Poderosa"
+    ],
+    "pagina": 153
+   },
+   {
+    "id": "latigo",
+    "nombre": "Látigo",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "contundentes",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 8,
+    "longitud": "La más larga",
+    "tabla": "Contund.",
+    "resultado_max": "130",
+    "critico": "Presa",
+    "critico_alt": "Tajo",
+    "alcance_base": null,
+    "cualidades": [
+     "Pesada",
+     "Alcance",
+     "Marcial"
+    ],
+    "pagina": 153
+   },
+   {
+    "id": "mangual",
+    "nombre": "Mangual",
+    "manos": "2M",
+    "habilidades": [
+     {
+      "habilidad": "contundentes",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 8,
+    "longitud": "Larga",
+    "tabla": "Contund.",
+    "resultado_max": "175",
+    "critico": "Aplast.",
+    "critico_alt": null,
+    "alcance_base": null,
+    "cualidades": [
+     "Inestable",
+     "Pesada",
+     "Poderosa"
+    ],
+    "pagina": 153
+   },
+   {
+    "id": "martillo_de_guerra",
+    "nombre": "Martillo de guerra",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "contundentes",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 4,
+    "longitud": "Corta",
+    "tabla": "Contund.",
+    "resultado_max": "130",
+    "critico": "Aplast.",
+    "critico_alt": "Perfor.",
+    "alcance_base": null,
+    "cualidades": [
+     "Marcial"
+    ],
+    "pagina": 153
+   },
+   {
+    "id": "maza_de_infanteria",
+    "nombre": "Maza de infantería",
+    "manos": "2M",
+    "habilidades": [
+     {
+      "habilidad": "contundentes",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 5,
+    "longitud": "Larga",
+    "tabla": "Contund.",
+    "resultado_max": "150",
+    "critico": "Aplast.",
+    "critico_alt": null,
+    "alcance_base": null,
+    "cualidades": [
+     "Pesada",
+     "Poderosa",
+     "Marcial"
+    ],
+    "pagina": 153
+   },
+   {
+    "id": "maza_ligera",
+    "nombre": "Maza ligera",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "contundentes",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 2,
+    "longitud": "Corta",
+    "tabla": "Contund.",
+    "resultado_max": "120",
+    "critico": "Aplast.",
+    "critico_alt": null,
+    "alcance_base": null,
+    "cualidades": [
+     "Marcial"
+    ],
+    "pagina": 153
+   },
+   {
+    "id": "maza_pesada",
+    "nombre": "Maza pesada",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "contundentes",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 3,
+    "longitud": "Corta",
+    "tabla": "Contund.",
+    "resultado_max": "140",
+    "critico": "Aplast.",
+    "critico_alt": null,
+    "alcance_base": null,
+    "cualidades": [
+     "Marcial"
+    ],
+    "pagina": 153
+   },
+   {
+    "id": "patada",
+    "nombre": "Patada",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "pelea",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 2,
+    "longitud": "Mano",
+    "tabla": "Desarm.",
+    "resultado_max": "Varía",
+    "critico": "Aplast.",
+    "critico_alt": null,
+    "alcance_base": null,
+    "cualidades": [],
+    "pagina": 153
+   },
+   {
+    "id": "pico",
+    "nombre": "Pico",
+    "manos": "2M",
+    "habilidades": [
+     {
+      "habilidad": "contundentes",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 5,
+    "longitud": "Larga",
+    "tabla": "Contund.",
+    "resultado_max": "175",
+    "critico": "Aplast.",
+    "critico_alt": "Perfor.",
+    "alcance_base": null,
+    "cualidades": [
+     "Pesada",
+     "Poderosa"
+    ],
+    "pagina": 153
+   },
+   {
+    "id": "porra",
+    "nombre": "Porra",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "contundentes",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 4,
+    "longitud": "Mano",
+    "tabla": "Contund.",
+    "resultado_max": "110",
+    "critico": "Aplast.",
+    "critico_alt": null,
+    "alcance_base": null,
+    "cualidades": [],
+    "pagina": 153
+   },
+   {
+    "id": "presa",
+    "nombre": "Presa",
+    "manos": "2M",
+    "habilidades": [
+     {
+      "habilidad": "pelea",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 5,
+    "longitud": "Mano",
+    "tabla": "Desarm.",
+    "resultado_max": "Varía",
+    "critico": "Presa",
+    "critico_alt": null,
+    "alcance_base": null,
+    "cualidades": [],
+    "pagina": 153
+   },
+   {
+    "id": "punetazo",
+    "nombre": "Puñetazo",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "pelea",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 1,
+    "longitud": "Mano",
+    "tabla": "Desarm.",
+    "resultado_max": "Varía",
+    "critico": "Aplast.",
+    "critico_alt": null,
+    "alcance_base": null,
+    "cualidades": [],
+    "pagina": 153
+   },
+   {
+    "id": "puno_acorazado",
+    "nombre": "Puño acorazado",
+    "manos": "1M",
+    "habilidades": [
+     {
+      "habilidad": "pelea",
+      "penalizador": 0
+     }
+    ],
+    "torpeza": 1,
+    "longitud": "Mano",
+    "tabla": "Desarm.",
+    "resultado_max": "Varía",
+    "critico": "Aplast.",
+    "critico_alt": null,
+    "alcance_base": null,
+    "cualidades": [],
+    "pagina": 153
+   }
+  ]
+ },
+ "equipo_generico": {
+  "_tabla": "[2.21]-[2.22]",
+  "pagina": 144,
+  "lista": [
+   {
+    "id": "abrojos",
+    "nombre": "Abrojos",
+    "precio": 0,
+    "resumen": "Clavos de cuatro puntas para sembrar el suelo.",
+    "disponibilidad": "Infrecuente"
+   },
+   {
+    "id": "antidoto",
+    "nombre": "Antídoto",
+    "precio": 3,
+    "resumen": "Segunda TS con +30 contra un veneno.",
+    "disponibilidad": "Raro"
+   },
+   {
+    "id": "antorcha",
+    "nombre": "Antorcha",
+    "precio": 0,
+    "resumen": "Luz Intensa en 3 m.",
+    "disponibilidad": "Común"
+   },
+   {
+    "id": "aparejo_para_encender_fuego",
+    "nombre": "Aparejo para encender fuego",
+    "precio": 0,
+    "resumen": "Para encender una hoguera.",
+    "disponibilidad": "Común"
+   },
+   {
+    "id": "brujula_solar",
+    "nombre": "Brújula solar",
+    "precio": 3,
+    "resumen": "Instrumento de navegación.",
+    "disponibilidad": "Infrecuente"
+   },
+   {
+    "id": "carcaj_vaina",
+    "nombre": "Carcaj/Vaina",
+    "precio": 0,
+    "resumen": "Para un arma mediana o 20 flechas.",
+    "disponibilidad": "Común"
+   },
+   {
+    "id": "cataplasma_unguento_curativo",
+    "nombre": "Cataplasma/Ungüento curativo",
+    "precio": 2,
+    "resumen": "Vendaje o cura 1d10 PG (un uso).",
+    "disponibilidad": "Infrecuente"
+   },
+   {
+    "id": "cordial_reanimador",
+    "nombre": "Cordial reanimador",
+    "precio": 2,
+    "resumen": "Quita el estado Cansado 1-3 horas; 2 tragos.",
+    "disponibilidad": "Infrecuente"
+   },
+   {
+    "id": "cuerda",
+    "nombre": "Cuerda",
+    "precio": 1,
+    "resumen": "15 metros.",
+    "disponibilidad": "Común"
+   },
+   {
+    "id": "equipo_de_curandero",
+    "nombre": "Equipo de curandero",
+    "precio": 2,
+    "resumen": "Tratar lesiones y hemorragias (3 usos).",
+    "disponibilidad": "Infrecuente"
+   },
+   {
+    "id": "frasco_de_aceite",
+    "nombre": "Frasco de aceite",
+    "precio": 0,
+    "resumen": "2 horas de linterna, o charco ardiente.",
+    "disponibilidad": "Infrecuente"
+   },
+   {
+    "id": "ganzua",
+    "nombre": "Ganzúa",
+    "precio": 1,
+    "resumen": "Para forzar cerraduras y trampas.",
+    "disponibilidad": "Infrecuente"
+   },
+   {
+    "id": "garfio_de_escalada",
+    "nombre": "Garfio de escalada",
+    "precio": 0,
+    "resumen": "Con cuerda, para escalar.",
+    "disponibilidad": "Común"
+   },
+   {
+    "id": "herramientas_de_mineria",
+    "nombre": "Herramientas de minería",
+    "precio": 1,
+    "resumen": "Pueden usarse como maza −20.",
+    "disponibilidad": "Común"
+   },
+   {
+    "id": "instrumento_musical",
+    "nombre": "Instrumento musical",
+    "precio": "0-4",
+    "resumen": "Precio según tipo y calidad.",
+    "disponibilidad": "Común a raro"
+   },
+   {
+    "id": "lente",
+    "nombre": "Lente",
+    "precio": 2,
+    "resumen": "Sin penalizador a Percepción con detalles pequeños.",
+    "disponibilidad": "Infrecuente"
+   },
+   {
+    "id": "linterna",
+    "nombre": "Linterna",
+    "precio": 1,
+    "resumen": "Luz Intensa en 6 m.",
+    "disponibilidad": "Común"
+   },
+   {
+    "id": "mochila",
+    "nombre": "Mochila",
+    "precio": 0,
+    "resumen": "Para cargar el equipo.",
+    "disponibilidad": "Común"
+   },
+   {
+    "id": "municion",
+    "nombre": "Munición",
+    "precio": 0,
+    "resumen": "20 flechas, 10 virotes o 50 balas de honda.",
+    "disponibilidad": "Común"
+   },
+   {
+    "id": "odre",
+    "nombre": "Odre",
+    "precio": 0,
+    "resumen": "Agua (o cerveza) para 2 días.",
+    "disponibilidad": "Común"
+   },
+   {
+    "id": "olla_de_hierro",
+    "nombre": "Olla de hierro",
+    "precio": 0,
+    "resumen": "Para cocinar.",
+    "disponibilidad": "Común"
+   },
+   {
+    "id": "pergamino_vitela",
+    "nombre": "Pergamino/Vitela",
+    "precio": 2,
+    "resumen": "Por hoja.",
+    "disponibilidad": "Infrecuente"
+   },
+   {
+    "id": "pipa",
+    "nombre": "Pipa",
+    "precio": 0,
+    "resumen": "Para fumar.",
+    "disponibilidad": "Común"
+   },
+   {
+    "id": "pitones_de_hierro",
+    "nombre": "Pitones de hierro",
+    "precio": 0,
+    "resumen": "10 clavos de 15 cm.",
+    "disponibilidad": "Común"
+   },
+   {
+    "id": "pluma_y_tintero",
+    "nombre": "Pluma y tintero",
+    "precio": 1,
+    "resumen": "Material de escritura.",
+    "disponibilidad": "Infrecuente"
+   },
+   {
+    "id": "ropa_de_buena_calidad",
+    "nombre": "Ropa de buena calidad",
+    "precio": 2,
+    "resumen": "Ropa burguesa.",
+    "disponibilidad": "Infrecuente"
+   },
+   {
+    "id": "ropa_extravagante",
+    "nombre": "Ropa extravagante",
+    "precio": 4,
+    "resumen": "Para destacar en la corte.",
+    "disponibilidad": "Raro"
+   },
+   {
+    "id": "ropa_lujosa",
+    "nombre": "Ropa lujosa",
+    "precio": 3,
+    "resumen": "Ropa noble.",
+    "disponibilidad": "Raro"
+   },
+   {
+    "id": "ropa_sencilla",
+    "nombre": "Ropa sencilla",
+    "precio": 1,
+    "resumen": "Ropa de diario.",
+    "disponibilidad": "Común"
+   },
+   {
+    "id": "saco_de_dormir",
+    "nombre": "Saco de dormir",
+    "precio": 0,
+    "resumen": "Evita despertar Cansado con frío.",
+    "disponibilidad": "Común"
+   },
+   {
+    "id": "tabaco",
+    "nombre": "Tabaco",
+    "precio": 1,
+    "resumen": "Una faltriquera.",
+    "disponibilidad": "Común"
+   },
+   {
+    "id": "tienda_de_campana",
+    "nombre": "Tienda de campaña",
+    "precio": 1,
+    "resumen": "Para dos personas.",
+    "disponibilidad": "Común"
+   },
+   {
+    "id": "trampa_de_cazador",
+    "nombre": "Trampa de cazador",
+    "precio": 1,
+    "resumen": "Con Caza: crítico superficial y Retenido.",
+    "disponibilidad": "Común"
+   },
+   {
+    "id": "vendas",
+    "nombre": "Vendas",
+    "precio": 1,
+    "resumen": "Detienen hemorragias (un uso).",
+    "disponibilidad": "Común"
+   },
+   {
+    "id": "raciones_en_conserva",
+    "nombre": "Raciones en conserva",
+    "precio": 1,
+    "resumen": "Para 1 semana.",
+    "disponibilidad": "Común"
+   },
+   {
+    "id": "raciones_especiales",
+    "nombre": "Raciones especiales",
+    "precio": 2,
+    "resumen": "Para 2 semanas; ligeras y nutritivas.",
+    "disponibilidad": "Infrecuente"
+   },
+   {
+    "id": "raciones_normales",
+    "nombre": "Raciones normales",
+    "precio": 0,
+    "resumen": "Para 1 semana; perecederas.",
+    "disponibilidad": "Común"
+   }
+  ]
+ }
+}

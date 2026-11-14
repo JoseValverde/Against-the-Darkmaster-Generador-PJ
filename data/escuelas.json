@@ -1,0 +1,4406 @@
+{
+ "_fuente": "Manual del Jugador, Libro tercero: Grimorio (pág. 188-265) y cap. 12 Magia (pág. 126-136)",
+ "_notas": {
+  "acceso": "Comunes: cualquier PJ, ejecutables hasta la 5ª urdimbre. Vocacionales: sin límite. De linaje: sin límite y se pagan con PD de cualquier categoría 1:1. Oscuras (Magia Negra, Nigromancia): no son comunes ni de vocación o linaje.",
+  "creacion": "En la creación se puede invertir en cualquier escuela accesible. Al subir de nivel solo en escuelas ya conocidas (con al menos 1 rango), salvo que se aprendan en juego.",
+  "rangos": "Cada rango da acceso a una urdimbre más. Solo se ejecutan urdimbres ≤ nivel del PJ.",
+  "pm": "Coste en PM = urdimbre. PM por nivel = floor(car. de PM / 10) + PM de vocación; + PM de linaje una sola vez.",
+  "caracteristica": "Cada escuela suma su propia característica (la de su ficha), no la de PM.",
+  "bono_vocacional": "El bonificador vocacional de Escuelas Sortílegas se aplica a todas las escuelas del PJ.",
+  "resumenes": "Resúmenes propios; el detalle y las opciones de distorsión están en la página indicada."
+ },
+ "comunes": [
+  "conocimiento_naturaleza",
+  "corpulencia_arcana",
+  "detecciones",
+  "luz_sonido",
+  "movimientos_naturaleza",
+  "purificacion",
+  "salmos",
+  "salvaguardas_arcanas",
+  "senda_naturaleza",
+  "visiones_arcanas"
+ ],
+ "escuelas": [
+  {
+   "id": "alivio_alma",
+   "nombre": "Alivio del Alma",
+   "pagina": 190,
+   "caracteristica": "SAB",
+   "resumen": "Sana el alma: calma, valor, aliento e inspiración heroica.",
+   "comun": false,
+   "vocaciones": [
+    "animista"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Mantener la Vida",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Detiene temporalmente el estado Moribundo."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Tranquilidad",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "1 min/nvl",
+     "salvacion": true,
+     "resumen": "Un humanoide se calma y no actúa con agresividad."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Aplacar el Miedo",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Inmunidad al miedo."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Eliminar la Fatiga",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Ignora el estado Cansado."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Recuperación",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Cura daño espiritual; impide alzarse como muerto viviente."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Inspirar",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "6 m radio",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Aliados cercanos ganan bonificador a ataque y habilidades."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Mente Sosegada",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": true,
+     "resumen": "Intenta disipar efectos de control mental."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Romper Maldición",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": true,
+     "resumen": "Intenta romper una maldición."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Exorcismo",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "1 día/10 fallo",
+     "salvacion": true,
+     "resumen": "Destierra a un demonio o ente incorpóreo a las Tinieblas."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "La Llama Secreta",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "El hechicero se vuelve inmune al miedo y al daño espiritual; los siervos oscuros huyen."
+    }
+   ]
+  },
+  {
+   "id": "canalizacion",
+   "nombre": "Canalización",
+   "pagina": 192,
+   "caracteristica": "POR",
+   "resumen": "Recibe el poder de espíritus y dioses para juzgar a tus enemigos.",
+   "comun": false,
+   "vocaciones": [
+    "animista"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Gracia Divina",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Bonificador a Carisma con personajes no hostiles."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Aura Sagrada",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Bonificador a la DEF propia."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Destello Aturdidor",
+     "instantaneo": true,
+     "alcance": "15 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": true,
+     "resumen": "Aturde a un objetivo."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Terror Sagrado",
+     "instantaneo": true,
+     "alcance": "15 m",
+     "area": "1 objetivo",
+     "duracion": "1 asl/10 puntos fallo",
+     "salvacion": true,
+     "resumen": "Aterroriza a muertos vivientes y siervos oscuros."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Transferencia",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "20 m radio",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "El siguiente sortilegio se transfiere a un aliado dispuesto."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Cargo de Conciencia",
+     "instantaneo": true,
+     "alcance": "15 m",
+     "area": "1 objetivo",
+     "duracion": "1 asl/10 puntos fallo",
+     "salvacion": true,
+     "resumen": "Deja Cansado a un objetivo."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Atadura Espiritual",
+     "instantaneo": true,
+     "alcance": "15 m",
+     "area": "1 objetivo",
+     "duracion": "1 asl/10 puntos fallo",
+     "salvacion": true,
+     "resumen": "Deja Retenido a un objetivo."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Tormento Espiritual",
+     "instantaneo": true,
+     "alcance": "15 m",
+     "area": "1 objetivo",
+     "duracion": "1 asl/10 puntos fallo",
+     "salvacion": true,
+     "resumen": "Deja Incapacitado a un objetivo."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Grito Sagrado",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "6 m radio",
+     "duracion": "1 asl",
+     "salvacion": true,
+     "resumen": "Palabra sagrada que estremece a enemigos y anima a aliados."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Castigo Divino",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "10 m radio",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Invoca la furia de la tormenta sobre los enemigos."
+    }
+   ]
+  },
+  {
+   "id": "canciones_sortilegas",
+   "nombre": "Canciones Sortílegas",
+   "pagina": 194,
+   "caracteristica": "POR",
+   "resumen": "Canciones mágicas ancestrales que fascinan y gobiernan mentes.",
+   "comun": false,
+   "vocaciones": [],
+   "linajes": [
+    "elfo_argenteo",
+    "elfo_estelar"
+   ],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Canción de Tranquilidad",
+     "instantaneo": false,
+     "alcance": "15 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": true,
+     "resumen": "Calma a un humanoide."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Canción de Coraje",
+     "instantaneo": false,
+     "alcance": "15 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Refuerza la determinación de un ser vivo."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Melodía Inquietante",
+     "instantaneo": false,
+     "alcance": "15 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": true,
+     "resumen": "Infunde un miedo inexplicable."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Nana Embrujada",
+     "instantaneo": false,
+     "alcance": "15 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": true,
+     "resumen": "Duerme a un humanoide."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Canción Cautivadora",
+     "instantaneo": false,
+     "alcance": "15 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": true,
+     "resumen": "El objetivo te toma por un viejo amigo."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Rima Reverberante",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "3 m radio",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Las canciones de 1 objetivo pasan a afectar a un área."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Canción de los Grilletes",
+     "instantaneo": false,
+     "alcance": "15 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": true,
+     "resumen": "El objetivo se mueve como si llevara cadenas."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Voz Resonante",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Concentrarse en canciones pasa a ser acción gratuita."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Canción Fascinadora",
+     "instantaneo": false,
+     "alcance": "15 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": true,
+     "resumen": "El objetivo cree todo lo que cantas."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Réquiem de la Memoria",
+     "instantaneo": false,
+     "alcance": "15 m",
+     "area": "1 objetivo",
+     "duracion": "P",
+     "salvacion": true,
+     "resumen": "El objetivo olvida un suceso reciente."
+    }
+   ]
+  },
+  {
+   "id": "comunion",
+   "nombre": "Comunión",
+   "pagina": 196,
+   "caracteristica": "SAB",
+   "resumen": "Habla con dioses y espíritus para obtener visiones y guía.",
+   "comun": false,
+   "vocaciones": [
+    "animista"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Interrogar Animal",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "6 m radio",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Pregunta a un animal pequeño por algo reciente."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Anticipar",
+     "instantaneo": true,
+     "alcance": "15m",
+     "area": "1 objetivo",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Los espíritus te avisan de los ataques."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Intuición",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "15 m radio",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Los espíritus revelan información sobre un tema."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Augurio",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Visión de los peligros del camino."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Visión Divina",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "4 horas",
+     "salvacion": false,
+     "resumen": "Trance de visión divina."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Hablar con los Muertos",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Una sombra de un muerto responde a una pregunta."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Presagio",
+     "instantaneo": false,
+     "alcance": "15 m",
+     "area": "1 objetivo",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Otorga buen o mal presagio a una tarea del objetivo."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Adivinación",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "4 horas",
+     "salvacion": false,
+     "resumen": "Trance adivinatorio profundo."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Perdición",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "1 asl/nvl",
+     "salvacion": true,
+     "resumen": "Contemplas la muerte futura del objetivo."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Comulgar con Espíritus",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "El DJ responde con claridad a una pregunta de sí o no."
+    }
+   ]
+  },
+  {
+   "id": "conocimiento_naturaleza",
+   "nombre": "Conocimiento de la Naturaleza",
+   "pagina": 198,
+   "caracteristica": "SAB",
+   "resumen": "Recibe el saber de plantas, animales, viento y aguas.",
+   "comun": true,
+   "vocaciones": [
+    "animista"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Percibir la Oscuridad",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Detecta siervos oscuros, maldiciones o magia maligna."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Percibir Vida",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "30 m radio",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Percibe seres vivos en el área."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Leer el Viento",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "Predice el tiempo atmosférico."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Detectar Magia",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "15 m radio",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Detecta objetos mágicos y sortilegios activos."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Conocimiento de las Hierbas",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 hora/nvl",
+     "salvacion": false,
+     "resumen": "Ayuda a buscar hierbas sin perder marcha."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Guía Espiritual",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 espíritu",
+     "duracion": "24 horas",
+     "salvacion": false,
+     "resumen": "Invoca un pequeño espíritu guía con forma animal."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Conocimiento del Cazador",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Identifica el tipo y origen de una criatura."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Rumores de la Tierra",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "La tierra te indica la dirección de tu presa."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Centinela Espiritual",
+     "instantaneo": false,
+     "alcance": "10 m",
+     "area": "30 m radio",
+     "duracion": "1 hora/nvl",
+     "salvacion": false,
+     "resumen": "Un espíritu animal vigila un lugar."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Sabiduría Ancestral",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Revela leyendas de un lugar, espíritu u objeto natural."
+    }
+   ]
+  },
+  {
+   "id": "conocimiento_elfico",
+   "nombre": "Conocimiento Élfico",
+   "pagina": 200,
+   "caracteristica": "POR",
+   "resumen": "Sabiduría de las estrellas: saber ancestral sobre personas, lugares y magia.",
+   "comun": false,
+   "vocaciones": [],
+   "linajes": [
+    "elfo_argenteo",
+    "elfo_estelar"
+   ],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "El Palacio de los Recuerdos",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Recuerdas a la perfección un suceso reciente."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Conocimiento del Artesano",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Tasa una gema, joya u objeto artesanal."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Conocimiento de las Palabras",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Identifica el idioma de un texto y su sentido oculto."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Conocimiento de la Mente",
+     "instantaneo": false,
+     "alcance": "15 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": true,
+     "resumen": "Sabes si alguien conoce un tema."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Sueños de Sabiduría",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "4 horas",
+     "salvacion": false,
+     "resumen": "Trance en busca de sabiduría."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Secretos de las Runas",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Averigua el propósito de un texto mágico."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Conocimiento Oscuro",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Sabe si algo está maldito o ligado al Señor de las Tinieblas."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Conocimiento del Cazador",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Identifica el tipo y origen de una criatura."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Conocimiento Místico",
+     "instantaneo": true,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Identifica un sortilegio o efecto mágico."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Conocimiento Ancestral",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "4 horas",
+     "salvacion": false,
+     "resumen": "Trance para consultar a los espíritus sabios."
+    }
+   ]
+  },
+  {
+   "id": "control_mental",
+   "nombre": "Control Mental",
+   "pagina": 202,
+   "caracteristica": "POR",
+   "resumen": "Domina mentes racionales: sueño, estupor, miedo y obligaciones.",
+   "comun": false,
+   "vocaciones": [
+    "mago",
+    "versatil"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Dormir",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m radio",
+     "duracion": "1 min/nvl",
+     "salvacion": true,
+     "resumen": "Duerme a varios humanoides."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Cautivar",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "1 hora/nvl",
+     "salvacion": true,
+     "resumen": "El objetivo te toma por un viejo amigo."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Miedo",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "1 asl/nvl",
+     "salvacion": true,
+     "resumen": "Provoca Temor."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Estupor",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "1 asl/5 fallo",
+     "salvacion": true,
+     "resumen": "Deja al objetivo confuso e inactivo."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Hostilidad",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": true,
+     "resumen": "El objetivo ataca con rabia al ser más cercano."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Sugestión",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "1 hora/nvl",
+     "salvacion": true,
+     "resumen": "Sugiere una acción al objetivo."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Retener Humanoide",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": true,
+     "resumen": "Deja Retenido a un humanoide."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Dominación",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "10 min/nvl",
+     "salvacion": true,
+     "resumen": "Un humanoide te obedece."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Cautivar Monstruos",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "1 hora/nvl",
+     "salvacion": true,
+     "resumen": "Como Cautivar, pero también con monstruos."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Geas",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "1 día/nvl",
+     "salvacion": true,
+     "resumen": "Impone una tarea o una prohibición (geas)."
+    }
+   ]
+  },
+  {
+   "id": "corpulencia_arcana",
+   "nombre": "Corpulencia Arcana",
+   "pagina": 204,
+   "caracteristica": "POR",
+   "resumen": "Magia que lleva el cuerpo más allá de sus límites.",
+   "comun": true,
+   "vocaciones": [
+    "mago",
+    "campeon"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Agudizar el Oído",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "Gran bonificador a Percepción auditiva."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Destreza",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "Gran bonificador a Acrobacias."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Visión en la Oscuridad",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "Visión en la oscuridad."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Apresurar",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "1 asl",
+     "salvacion": false,
+     "resumen": "Acciones más rápidas."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Resistir el Dolor",
+     "instantaneo": true,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "PG temporales extra."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Respiración Mística",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "No necesita respirar."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Inmunidad al Veneno",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "Inmune al veneno."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Fuerza Interior",
+     "instantaneo": true,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "1 asl",
+     "salvacion": false,
+     "resumen": "Gran bonificador a FUE y doble daño base cuerpo a cuerpo."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Armadura Arcana",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Aura de luz que protege."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Corazón de Acero",
+     "instantaneo": true,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Suspende el primer crítico recibido."
+    }
+   ]
+  },
+  {
+   "id": "defensa_heroica",
+   "nombre": "Defensa Heroica",
+   "pagina": 206,
+   "caracteristica": "POR",
+   "resumen": "Protege el cuerpo, lo fortalece y desvía ataques.",
+   "comun": false,
+   "vocaciones": [
+    "campeon"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Instinto de Combate",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Bonificador a las tiradas de evaluación."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Equilibrio Místico",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Bonificador a la habilidad de Armadura."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Piel Pétrea",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Endurece como piedra una zona del cuerpo."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Defensa Impenetrable",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "+25 a la DEF mientras paras con al menos la mitad del BC."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Defensor",
+     "instantaneo": true,
+     "alcance": "5 m",
+     "area": "1 ataque",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Te interpones ante un ataque dirigido a otro."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Imperturbable",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "No puedes quedar Aturdido."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Bloqueo de Escudo",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl",
+     "salvacion": false,
+     "resumen": "Desvía un crítico al brazo del escudo."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Intocable",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Con escudo, anula ventajas de posición del rival."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Respuesta",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl",
+     "salvacion": false,
+     "resumen": "Con escudo, contraataca cuando fallan contra ti."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Desafío",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Ignora hemorragia, aturdimiento, retención y derribo."
+    }
+   ]
+  },
+  {
+   "id": "detecciones",
+   "nombre": "Detecciones",
+   "pagina": 208,
+   "caracteristica": "SAB",
+   "resumen": "Percibe lo invisible, la magia, las maldiciones y las auras.",
+   "comun": true,
+   "vocaciones": [
+    "mago",
+    "versatil"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Detectar Magia",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "15 m radio",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Detecta objetos mágicos y sortilegios activos."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Comprender Idiomas",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Comprende lo básico de un texto extranjero."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Percibir la Oscuridad",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Detecta siervos oscuros, maldiciones o magia maligna."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Percibir lo Invisible",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "15 m radio",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Percibe criaturas u objetos invisibles."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Detectar Trampas",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "15 m radio",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Detecta trampas."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Lectura del Aura",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Lee el aura: Motivación, Naturaleza y Lealtad."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Hallar",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Encuentra la ruta a algo conocido."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Traspasar el Velo",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "15 m radio",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Ve a través de ilusiones, disfraces y ocultaciones."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Precognición",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "No puedes ser Sorprendido y actúas primero."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Relatos Legendarios",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Revela leyendas de un objeto, lugar o persona."
+    }
+   ]
+  },
+  {
+   "id": "encantamiento",
+   "nombre": "Encantamiento",
+   "pagina": 210,
+   "caracteristica": "INT",
+   "resumen": "Runas para encantar objetos, armas y armaduras, o guardar sortilegios.",
+   "comun": false,
+   "vocaciones": [
+    "mago"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Bastón de Mago",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "P",
+     "salvacion": false,
+     "resumen": "Convierte un bastón en Bastón de Mago."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Runa de Salvaguarda",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "10 m radio",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "Runa protectora sobre un objeto."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Almacenar Sortilegio",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "1 sortilegio",
+     "duracion": "varía",
+     "salvacion": false,
+     "resumen": "Guarda un sortilegio en el Bastón de Mago."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Runa de la Buena Suerte",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "Runa de buena suerte."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Runas de Poder",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "varía",
+     "salvacion": false,
+     "resumen": "Inscribe un sortilegio en runas para usar después."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Runa del Arquero",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Runa que mejora un arco."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Runa de Parada",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Runa que mejora la parada de un arma o escudo."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Runa de la Majestuosidad",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Runa de majestuosidad en yelmo o armadura."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Taumaturgia",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Imbuye temporalmente un sortilegio en un objeto."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Runa de la Victoria",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Runa de la victoria en un arma."
+    }
+   ]
+  },
+  {
+   "id": "engano",
+   "nombre": "Engaño",
+   "pagina": 212,
+   "caracteristica": "POR",
+   "resumen": "Trucos, ilusionismo y triquiñuelas para confundir.",
+   "comun": false,
+   "vocaciones": [
+    "versatil"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Distracción",
+     "instantaneo": false,
+     "alcance": "15 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": true,
+     "resumen": "Penaliza ataques y habilidades del objetivo."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Prestidigitación",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Oculta un objeto pequeño como parte de tu cuerpo."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Hurto Fantasmal",
+     "instantaneo": false,
+     "alcance": "15 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Birla un objeto ligero a distancia."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Cambio de Rostro",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 hora/nvl",
+     "salvacion": false,
+     "resumen": "Adoptas la cara y la voz de otro."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Huida",
+     "instantaneo": true,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Te libera de cerraduras o cuerdas normales."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Pifia",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": true,
+     "resumen": "El objetivo pifia con el arma que empuña."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Enemigos Fantasmales",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": true,
+     "resumen": "El objetivo ve un enemigo sombrío que le ataca."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Lengua Meliflua",
+     "instantaneo": false,
+     "alcance": "15 m",
+     "area": "1 objetivo",
+     "duracion": "varía",
+     "salvacion": true,
+     "resumen": "El objetivo cree todo lo que dices."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Desaparición",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Desapareces en una nube de humo."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Sorpresa Final",
+     "instantaneo": true,
+     "alcance": "10 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": true,
+     "resumen": "Tu siguiente ataque cuenta como contra un Sorprendido."
+    }
+   ]
+  },
+  {
+   "id": "frio_arcano",
+   "nombre": "Frío Arcano",
+   "pagina": 214,
+   "caracteristica": "INT",
+   "resumen": "Frío elemental: ataques helados, muros de hielo y congelación.",
+   "comun": false,
+   "vocaciones": [
+    "mago"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Contacto Gélido",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Mano gélida que daña al tocar."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Hipotermia",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "1 asl/5 fallo",
+     "salvacion": true,
+     "resumen": "Entumece y aletarga a un ser vivo."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Frío Invernal",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m radio",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Enfría el aire de una zona."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Muro de Escarcha",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m × 3 m × 15 cm",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Muro de frío intenso."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Corazón del Invierno",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Protección contra el frío."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Rayo de Escarcha",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Rayo de escarcha."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Bola de Frío",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "6 m radio",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Bola de frío que estalla."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Muro de Hielo",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m × 3 m × 15 cm",
+     "duracion": "P",
+     "salvacion": false,
+     "resumen": "Muro de hielo."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Cono de Frío",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "cono 15 m x 3 m",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Cono de frío."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Furia del Invierno",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "6 m radio",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Torbellino helado alrededor del hechicero."
+    }
+   ]
+  },
+  {
+   "id": "fuego_arcano",
+   "nombre": "Fuego Arcano",
+   "pagina": 216,
+   "caracteristica": "INT",
+   "resumen": "Fuego elemental: ataques abrasadores, barreras y calor.",
+   "comun": false,
+   "vocaciones": [
+    "mago"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Encender",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Prende un objeto inflamable."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Cauterizar",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 herida",
+     "duracion": "P",
+     "salvacion": false,
+     "resumen": "Cauteriza hemorragias leves (a costa de daño)."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Incandescencia",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "cubo de 30 cm/nvl",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Calienta materia inerte al rojo."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Muro de Fuego",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m × 3 m × 15 cm",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Muro de fuego."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Escudo Ignífugo",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Protección contra el fuego."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Rayo de Fuego",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Rayo de fuego."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Arma Llameante",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 arma",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Envuelve un arma en llamas."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Bola de Fuego",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m radio",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Bola de fuego."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Inmolación",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Aura abrasadora alrededor del hechicero."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Tormenta de Fuego",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "6 m radio",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Tormenta de llamaradas en una zona."
+    }
+   ]
+  },
+  {
+   "id": "ilusiones",
+   "nombre": "Ilusiones",
+   "pagina": 218,
+   "caracteristica": "INT",
+   "resumen": "Ilusiones que engañan vista y oído.",
+   "comun": false,
+   "vocaciones": [
+    "mago",
+    "versatil"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Sonido Fantasmal",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m radio",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "Sonido ilusorio."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Camaleón",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "24 horas",
+     "salvacion": false,
+     "resumen": "Camufla algo inmóvil."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Espejismo",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m radio",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "Imagen ilusoria estática."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Invisibilidad",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "24 horas",
+     "salvacion": false,
+     "resumen": "Invisibilidad."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Señuelo",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Doble ilusorio del hechicero."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Disfraz",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "1 hora/nvl",
+     "salvacion": false,
+     "resumen": "Cambia el aspecto y la voz de alguien."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Ilusión",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m radio",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "Ilusión con movimiento."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Aullido Enloquecedor",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "15 m radio",
+     "duracion": "1 asl/nvl",
+     "salvacion": true,
+     "resumen": "Aullido que perturba a quien esté cerca."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Mirada Incapacitante",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "1 asl/5 fallo",
+     "salvacion": true,
+     "resumen": "El objetivo cree haber recibido una herida terrible."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Nublar Clarividencia",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "6 m radio",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "Zona inmune a la adivinación."
+    }
+   ]
+  },
+  {
+   "id": "luz_sonido",
+   "nombre": "Luz y Sonido",
+   "pagina": 220,
+   "caracteristica": "INT",
+   "resumen": "Luz, oscuridad, sonido y silencio; hablar lenguas.",
+   "comun": true,
+   "vocaciones": [
+    "mago",
+    "animista",
+    "versatil"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Luz Mágica",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "3 m radio",
+     "duracion": "1 hora/nvl",
+     "salvacion": false,
+     "resumen": "Luz tenue."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Lenguas",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Hablar (sin entender) la lengua de un humanoide."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Controlar el Sonido",
+     "instantaneo": false,
+     "alcance": "5 m",
+     "area": "5 m radio",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Controla el volumen de los sonidos."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Sudario de Oscuridad",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "Envuelve al objetivo en sombras."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Luces Cautivadoras",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "6 m radio",
+     "duracion": "1 asl/nvl",
+     "salvacion": true,
+     "resumen": "Luces de colores que embelesan."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Oscuridad",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "5 m radio",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "Oscuridad absoluta."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Ruido Ensordecedor",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "1 hora",
+     "salvacion": true,
+     "resumen": "Ruido que solo oye el objetivo."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Luz Cegadora",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m radio",
+     "duracion": "-",
+     "salvacion": true,
+     "resumen": "Estallido de luz cegadora."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Voz Silenciosa",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Lanzar sortilegios sin hablar."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Luz Estelar",
+     "instantaneo": false,
+     "alcance": "10 m",
+     "area": "6 m radio",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "Luz estelar intensa en una zona."
+    }
+   ]
+  },
+  {
+   "id": "maestria_escaramuza",
+   "nombre": "Maestría de la Escaramuza",
+   "pagina": 222,
+   "caracteristica": "POR",
+   "resumen": "Acrobacias asombrosas y disparos certeros en el campo de batalla.",
+   "comun": false,
+   "vocaciones": [
+    "versatil"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Balancearse",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl",
+     "salvacion": false,
+     "resumen": "Proeza acrobática: saltar, balancearse."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Puntería",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl",
+     "salvacion": false,
+     "resumen": "Gran bonificador al siguiente disparo."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Ojo de Halcón",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Reduce las penalizaciones por alcance."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Disparo Inmovilizador",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl",
+     "salvacion": true,
+     "resumen": "El impactado no podrá moverse."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Maniobra Evasiva",
+     "instantaneo": true,
+     "alcance": "30 m",
+     "area": "1 ataque",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Gran bonificador a la DEF contra un rival."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Rebote",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl",
+     "salvacion": false,
+     "resumen": "Disparo que no se para ni respeta escudos."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Abrojos",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1,5m radio",
+     "duracion": "P",
+     "salvacion": false,
+     "resumen": "Trampa mágica de abrojos."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Disparo Cegador",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl",
+     "salvacion": true,
+     "resumen": "El impactado queda cegado."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Tiro Certero",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl",
+     "salvacion": false,
+     "resumen": "Bonificador a los críticos de proyectiles."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Lluvia de Flechas",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "6 m radio",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Lluvia de flechas sobre los enemigos."
+    }
+   ]
+  },
+  {
+   "id": "maestria_armas",
+   "nombre": "Maestría de las Armas",
+   "pagina": 224,
+   "caracteristica": "POR",
+   "resumen": "Unión mística con tu arma para proezas marciales.",
+   "comun": false,
+   "vocaciones": [
+    "campeon"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Arma Vinculada",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "P",
+     "salvacion": false,
+     "resumen": "Vincula un arma como Arma Personal."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Hoja Luminosa",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "1 hora/nvl",
+     "salvacion": false,
+     "resumen": "El Arma Personal da luz."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Danza del Acero",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Bonificador al ataque con el Arma Personal."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Lanzamiento",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Lanzas el Arma Personal a un enemigo."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Partir",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Partes limpiamente un objeto."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Estocadas a Fondo",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Tu arma cuenta como más larga para el orden de ataque."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Golpes Desgarradores",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Tus críticos sangran más."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Ataque Múltiple",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl",
+     "salvacion": false,
+     "resumen": "Atacas a dos enemigos a la vez."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Golpe Salvaje",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl",
+     "salvacion": false,
+     "resumen": "Bonificador a tus críticos este asalto."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Tornado de Acero",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "1,5m radio",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Torbellino de acero contra todos los enemigos cercanos."
+    }
+   ]
+  },
+  {
+   "id": "manipulacion_arcana",
+   "nombre": "Manipulación Arcana",
+   "pagina": 226,
+   "caracteristica": "INT",
+   "resumen": "Mueve y afecta la materia con la mente.",
+   "comun": false,
+   "vocaciones": [
+    "mago",
+    "campeon"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Poltergeist",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "1 min/nvl",
+     "salvacion": true,
+     "resumen": "Hace temblar un objeto ligero."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Escudo Mágico",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Escudo invisible que mejora la DEF."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Lastre",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "1 min/nvl",
+     "salvacion": true,
+     "resumen": "Aumenta la impedimenta del objetivo."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Telequinesis",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": true,
+     "resumen": "Telequinesis de algo ligero."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Desviar",
+     "instantaneo": true,
+     "alcance": "30 m",
+     "area": "1 ataque",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Desvía un proyectil."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Puntería Certera",
+     "instantaneo": true,
+     "alcance": "0 (toque)",
+     "area": "1 ataque",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Guía el disparo de un aliado."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Salvaguarda contra Espadas",
+     "instantaneo": true,
+     "alcance": "30 m",
+     "area": "1 ataque",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Desvía un ataque cuerpo a cuerpo."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Presión Arcana",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": true,
+     "resumen": "Golpe de fuerza mágica."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Desmenuzar",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": true,
+     "resumen": "Hace estallar un objeto inorgánico."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Fuerza Aplastante",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "1 asl/nvl",
+     "salvacion": true,
+     "resumen": "Fuerza aplastante sobre el objetivo."
+    }
+   ]
+  },
+  {
+   "id": "marea_arcana",
+   "nombre": "Marea Arcana",
+   "pagina": 228,
+   "caracteristica": "INT",
+   "resumen": "Agua elemental: niebla, mareas y olas devastadoras.",
+   "comun": false,
+   "vocaciones": [
+    "mago"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Conjurar Agua",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "10 l/nvl",
+     "duracion": "P",
+     "salvacion": false,
+     "resumen": "Brota agua potable."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Niebla",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m/nvl radio",
+     "duracion": "P",
+     "salvacion": false,
+     "resumen": "Niebla espesa."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Muro de Agua",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m × 3 m × 15 cm",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Muro de agua."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Chorro de Agua",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Chorro de agua a presión."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Aguacero",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "6 m radio",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Lluvia torrencial."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Abrir las Aguas",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "30 m³",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Abre un corredor en el agua."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Ola Rompiente",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m × 3 m × 6 m",
+     "duracion": "-",
+     "salvacion": true,
+     "resumen": "Ola rompiente."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Remolino",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "6 m radio",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Remolino."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Controlar las Aguas",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "10 m radio",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Controla una masa de agua."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Maremoto",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "10 m × 10 m × 10 m",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Ola descomunal."
+    }
+   ]
+  },
+  {
+   "id": "milagros",
+   "nombre": "Milagros",
+   "pagina": 230,
+   "caracteristica": "SAB",
+   "resumen": "Crea, repara y dobla las leyes naturales con ayuda de los espíritus.",
+   "comun": false,
+   "vocaciones": [
+    "animista"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Ayuno",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 día",
+     "salvacion": false,
+     "resumen": "Un día sin comer ni beber."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Rama Sagrada",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "P",
+     "salvacion": false,
+     "resumen": "Bendice una Rama Sagrada personal."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Conjurar Agua",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "10 l/nvl",
+     "duracion": "P",
+     "salvacion": false,
+     "resumen": "Brota agua potable."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Reparar",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Repara un objeto roto."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Multiplicación",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "Crea un duplicado de madera de un objeto."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Banquete Espiritual",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Espíritus traen un banquete."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Acero Sagrado",
+     "instantaneo": true,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "La Rama Sagrada se vuelve un arma."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Doncella Escudera",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 espíritu",
+     "duracion": "1 hora/nvl",
+     "salvacion": false,
+     "resumen": "Invoca una doncella escudera espiritual."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Controlar el Clima",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "10 km radio",
+     "duracion": "1 hora/nvl",
+     "salvacion": false,
+     "resumen": "Control limitado del clima."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Verdadero Creyente",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asalto",
+     "salvacion": false,
+     "resumen": "Inmune al daño este asalto."
+    }
+   ]
+  },
+  {
+   "id": "modelar_tierra",
+   "nombre": "Modelar Tierra",
+   "pagina": 232,
+   "caracteristica": "INT",
+   "resumen": "Tierra y piedra: proyectiles, grietas y temblores.",
+   "comun": false,
+   "vocaciones": [
+    "mago",
+    "animista"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Debilitar",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Vuelve quebradizo un objeto de piedra o metal."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Arar",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m × 3m",
+     "duracion": "P",
+     "salvacion": false,
+     "resumen": "Ara un trozo de tierra."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Cristal de Poder",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "1 cristal",
+     "duracion": "24 horas",
+     "salvacion": false,
+     "resumen": "Crea un cristal de poder mágico."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Muro de Tierra",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m × 3 m × 15 cm",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Muro de tierra."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Esquirlas de Roca",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "cono 3 m",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Andanada de esquirlas de piedra."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Fisura",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m × 3 m × 3 m",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Abre un foso."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Pulverizar",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m³",
+     "duracion": "P",
+     "salvacion": true,
+     "resumen": "Pulveriza piedra o tierra."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Tierra Desgarrada",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m radio",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "El suelo estalla."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Piedra en Barro",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m × 3 m × 3 m",
+     "duracion": "P",
+     "salvacion": false,
+     "resumen": "Convierte piedra en barro."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Terremoto",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "10 m radio",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Terremoto."
+    }
+   ]
+  },
+  {
+   "id": "movimientos_arcanos",
+   "nombre": "Movimientos Arcanos",
+   "pagina": 234,
+   "caracteristica": "INT",
+   "resumen": "Desplazamiento mágico: trepar, volar, teleportarse.",
+   "comun": false,
+   "vocaciones": [
+    "mago"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Salto",
+     "instantaneo": true,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "1 asl",
+     "salvacion": false,
+     "resumen": "Salto prodigioso."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Ralentizar Caída",
+     "instantaneo": true,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Caída lenta sin daño."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Adherirse",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Trepa cualquier superficie."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Levitar",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Levitar."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Parpadeo",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": true,
+     "resumen": "Teletransporte corto."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Nadar",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "Nadar sin tiradas."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Gobernar los Cielos",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Volar."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Portal Arcano",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 superficie",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Abre un portal en una pared."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Paso Místico",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "30 m",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Teletransporte dentro de una zona."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Travesía por las Tinieblas",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "10 m radio",
+     "duracion": "Especial",
+     "salvacion": false,
+     "resumen": "Viaje a través de las Tinieblas con acompañantes."
+    }
+   ]
+  },
+  {
+   "id": "movimientos_naturaleza",
+   "nombre": "Movimientos de la Naturaleza",
+   "pagina": 236,
+   "caracteristica": "SAB",
+   "resumen": "Moverse como las criaturas de la naturaleza.",
+   "comun": true,
+   "vocaciones": [
+    "animista",
+    "versatil"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Zancada del Vagabundo",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "Ignora el terreno difícil natural."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Paso de la Ardilla",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Camina por ramas."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Velocidad del Lobo",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "Velocidad doble sin cansarse."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Aliento de la Nutria",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Respira bajo el agua."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Caminar sobre el Agua",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Camina sobre el agua."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Excavar",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Excava túneles en tierra blanda."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Trepar como una Araña",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Camina por paredes y techos."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Unión con la Naturaleza",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "hechicero",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Se funde con la materia orgánica."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Vuelo del Halcón",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Vuela."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Paso Fantasmal",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Atraviesa madera, tierra y piedra."
+    }
+   ]
+  },
+  {
+   "id": "presencia_imponente",
+   "nombre": "Presencia Imponente",
+   "pagina": 238,
+   "caracteristica": "POR",
+   "resumen": "Órdenes, intimidación y gritos de guerra que inspiran.",
+   "comun": false,
+   "vocaciones": [
+    "campeon"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Autoridad del Comandante",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Bonificador a Carisma."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Grito de Guerra Agrupador",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "6 m radio",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Aliados repiten TS contra efectos que les afecten."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Formación de Combate",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "6 m radio",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Aliados en formación ganan DEF y ataque."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Provocación",
+     "instantaneo": true,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "1 asl/5 fallo",
+     "salvacion": true,
+     "resumen": "El objetivo penaliza ataques que no sean contra ti."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Actitud Intimidatoria",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "1,5 m radio",
+     "duracion": "1 asl/5 fallo",
+     "salvacion": true,
+     "resumen": "Intimida a quienes luchan contra ti."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Despliegue Rápido",
+     "instantaneo": true,
+     "alcance": "6 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Un aliado se reposiciona gratis."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Grito de Guerra Vigorizador",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "6 m radio",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Aliados ignoran el cansancio."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Orden",
+     "instantaneo": true,
+     "alcance": "6 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": true,
+     "resumen": "El objetivo obedece una orden."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Llamada a las Armas",
+     "instantaneo": true,
+     "alcance": "6 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Un aliado ataca gratis."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Rugido de Guerra",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "6 m radio",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Tú y tus aliados, inmunes al miedo y al control mental."
+    }
+   ]
+  },
+  {
+   "id": "purificacion",
+   "nombre": "Purificación",
+   "pagina": 240,
+   "caracteristica": "SAB",
+   "resumen": "Purga venenos, enfermedades y corrupción.",
+   "comun": true,
+   "vocaciones": [
+    "animista"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Purificar Comida y Agua",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 m radio",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Purifica comida y agua."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Detectar Veneno",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "1 m radio",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Detecta venenos."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Resistir Enfermedad",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "Bonificador contra enfermedades."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Resistir Veneno",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "Bonificador contra venenos."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Limpiar Herida",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Lesión persistente pasa a normal."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Curar Enfermedad",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Cura una enfermedad."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Curar Envenenamiento",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Elimina un veneno."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Purgar el Mal",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": true,
+     "resumen": "Purga la maldad de un cadáver animado."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Purificar la Tierra",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "10 m radio/nvl",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Purifica una zona."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Purificar la Mente",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Cura una aflicción mental."
+    }
+   ]
+  },
+  {
+   "id": "salmos",
+   "nombre": "Salmos",
+   "pagina": 242,
+   "caracteristica": "SAB",
+   "resumen": "Protección de los espíritus contra magia, maldiciones y males.",
+   "comun": true,
+   "vocaciones": [
+    "animista",
+    "campeon"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Salmo de Coraje",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "3 m radio",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Bonificador contra el miedo para el grupo."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Soportar los Elementos",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Protege del calor o frío extremos."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Bendición de la Naturaleza",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Bonificador a defensa y TS."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Contener Maldición",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "1 hora/nvl",
+     "salvacion": true,
+     "resumen": "Contiene una maldición."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Repeler Magia",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "3 m radio",
+     "duracion": "C",
+     "salvacion": true,
+     "resumen": "Protección contra la magia hostil."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Santuario",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "3 m radio",
+     "duracion": "C",
+     "salvacion": true,
+     "resumen": "Bonificador a defensa y TS para el grupo."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Disipar Magia",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": true,
+     "resumen": "Intenta disipar un efecto mágico."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Romper Maldición",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "P",
+     "salvacion": true,
+     "resumen": "Intenta romper una maldición."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Arrullo de la Naturaleza",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 campamento",
+     "duracion": "1 día",
+     "salvacion": false,
+     "resumen": "Oculta al grupo de los siervos oscuros."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Escudo de la Naturaleza",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Hace fallar un ataque no mágico."
+    }
+   ]
+  },
+  {
+   "id": "salvaguardas_arcanas",
+   "nombre": "Salvaguardas Arcanas",
+   "pagina": 244,
+   "caracteristica": "INT",
+   "resumen": "Barreras y defensas místicas; disipa y devuelve magia.",
+   "comun": true,
+   "vocaciones": [
+    "mago"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Salvaguarda de Alarma",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "3 m radio",
+     "duracion": "1 hora/nvl",
+     "salvacion": false,
+     "resumen": "Alarma mágica en una zona."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Cierre Mágico",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Cierra mágicamente una puerta o recipiente."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Contener Magia",
+     "instantaneo": true,
+     "alcance": "20 m",
+     "area": "1 sortilegio",
+     "duracion": "1 asl",
+     "salvacion": true,
+     "resumen": "Contiene un efecto mágico."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Contrarrestar Sortilegio",
+     "instantaneo": true,
+     "alcance": "20 m",
+     "area": "1 sortilegio",
+     "duracion": "-",
+     "salvacion": true,
+     "resumen": "Contrarresta un sortilegio."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Disipar Magia",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": true,
+     "resumen": "Disipa un efecto mágico."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Salvaguarda contra Sortilegios",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Bonificador a TS y DEF contra la magia."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Contener Maldición",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "1 hora/nvl",
+     "salvacion": true,
+     "resumen": "Contiene una maldición."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Muro Arcano",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m × 3 m × 15 cm",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Muro de luz."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Glifo de Salvaguarda",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "6 m radio",
+     "duracion": "varía",
+     "salvacion": false,
+     "resumen": "Glifo que se activa con una condición."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Devolver Sortilegio",
+     "instantaneo": true,
+     "alcance": "20 m",
+     "area": "1 sortilegio",
+     "duracion": "-",
+     "salvacion": true,
+     "resumen": "Devuelve un sortilegio a quien lo lanzó."
+    }
+   ]
+  },
+  {
+   "id": "sanacion",
+   "nombre": "Sanación",
+   "pagina": 246,
+   "caracteristica": "SAB",
+   "resumen": "Curación milagrosa de heridas, huesos y órganos.",
+   "comun": false,
+   "vocaciones": [
+    "animista"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Sanar",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Recupera algo de PG."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Coagular",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 herida",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Reduce la hemorragia."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Eliminar Aturdimiento",
+     "instantaneo": true,
+     "alcance": "6 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Quita el Aturdimiento."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Aliviar Lesiones",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 lesión",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Acelera la recuperación de una lesión leve."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Restablecimiento",
+     "instantaneo": true,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Recupera PG cada asalto."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Claridad",
+     "instantaneo": true,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Despierta o quita Aturdido o Incapacitado."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Reinsertar",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 lesión",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Reimplanta un miembro amputado."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Curar Lesiones",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 lesión",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Reduce la gravedad de una lesión."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Animación Suspendida",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "1 día/nvl",
+     "salvacion": false,
+     "resumen": "Animación suspendida."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Regeneración",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 lesión",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Regenera un miembro u órgano."
+    }
+   ]
+  },
+  {
+   "id": "secretos_arcanos",
+   "nombre": "Secretos Arcanos",
+   "pagina": 248,
+   "caracteristica": "INT",
+   "resumen": "Revela lo oculto, oculta la verdad y domina misterios mágicos.",
+   "comun": false,
+   "vocaciones": [
+    "versatil"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Percibir Secretos",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "6 m radio",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Sabe si algo se oculta en la zona."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Símbolo Secreto",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "1 hora/nvl",
+     "salvacion": false,
+     "resumen": "Símbolo secreto."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Falsificación",
+     "instantaneo": true,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "El objetivo cree que llevas una credencial."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Mano de Gloria",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "6 m radio",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Dificulta encontrar lo oculto en la zona."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Cazador de Magos",
+     "instantaneo": true,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Rastrea al autor de un sortilegio."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Secretos de las Runas",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Averigua el propósito de un texto mágico."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Revelar Secreto",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Ruta exacta a algo concreto."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Secretismo",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "10 min/nvl",
+     "salvacion": false,
+     "resumen": "Indetectable por magia."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Secretos del Pasado y el Futuro",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": true,
+     "resumen": "Visión del pasado o futuro de algo."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Mil Caras",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "P",
+     "salvacion": false,
+     "resumen": "Cambia tu aspecto y voz."
+    }
+   ]
+  },
+  {
+   "id": "semblantes_naturaleza",
+   "nombre": "Semblantes de la Naturaleza",
+   "pagina": 250,
+   "caracteristica": "SAB",
+   "resumen": "Adopta rasgos y formas de animales y plantas.",
+   "comun": false,
+   "vocaciones": [
+    "animista",
+    "campeon"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Cambio de Tonalidad",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Camuflaje en la vegetación."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Semblante del Sabueso",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Rastreo como un sabueso."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Semblante del Búho",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Visión nocturna."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Forma Arbórea",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Aspecto de árbol mientras no te mueves."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Semblante del Zorro",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Astucia del zorro."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Garras Furiosas",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Garras de bestia."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Cambiapieles",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Aspecto de un animal."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Semblante del Toro",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Resistencia del toro."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Semblante del Jabalí",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Fuerza y ferocidad del jabalí."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Dominio de la Forma",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Adopta la forma de un animal."
+    }
+   ]
+  },
+  {
+   "id": "senda_naturaleza",
+   "nombre": "Senda de la Naturaleza",
+   "pagina": 252,
+   "caracteristica": "SAB",
+   "resumen": "Orientación, rastreo, refugio y evitar peligros en la naturaleza.",
+   "comun": true,
+   "vocaciones": [
+    "animista",
+    "campeon"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Visión de la Senda",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 sendero",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Ve origen y destino de un camino."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Percibir Trampas",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "3 m radio",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Percibe trampas cerca."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Pericia del Cazador",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Bonificador a Caza y ataques contra animales."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Encontrar la Senda",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 hora/nvl",
+     "salvacion": false,
+     "resumen": "Te orientas sin perder marcha."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Senda Bendita",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 hora/nvl",
+     "salvacion": false,
+     "resumen": "Forrajeas sin perder marcha y con el doble de fruto."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Encontrar Refugio",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 hora/nvl",
+     "salvacion": false,
+     "resumen": "Bonificador para acampar y encontrar refugio."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Pasar sin Dejar Rastro",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "No dejas rastro."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Percibir Emboscada",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "No puedes ser Sorprendido."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Ojo del Cazador",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "15 m radio",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Ve quién pasó por la zona."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "La Senda Oculta",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 día",
+     "salvacion": false,
+     "resumen": "Evitas encuentros viajando solo."
+    }
+   ]
+  },
+  {
+   "id": "senorio_plantas",
+   "nombre": "Señorío de las Plantas",
+   "pagina": 254,
+   "caracteristica": "SAB",
+   "resumen": "Gobierna plantas y árboles para que crezcan, ayuden o apresen.",
+   "comun": false,
+   "vocaciones": [
+    "animista"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Entorpecer",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "10 m radio",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "La vegetación estorba a los enemigos."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Hablar con las Plantas",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Hablar con las plantas."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Remedio Herbal",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 hierba",
+     "duracion": "P",
+     "salvacion": false,
+     "resumen": "Duplica el efecto de una hierba curativa."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Paso Seguro",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "30m radio",
+     "duracion": "1 hora/nvl",
+     "salvacion": false,
+     "resumen": "La vegetación abre paso al grupo."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Localizar Planta",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "1,5 km radio",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Localiza una planta concreta."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Purificar Planta",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 planta",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Elimina efectos dañinos de una planta."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Regalo de la Naturaleza",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1,5 km radio",
+     "duracion": "1 día",
+     "salvacion": false,
+     "resumen": "Abundancia de frutos."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Crecimiento Milagroso",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Revive una planta o la hace brotar."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Deforestar",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "6 m radio",
+     "duracion": "-",
+     "salvacion": true,
+     "resumen": "Arrasa la vegetación de una zona."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Consciencia Arbórea",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 árbol",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Despierta un árbol consciente."
+    }
+   ]
+  },
+  {
+   "id": "senorio_animales",
+   "nombre": "Señorío de los Animales",
+   "pagina": 256,
+   "caracteristica": "SAB",
+   "resumen": "Domina, convoca, calma y habla con los animales.",
+   "comun": false,
+   "vocaciones": [
+    "animista"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Dormir Animal",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 animal",
+     "duracion": "1 min/nvl",
+     "salvacion": true,
+     "resumen": "Duerme a un animal."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Hablar con Animales",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Hablar con animales."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Compañero Animal",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "P",
+     "salvacion": false,
+     "resumen": "Pacto con un compañero animal."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Invocar Animales",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 animal",
+     "duracion": "1 min",
+     "salvacion": false,
+     "resumen": "Convoca un animal cercano."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Dominio sobre las Bestias",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 animal",
+     "duracion": "C",
+     "salvacion": true,
+     "resumen": "Controla a un animal."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Retener Bestias",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 animal",
+     "duracion": "1 asl/5 fallo",
+     "salvacion": true,
+     "resumen": "Retiene a un animal."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Ojos del Bosque",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 hora/nvl",
+     "salvacion": false,
+     "resumen": "Los animales te avisan de peligros."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Amigo de la Naturaleza",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "15 m radio",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Los animales son amistosos."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Curar Animal",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 animal",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Cura a un animal."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Plaga de Insectos",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "6 m radio",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Plaga de insectos."
+    }
+   ]
+  },
+  {
+   "id": "tormenta_arcana",
+   "nombre": "Tormenta Arcana",
+   "pagina": 258,
+   "caracteristica": "INT",
+   "resumen": "Tormenta elemental: rayos, truenos y vendavales.",
+   "comun": false,
+   "vocaciones": [
+    "mago"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Brisa",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "cono 6 m",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Brisa intensa."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Arco Voltaico",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Arco eléctrico."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Muro de Tormenta",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m × 3 m × 15 cm",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Muro de viento."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Nube de Tormenta",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1,5 m radio",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Nube de descargas."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Calma",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m radio",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Burbuja de calma contra el viento."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Armadura de Viento",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Armadura de viento."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Portadora de Tormentas",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 arma",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Arma cargada de electricidad."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Bola de Relámpagos",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "3 m radio",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Bola de relámpagos."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Huracán",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "6 m radio",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Muro de huracán alrededor."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Relámpago",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Relámpago."
+    }
+   ]
+  },
+  {
+   "id": "visiones_arcanas",
+   "nombre": "Visiones Arcanas",
+   "pagina": 260,
+   "caracteristica": "POR",
+   "resumen": "Proyección mental: percibir, hablar mente a mente y sintonizar.",
+   "comun": true,
+   "vocaciones": [
+    "mago"
+   ],
+   "linajes": [],
+   "oscura": false,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Visión Bestial",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Ves por los ojos de un animal."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Percibir Pensamientos",
+     "instantaneo": true,
+     "alcance": "0 (uno mismo)",
+     "area": "6 m radio",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Percibes cuántos seres racionales hay y dónde."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Clariaudiencia",
+     "instantaneo": false,
+     "alcance": "10 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Oyes desde un punto lejano."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Premonición",
+     "instantaneo": true,
+     "alcance": "30 m",
+     "area": "1 ataque",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Anticipas y evitas un ataque."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Visión Remota",
+     "instantaneo": false,
+     "alcance": "10 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Ves desde un punto lejano."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Habla Mental",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Hablas mentalmente con alguien."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Clarividencia",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Visión a través de una superficie reflectante."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Vínculo Mental",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "P",
+     "salvacion": true,
+     "resumen": "Vínculo mental con una criatura."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Viajero Mental",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Tu conciencia viaja fuera del cuerpo."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Lectura Mental",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "1 asl/10 fallo",
+     "salvacion": true,
+     "resumen": "Lees la mente del objetivo."
+    }
+   ]
+  },
+  {
+   "id": "magia_negra",
+   "nombre": "Magia Negra",
+   "pagina": 262,
+   "caracteristica": "INT",
+   "resumen": "Fórmulas letales, invocaciones del inframundo y venganza.",
+   "comun": false,
+   "vocaciones": [],
+   "linajes": [],
+   "oscura": true,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Agonía",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": true,
+     "resumen": "Dolor que inflige daño."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Lengua Negra",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Hablar con siervos del Señor de las Tinieblas."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Contacto Oscuro",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "hechicero",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Consulta al Señor de las Tinieblas."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Mano de Perdición",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Inflige un crítico leve."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Invocación",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 demonio",
+     "duracion": "1 hora/nvl",
+     "salvacion": true,
+     "resumen": "Invoca un demonio."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Relámpago Negro",
+     "instantaneo": false,
+     "alcance": "30 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Relámpago negro."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Ponzoña",
+     "instantaneo": false,
+     "alcance": "15 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": true,
+     "resumen": "Envenena a un ser vivo."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Aliento de Demonio",
+     "instantaneo": false,
+     "alcance": "0 (uno mismo)",
+     "area": "cono 15 m × 6 m",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Aliento cáustico."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Lanzar Maldición",
+     "instantaneo": false,
+     "alcance": "15 m",
+     "area": "1 objetivo",
+     "duracion": "P",
+     "salvacion": true,
+     "resumen": "Lanza una maldición."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Tormento Eterno",
+     "instantaneo": false,
+     "alcance": "15 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Retiene y aplasta la voluntad del objetivo."
+    }
+   ]
+  },
+  {
+   "id": "nigromancia",
+   "nombre": "Nigromancia",
+   "pagina": 264,
+   "caracteristica": "SAB",
+   "resumen": "Poder de la muerte: destruir almas y alzar a los muertos.",
+   "comun": false,
+   "vocaciones": [],
+   "linajes": [],
+   "oscura": true,
+   "sortilegios": [
+    {
+     "urdimbre": 1,
+     "nombre": "Espiritismo",
+     "instantaneo": false,
+     "alcance": "10 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": false,
+     "resumen": "Habla con espíritus o muertos vivientes."
+    },
+    {
+     "urdimbre": 2,
+     "nombre": "Danza Macabra",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "1 min/nvl",
+     "salvacion": false,
+     "resumen": "Anima brevemente un cadáver."
+    },
+    {
+     "urdimbre": 3,
+     "nombre": "Dominar Muertos Vivientes",
+     "instantaneo": false,
+     "alcance": "10 m",
+     "area": "1 objetivo",
+     "duracion": "P",
+     "salvacion": true,
+     "resumen": "Domina a un muerto viviente."
+    },
+    {
+     "urdimbre": 4,
+     "nombre": "Hablar con los Muertos",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "-",
+     "salvacion": false,
+     "resumen": "Una sombra de un muerto responde."
+    },
+    {
+     "urdimbre": 5,
+     "nombre": "Animar Esclavo",
+     "instantaneo": false,
+     "alcance": "3 m",
+     "area": "1 objetivo",
+     "duracion": "P",
+     "salvacion": false,
+     "resumen": "Alza un esclavo muerto viviente."
+    },
+    {
+     "urdimbre": 6,
+     "nombre": "Drenar Vida",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "C",
+     "salvacion": true,
+     "resumen": "Drena la vida del objetivo."
+    },
+    {
+     "urdimbre": 7,
+     "nombre": "Segadora de Almas",
+     "instantaneo": false,
+     "alcance": "0 (toque)",
+     "area": "1 arma",
+     "duracion": "1 asl/nvl",
+     "salvacion": false,
+     "resumen": "Un arma inflige daño espiritual a los vivos."
+    },
+    {
+     "urdimbre": 8,
+     "nombre": "Llamada del Señor de la Tumba",
+     "instantaneo": false,
+     "alcance": "10 m",
+     "area": "1 objetivo",
+     "duracion": "1 hora/nvl",
+     "salvacion": true,
+     "resumen": "Invoca un espíritu muerto viviente."
+    },
+    {
+     "urdimbre": 9,
+     "nombre": "Posesión Espiritual",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "especial",
+     "salvacion": true,
+     "resumen": "Tu alma posee el cuerpo del objetivo."
+    },
+    {
+     "urdimbre": 10,
+     "nombre": "Destierro",
+     "instantaneo": false,
+     "alcance": "20 m",
+     "area": "1 objetivo",
+     "duracion": "1 semana/10 fallo",
+     "salvacion": true,
+     "resumen": "Exilia el alma del objetivo, que queda en coma."
+    }
+   ]
+  }
+ ]
+}

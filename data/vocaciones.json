@@ -1,0 +1,262 @@
+{
+ "_fuente": "Manual del Jugador, cap. 5 (pág. 62-69), tablas [1.7]-[1.17] y [1.20]",
+ "_notas": {
+  "pd": "PD por nivel y categoría. 1 PD = 1 rango. 2 PD de una o dos categorías = 1 rango en otra, o 1 PM extra. Máx. 2 rangos por habilidad y nivel. Los PD sobrantes se pierden.",
+  "bonos_combate": "Bonificadores a la 1ª, 2ª… habilidad de Combate elegida por el jugador (cada uno a una habilidad distinta). Fijos para siempre.",
+  "bonos_vocacionales": "Fijos. El de escuelas_sortilegas se aplica a TODAS las Escuelas Sortílegas del PJ (comprobado en la hoja de Syndel).",
+  "pm_por_nivel": "Se suma a floor(característica de PM / 10) en cada nivel."
+ },
+ "caracteristica_pm": {
+  "mago": "INT",
+  "animista": "SAB",
+  "guerrero": "POR",
+  "picaro": "POR",
+  "versatil": "POR",
+  "campeon": "POR"
+ },
+ "vocaciones": [
+  {
+   "id": "guerrero",
+   "nombre": "Guerrero",
+   "pagina": 64,
+   "resumen": "Maestro de las armas y de la armadura pesada; aguanta más castigo que nadie.",
+   "pd": {
+    "armadura": 2,
+    "combate": 5,
+    "aventura": 4,
+    "latrocinio": 2,
+    "conocimiento": 0,
+    "sortilegios": 0,
+    "corpulencia": 2
+   },
+   "pm_por_nivel": 0,
+   "bonos_combate": [
+    20,
+    20,
+    20,
+    20,
+    20
+   ],
+   "bonos_vocacionales": {
+    "atletismo": 10,
+    "caza": 5,
+    "equitacion": 10,
+    "naturaleza": 5,
+    "vagabundear": 5,
+    "corpulencia": 15
+   },
+   "escuelas_vocacionales": []
+  },
+  {
+   "id": "picaro",
+   "nombre": "Pícaro",
+   "pagina": 65,
+   "resumen": "Sigilo, disfraz y subterfugio; letal cuando ataca por sorpresa.",
+   "pd": {
+    "armadura": 1,
+    "combate": 3,
+    "aventura": 4,
+    "latrocinio": 5,
+    "conocimiento": 1,
+    "sortilegios": 0,
+    "corpulencia": 1
+   },
+   "pm_por_nivel": 0,
+   "bonos_combate": [
+    10,
+    5,
+    5
+   ],
+   "bonos_vocacionales": {
+    "atletismo": 5,
+    "caza": 5,
+    "equitacion": 5,
+    "naturaleza": 5,
+    "vagabundear": 5,
+    "acrobacias": 20,
+    "cerraduras_trampas": 20,
+    "enganar": 20,
+    "percepcion": 20,
+    "sigilo": 20,
+    "corpulencia": 5
+   },
+   "escuelas_vocacionales": []
+  },
+  {
+   "id": "mago",
+   "nombre": "Mago",
+   "pagina": 66,
+   "resumen": "Estudioso de lo arcano: encantamientos sutiles y poder elemental devastador.",
+   "pd": {
+    "armadura": 0,
+    "combate": 0,
+    "aventura": 1,
+    "latrocinio": 1,
+    "conocimiento": 5,
+    "sortilegios": 5,
+    "corpulencia": 0
+   },
+   "pm_por_nivel": 3,
+   "bonos_combate": [],
+   "bonos_vocacionales": {
+    "enganar": 5,
+    "canciones_relatos": 10,
+    "carisma": 10,
+    "culturas": 15,
+    "sanacion": 5,
+    "taumaturgia": 15,
+    "escuelas_sortilegas": 15
+   },
+   "escuelas_vocacionales": [
+    "control_mental",
+    "corpulencia_arcana",
+    "detecciones",
+    "encantamiento",
+    "frio_arcano",
+    "fuego_arcano",
+    "ilusiones",
+    "luz_sonido",
+    "manipulacion_arcana",
+    "marea_arcana",
+    "modelar_tierra",
+    "movimientos_arcanos",
+    "salvaguardas_arcanas",
+    "tormenta_arcana",
+    "visiones_arcanas"
+   ]
+  },
+  {
+   "id": "animista",
+   "nombre": "Animista",
+   "pagina": 67,
+   "resumen": "Chamán, druida o santón: sanador que invoca los nombres secretos y los espíritus de la Naturaleza.",
+   "pd": {
+    "armadura": 0,
+    "combate": 1,
+    "aventura": 2,
+    "latrocinio": 1,
+    "conocimiento": 4,
+    "sortilegios": 5,
+    "corpulencia": 0
+   },
+   "pm_por_nivel": 2,
+   "bonos_combate": [],
+   "bonos_vocacionales": {
+    "caza": 5,
+    "naturaleza": 15,
+    "vagabundear": 5,
+    "percepcion": 5,
+    "canciones_relatos": 5,
+    "carisma": 5,
+    "culturas": 5,
+    "sanacion": 20,
+    "taumaturgia": 10,
+    "escuelas_sortilegas": 10
+   },
+   "escuelas_vocacionales": [
+    "alivio_alma",
+    "canalizacion",
+    "comunion",
+    "conocimiento_naturaleza",
+    "luz_sonido",
+    "milagros",
+    "modelar_tierra",
+    "movimientos_naturaleza",
+    "purificacion",
+    "salmos",
+    "sanacion",
+    "semblantes_naturaleza",
+    "senda_naturaleza",
+    "senorio_plantas",
+    "senorio_animales"
+   ]
+  },
+  {
+   "id": "versatil",
+   "nombre": "Versátil",
+   "pagina": 68,
+   "resumen": "Comodín que mezcla exploración, sigilo y algo de magia.",
+   "pd": {
+    "armadura": 1,
+    "combate": 2,
+    "aventura": 3,
+    "latrocinio": 3,
+    "conocimiento": 1,
+    "sortilegios": 3,
+    "corpulencia": 1
+   },
+   "pm_por_nivel": 1,
+   "bonos_combate": [
+    5,
+    5
+   ],
+   "bonos_vocacionales": {
+    "atletismo": 5,
+    "equitacion": 5,
+    "vagabundear": 5,
+    "acrobacias": 15,
+    "cerraduras_trampas": 10,
+    "enganar": 10,
+    "percepcion": 10,
+    "sigilo": 15,
+    "carisma": 5,
+    "taumaturgia": 5,
+    "escuelas_sortilegas": 5
+   },
+   "escuelas_vocacionales": [
+    "control_mental",
+    "detecciones",
+    "engano",
+    "ilusiones",
+    "luz_sonido",
+    "maestria_escaramuza",
+    "movimientos_naturaleza",
+    "secretos_arcanos"
+   ]
+  },
+  {
+   "id": "campeon",
+   "nombre": "Campeón",
+   "pagina": 69,
+   "resumen": "Guerrero místico: combate con apoyo de magia que refuerza sus armas y su cuerpo.",
+   "pd": {
+    "armadura": 2,
+    "combate": 3,
+    "aventura": 3,
+    "latrocinio": 0,
+    "conocimiento": 1,
+    "sortilegios": 3,
+    "corpulencia": 2
+   },
+   "pm_por_nivel": 1,
+   "bonos_combate": [
+    15,
+    10,
+    5
+   ],
+   "bonos_vocacionales": {
+    "atletismo": 10,
+    "caza": 5,
+    "equitacion": 10,
+    "naturaleza": 5,
+    "vagabundear": 5,
+    "acrobacias": 5,
+    "percepcion": 5,
+    "carisma": 10,
+    "taumaturgia": 5,
+    "escuelas_sortilegas": 5,
+    "corpulencia": 5
+   },
+   "escuelas_vocacionales": [
+    "corpulencia_arcana",
+    "defensa_heroica",
+    "maestria_armas",
+    "manipulacion_arcana",
+    "presencia_imponente",
+    "salmos",
+    "semblantes_naturaleza",
+    "senda_naturaleza"
+   ]
+  }
+ ]
+}

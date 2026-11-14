@@ -1,0 +1,68 @@
+{
+  "_fuente": "Manual del Jugador, cap. 6 (pág. 70-85), tablas [1.18] y [1.21]",
+  "categorias": [
+    { "id": "armadura", "nombre": "Armadura", "pagina": 74 },
+    { "id": "combate", "nombre": "Combate", "pagina": 74 },
+    { "id": "aventura", "nombre": "Aventura", "pagina": 75 },
+    { "id": "latrocinio", "nombre": "Latrocinio", "pagina": 76 },
+    { "id": "conocimiento", "nombre": "Conocimiento", "pagina": 78 },
+    { "id": "sortilegios", "nombre": "Sortilegios", "pagina": 80 },
+    { "id": "corpulencia", "nombre": "Corpulencia", "pagina": 80 }
+  ],
+  "habilidades": [
+    { "id": "armadura", "nombre": "Armadura", "categoria": "armadura", "caracteristica": null, "pagina": 74, "resumen": "Nunca se tira. Su bonificador reduce el penalizador a movimiento de la armadura (hasta 0)." },
+
+    { "id": "asta", "nombre": "Asta", "categoria": "combate", "caracteristica": "FUE", "pagina": 74, "resumen": "Lanzas, varas y armas de astil largo." },
+    { "id": "contundentes", "nombre": "Contundentes", "categoria": "combate", "caracteristica": "FUE", "pagina": 74, "resumen": "Mazas, martillos, hachas y garrotes." },
+    { "id": "filo", "nombre": "Filo", "categoria": "combate", "caracteristica": "FUE", "pagina": 74, "resumen": "Espadas, dagas y otras armas cortantes." },
+    { "id": "pelea", "nombre": "Pelea", "categoria": "combate", "caracteristica": "FUE", "pagina": 74, "resumen": "Combate desarmado y presas." },
+    { "id": "proyectiles", "nombre": "Proyectiles", "categoria": "combate", "caracteristica": "AGI", "pagina": 74, "resumen": "Arcos, ballestas, hondas y armas arrojadizas." },
+
+    { "id": "atletismo", "nombre": "Atletismo", "categoria": "aventura", "caracteristica": "FUE", "pagina": 75, "resumen": "Correr, trepar, nadar, saltar." },
+    { "id": "caza", "nombre": "Caza", "categoria": "aventura", "caracteristica": "INT", "pagina": 75, "resumen": "Rastrear, cazar y conseguir sustento." },
+    { "id": "equitacion", "nombre": "Equitación", "categoria": "aventura", "caracteristica": "AGI", "pagina": 75, "resumen": "Montar y manejar monturas." },
+    { "id": "naturaleza", "nombre": "Naturaleza", "categoria": "aventura", "caracteristica": "SAB", "pagina": 76, "resumen": "Conocer plantas, animales, clima y terreno." },
+    { "id": "vagabundear", "nombre": "Vagabundear", "categoria": "aventura", "caracteristica": "SAB", "pagina": 76, "resumen": "Orientarse, viajar y acampar en tierras salvajes." },
+
+    { "id": "acrobacias", "nombre": "Acrobacias", "categoria": "latrocinio", "caracteristica": "AGI", "pagina": 76, "resumen": "Equilibrio, volteretas y caídas controladas." },
+    { "id": "cerraduras_trampas", "nombre": "Cerraduras y Trampas", "categoria": "latrocinio", "caracteristica": "INT", "pagina": 76, "resumen": "Abrir cerraduras, detectar y desactivar trampas." },
+    { "id": "enganar", "nombre": "Engañar", "categoria": "latrocinio", "caracteristica": "INT", "pagina": 77, "resumen": "Mentir, disfrazarse, juegos de manos." },
+    { "id": "percepcion", "nombre": "Percepción", "categoria": "latrocinio", "caracteristica": "SAB", "pagina": 77, "resumen": "Notar detalles, peligros y emboscadas." },
+    { "id": "sigilo", "nombre": "Sigilo", "categoria": "latrocinio", "caracteristica": "AGI", "pagina": 77, "resumen": "Moverse y ocultarse sin ser visto." },
+
+    { "id": "canciones_relatos", "nombre": "Canciones y Relatos", "categoria": "conocimiento", "caracteristica": "POR", "pagina": 78, "resumen": "Saber tradicional, leyendas e historia oral; también interpretar." },
+    { "id": "carisma", "nombre": "Carisma", "categoria": "conocimiento", "caracteristica": "POR", "pagina": 79, "resumen": "Convencer, negociar e influir sin engaño." },
+    { "id": "culturas", "nombre": "Culturas", "categoria": "conocimiento", "caracteristica": "INT", "pagina": 79, "resumen": "Costumbres, idiomas y pueblos." },
+    { "id": "sanacion", "nombre": "Sanación", "categoria": "conocimiento", "caracteristica": "SAB", "pagina": 79, "resumen": "Tratar heridas, enfermedades y venenos." },
+    { "id": "taumaturgia", "nombre": "Taumaturgia", "categoria": "conocimiento", "caracteristica": "INT", "pagina": 79, "resumen": "Saber mágico: identificar magia, objetos y criaturas sobrenaturales." },
+
+    { "id": "escuelas_sortilegas", "nombre": "Escuelas Sortílegas", "categoria": "sortilegios", "caracteristica": "variable", "multiple": true, "pagina": 80, "resumen": "Cada escuela es una habilidad aparte. Cada rango da acceso a una urdimbre más (1 a 10) de esa escuela." },
+
+    { "id": "corpulencia", "nombre": "Corpulencia", "categoria": "corpulencia", "caracteristica": "RES", "pagina": 80, "resumen": "Nunca se tira. Su bonificador total son los PG máximos. Si llega a 0, el personaje muere." }
+  ],
+  "especializadas": {
+    "_opcional": true,
+    "pagina": 81,
+    "coste": {
+      "_resumen": "Guerrero y Pícaro: 1 PD de la categoría = 2 rangos. Resto de vocaciones: 2 PD = 1 rango. Siempre máx. 2 rangos por habilidad y nivel.",
+      "rangos_por_pd": { "guerrero": 2, "picaro": 2 },
+      "pd_por_rango": { "mago": 2, "animista": 2, "versatil": 2, "campeon": 2 }
+    },
+    "lista": [
+      { "id": "administracion", "nombre": "Administración", "caracteristica": "SAB", "categoria": "conocimiento", "pagina": 81, "resumen": "Gestionar la riqueza; permite Proyecto Económico fuera de un refugio." },
+      { "id": "artesania", "nombre": "Artesanía", "caracteristica": "SAB", "categoria": "conocimiento", "pagina": 81, "multiple": true, "resumen": "Maestría en un material u oficio; la tirada fija la calidad de lo fabricado." },
+      { "id": "asesinato", "nombre": "Asesinato", "caracteristica": "AGI", "categoria": "latrocinio", "pagina": 82, "resumen": "En emboscada con arma de Apuñalar, sus rangos modifican la tirada de crítico." },
+      { "id": "cocina", "nombre": "Cocina", "caracteristica": "AGI", "categoria": "aventura", "pagina": 82, "resumen": "Una vez por viaje puede reducir el consumo de raciones del grupo." },
+      { "id": "desenvainado_rapido", "nombre": "Desenvainado Rápido", "caracteristica": null, "categoria": "latrocinio", "pagina": 82, "resumen": "Reduce el penalizador por desenvainar o recargar; a 20+ rangos, dos disparos por asalto." },
+      { "id": "dos_armas", "nombre": "Entrenamiento con Dos Armas", "caracteristica": null, "categoria": "combate", "pagina": 82, "multiple": true, "rangos_max": "AGI", "resumen": "Reduce el penalizador de luchar con dos armas emparejadas. Máx. rangos = AGI." },
+      { "id": "erudicion", "nombre": "Erudición", "caracteristica": "INT", "categoria": "conocimiento", "pagina": 83, "resumen": "Sustituye a Canciones y Relatos en ambientaciones con escritura." },
+      { "id": "esgrima", "nombre": "Esgrima", "caracteristica": null, "categoria": "combate", "pagina": 83, "resumen": "Sin armadura y con un arma de una mano: +1 DEF por rango." },
+      { "id": "especializacion_arma", "nombre": "Especialización en un Arma", "caracteristica": null, "categoria": "combate", "pagina": 83, "multiple": true, "resumen": "Un arma concreta: reduce su margen de torpeza; a 20/30 rangos divide el BC en varios ataques." },
+      { "id": "estrategia_militar", "nombre": "Estrategia Militar", "caracteristica": "INT", "categoria": "combate", "pagina": 83, "resumen": "Tácticas y armas de asedio; +1 por rango al liderar tropas." },
+      { "id": "frenesi_combate", "nombre": "Frenesí de Combate", "caracteristica": "SAB", "categoria": "combate", "pagina": 83, "resumen": "Entrar en frenesí: suma rangos al BC y +20 FUE, pero no puede parar." },
+      { "id": "intimidacion", "nombre": "Intimidación", "caracteristica": "POR", "categoria": ["combate", "latrocinio"], "pagina": 83, "resumen": "Amenazar y coaccionar; mejora la disposición del rival en combate." },
+      { "id": "meditacion", "nombre": "Meditación", "caracteristica": "SAB", "categoria": "conocimiento", "pagina": 84, "resumen": "Meditar sobre una tarea para obtener un bonificador a esa tirada." },
+      { "id": "paso_ligero", "nombre": "Paso Ligero", "caracteristica": "AGI", "categoria": "latrocinio", "pagina": 84, "resumen": "Moverse rápido y ligero; reduce el penalizador de movimiento parcial." }
+    ]
+  }
+}

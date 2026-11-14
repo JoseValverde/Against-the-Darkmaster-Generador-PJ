@@ -45,7 +45,10 @@ Generador pj - Against the Darkmaster/
 - `git init`, `.gitignore` (REF, .DS_Store), conectar con tu repo vacío y primer commit.
 - Activar GitHub Pages en el repo (lo haces tú en la web; te dejo los clics).
 
-### 1 · Datos de reglas → JSON (la base de todo)
+### 1 · Datos de reglas → JSON (la base de todo) — ✅ hecha
+Resultado en `data/`, validador en `tests/validar-datos.mjs`, caso de prueba
+Syndel en `tests/fixtures/`. Las opciones de distorsión de sortilegios quedan
+para la fase 4.
 - Extraer de la Guía: características [1.1], linajes [1.2] con rasgos, culturas [1.4–1.6], linaje/cultura aleatorios [1.5], vocaciones [1.7–1.20], habilidades y características [1.18], bonificador por rango [1.19], especializadas [1.21], trasfondos [1.22] con sus efectos, derivados (pág. 98–99), Pasiones y Determinación.
 - Extraer del Manual completo: Grimorio (escuelas sortílegas por vocación y sortilegios, pág. ~198–277), armas, armaduras y escudos, riqueza (apéndice).
 - Las tablas cuyo texto sale desordenado del PDF (p. ej. [1.4], [1.7]) se verifican mirando la página renderizada.

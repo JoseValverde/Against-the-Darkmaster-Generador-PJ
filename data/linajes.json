@@ -1,0 +1,259 @@
+{
+  "_fuente": "Manual del Jugador, cap. 3 (pág. 18-43), tabla [1.2]",
+  "_notas": {
+    "mods": "Se suman a la característica base.",
+    "pg": "Se suma al bonificador de Corpulencia (PG iniciales).",
+    "pg_max": "Tope absoluto de PG.",
+    "pm": "PM extra solo en nivel 1.",
+    "bonos_habilidad": "Bonificadores fijos de linaje a habilidades (columna Lin. de la hoja). Los condicionales van solo en el texto del rasgo.",
+    "restriccion_porte": "POR debe ser uno de los N valores base más altos, antes de aplicar el linaje.",
+    "eleccion_habilidad": "El jugador elige una habilidad que recibe el bonificador."
+  },
+  "linajes": [
+    {
+      "id": "humano", "nombre": "Humano", "pagina": 20,
+      "mods": { "FUE": 5, "AGI": 0, "RES": 0, "INT": 0, "SAB": 0, "POR": 0 },
+      "pg": 30, "pg_max": 120, "pm": 0, "tsf": 0, "tsv": 0, "pt": 6, "nr": 0,
+      "tamano": "Mediano",
+      "resumen": "El linaje más numeroso y adaptable; los hay en todas partes y de todos los aspectos.",
+      "rasgos": [
+        { "nombre": "Especialización", "resumen": "+10 a una habilidad a elegir." }
+      ],
+      "eleccion_habilidad": { "valor": 10, "cantidad": 1 },
+      "bonos_habilidad": [],
+      "culturas_sugeridas": ["anil", "artica", "desertica", "esteparia", "forestal", "maritima", "montesa", "noble", "pastoral", "urbana"],
+      "culturas_sugeridas_texto": "Cualquiera salvo subterránea, feérica o saqueadora."
+    },
+    {
+      "id": "humano_mitico", "nombre": "Humano mítico", "pagina": 21,
+      "mods": { "FUE": 10, "AGI": 0, "RES": 10, "INT": 0, "SAB": 0, "POR": 5 },
+      "pg": 35, "pg_max": 150, "pm": 1, "tsf": 5, "tsv": 0, "pt": 4, "nr": 1,
+      "tamano": "Mediano",
+      "resumen": "Últimos herederos de un linaje humano antiguo: altos, longevos (unos 200 años) y de porte señorial.",
+      "rasgos": [
+        { "nombre": "Imponente", "resumen": "+15 a Carisma." }
+      ],
+      "bonos_habilidad": [ { "habilidad": "carisma", "valor": 15 } ],
+      "culturas_sugeridas": ["noble", "urbana", "maritima"]
+    },
+    {
+      "id": "enano", "nombre": "Enano", "pagina": 22,
+      "mods": { "FUE": 5, "AGI": -5, "RES": 15, "INT": 0, "SAB": 5, "POR": -5 },
+      "pg": 40, "pg_max": 150, "pm": 0, "tsf": 20, "tsv": 20, "pt": 4, "nr": 1,
+      "tamano": "Mediano",
+      "resumen": "Bajos, recios y longevos (más de 300 años), con afinidad por la piedra y la forja.",
+      "rasgos": [
+        { "nombre": "Visión en la Oscuridad", "resumen": "Ve 30 m en Penumbra (15 m como Luz Intensa) y 3 m en Oscuridad Absoluta." },
+        { "nombre": "Hijo de la Forja", "resumen": "+30 a TS y defensas contra frío y calor y a trabajar metal, piedra y gemas; su metalurgia es al menos de gran calidad." },
+        { "nombre": "Nacido de la Piedra", "resumen": "+20 a Naturaleza y Vagabundear bajo tierra." },
+        { "nombre": "Supersticioso", "resumen": "No puede ser mago, campeón ni versátil." }
+      ],
+      "bonos_habilidad": [],
+      "vocaciones_prohibidas": ["mago", "campeon", "versatil"],
+      "culturas_sugeridas": ["subterranea", "montesa", "forestal"]
+    },
+    {
+      "id": "mediano", "nombre": "Mediano", "pagina": 24,
+      "mods": { "FUE": -20, "AGI": 15, "RES": 10, "INT": 0, "SAB": 5, "POR": 0 },
+      "pg": 20, "pg_max": 100, "pm": 0, "tsf": 10, "tsv": 35, "pt": 5, "nr": 1,
+      "tamano": "Pequeño",
+      "resumen": "Pueblo diminuto, alegre y sorprendentemente ágil, casi inmune a la magia.",
+      "rasgos": [
+        { "nombre": "Diminuto", "resumen": "Tamaño Pequeño; cuenta como medio miembro del grupo al acampar." },
+        { "nombre": "Ágil", "resumen": "+20 a Sigilo y Acrobacias." },
+        { "nombre": "Certero", "resumen": "+10 a Proyectiles." },
+        { "nombre": "Segundo Desayuno", "resumen": "Con una buena comida antes de descansar, duplica la recuperación diaria de PG." },
+        { "nombre": "Supersticioso", "resumen": "No puede ser mago, campeón ni versátil." }
+      ],
+      "bonos_habilidad": [
+        { "habilidad": "sigilo", "valor": 20 },
+        { "habilidad": "acrobacias", "valor": 20 },
+        { "habilidad": "proyectiles", "valor": 10 }
+      ],
+      "vocaciones_prohibidas": ["mago", "campeon", "versatil"],
+      "culturas_sugeridas": ["pastoral"]
+    },
+    {
+      "id": "semielfo", "nombre": "Semielfo", "pagina": 26,
+      "mods": { "FUE": 5, "AGI": 5, "RES": 5, "INT": 0, "SAB": 0, "POR": 5 },
+      "pg": 25, "pg_max": 120, "pm": 2, "tsf": 5, "tsv": 0, "pt": 4, "nr": 1,
+      "tamano": "Mediano",
+      "resumen": "Mezcla de sangre humana y élfica; gráciles, longevos y a caballo entre dos mundos.",
+      "rasgos": [
+        { "nombre": "Visión Estelar", "resumen": "Ve con luna o estrellas como de día; 30 m en Penumbra (15 m como Luz Intensa)." },
+        { "nombre": "Herencia Élfica", "resumen": "+50 a TSF contra enfermedad, +5 contra frío; medita 4 horas en lugar de dormir." },
+        { "nombre": "Especialización", "resumen": "+10 a una habilidad a elegir." }
+      ],
+      "eleccion_habilidad": { "valor": 10, "cantidad": 1 },
+      "bonos_habilidad": [],
+      "culturas_sugeridas": ["feerica", "noble", "maritima"]
+    },
+    {
+      "id": "elfo_argenteo", "nombre": "Elfo argénteo", "pagina": 28,
+      "mods": { "FUE": 0, "AGI": 10, "RES": 5, "INT": 5, "SAB": 5, "POR": 10 },
+      "pg": 20, "pg_max": 120, "pm": 4, "tsf": 10, "tsv": 0, "pt": 3, "nr": 1,
+      "tamano": "Mediano",
+      "resumen": "Elfos regresados de las Tierras Inmortales: orgullosos, sabios y grandes marinos.",
+      "rasgos": [
+        { "nombre": "Sentidos Agudizados", "resumen": "+10 a Percepción; ve con luna o estrellas como de día; 30 m en Penumbra." },
+        { "nombre": "Inmortal", "resumen": "No envejece, inmune a la enfermedad, +10 contra frío; medita 3 horas en lugar de dormir." },
+        { "nombre": "Caminar Ligero", "resumen": "Ignora terreno difícil sin carga y con armadura ligera o sin ella; medio miembro al acampar." },
+        { "nombre": "Constructor de Navíos", "resumen": "+20 a construir, reparar o pilotar embarcaciones." },
+        { "nombre": "Justo y Sabio", "resumen": "POR debe ser uno de sus 2 valores más altos; +10 a Canciones y Relatos y a Carisma." },
+        { "nombre": "Conocimiento de los Eones", "resumen": "Accede a las escuelas de linaje Conocimiento Élfico y Canciones Sortílegas, con 2 rangos a repartir." }
+      ],
+      "bonos_habilidad": [
+        { "habilidad": "percepcion", "valor": 10 },
+        { "habilidad": "canciones_relatos", "valor": 10 },
+        { "habilidad": "carisma", "valor": 10 }
+      ],
+      "restriccion_porte": { "top": 2 },
+      "escuelas_linaje": { "escuelas": ["conocimiento_elfico", "canciones_sortilegas"], "rangos": 2 },
+      "culturas_sugeridas": ["feerica", "maritima"]
+    },
+    {
+      "id": "elfo_crepuscular", "nombre": "Elfo crepuscular", "pagina": 30,
+      "mods": { "FUE": 0, "AGI": 10, "RES": 0, "INT": 5, "SAB": 0, "POR": 5 },
+      "pg": 25, "pg_max": 120, "pm": 3, "tsf": 10, "tsv": 0, "pt": 3, "nr": 1,
+      "tamano": "Mediano",
+      "resumen": "Los elfos que nunca partieron: más ligados al mundo mortal y a la vida salvaje.",
+      "rasgos": [
+        { "nombre": "Sentidos Agudizados", "resumen": "+10 a Percepción; ve con luna o estrellas como de día; 30 m en Penumbra." },
+        { "nombre": "Inmortal", "resumen": "No envejece, inmune a la enfermedad, +10 contra frío; medita 3 horas en lugar de dormir." },
+        { "nombre": "Caminar Ligero", "resumen": "Ignora terreno difícil sin carga y con armadura ligera o sin ella; medio miembro al acampar." },
+        { "nombre": "Certero", "resumen": "+10 a Proyectiles." },
+        { "nombre": "Grácil y Elegante", "resumen": "POR debe ser uno de sus 3 valores más altos; +10 a Acrobacias y +20 a Sigilo en entornos naturales." }
+      ],
+      "bonos_habilidad": [
+        { "habilidad": "percepcion", "valor": 10 },
+        { "habilidad": "proyectiles", "valor": 10 },
+        { "habilidad": "acrobacias", "valor": 10 }
+      ],
+      "restriccion_porte": { "top": 3 },
+      "culturas_sugeridas": ["feerica", "anil"]
+    },
+    {
+      "id": "elfo_estelar", "nombre": "Elfo estelar", "pagina": 32,
+      "mods": { "FUE": 0, "AGI": 15, "RES": 10, "INT": 5, "SAB": 10, "POR": 15 },
+      "pg": 20, "pg_max": 120, "pm": 5, "tsf": 10, "tsv": 0, "pt": 2, "nr": 1,
+      "tamano": "Mediano",
+      "resumen": "Los elfos más antiguos y bellos, predilectos de los dioses y algo altivos.",
+      "rasgos": [
+        { "nombre": "Sentidos Agudizados", "resumen": "+10 a Percepción; ve con luna o estrellas como de día; 30 m en Penumbra." },
+        { "nombre": "Inmortal", "resumen": "No envejece, inmune a la enfermedad, +10 contra frío; medita 3 horas en lugar de dormir." },
+        { "nombre": "Caminar Ligero", "resumen": "Ignora terreno difícil sin carga y con armadura ligera o sin ella; medio miembro al acampar." },
+        { "nombre": "Bendecido por las Estrellas", "resumen": "POR debe ser su valor más alto; +20 a Taumaturgia, Canciones y Relatos y Carisma." },
+        { "nombre": "Conocimiento de los Eones", "resumen": "Accede a las escuelas de linaje Conocimiento Élfico y Canciones Sortílegas, con 2 rangos a repartir." }
+      ],
+      "bonos_habilidad": [
+        { "habilidad": "percepcion", "valor": 10 },
+        { "habilidad": "taumaturgia", "valor": 20 },
+        { "habilidad": "canciones_relatos", "valor": 20 },
+        { "habilidad": "carisma", "valor": 20 }
+      ],
+      "restriccion_porte": { "top": 1 },
+      "escuelas_linaje": { "escuelas": ["conocimiento_elfico", "canciones_sortilegas"], "rangos": 2 },
+      "culturas_sugeridas": ["feerica", "noble"]
+    },
+    {
+      "id": "pueblo_salvaje", "nombre": "Pueblo salvaje", "pagina": 34,
+      "mods": { "FUE": 5, "AGI": 5, "RES": 10, "INT": 0, "SAB": 10, "POR": -5 },
+      "pg": 30, "pg_max": 150, "pm": 1, "tsf": 0, "tsv": 0, "pt": 4, "nr": 0,
+      "tamano": "Mediano",
+      "resumen": "Los Leshy: gente pequeña y robusta, ligada a los espíritus del bosque.",
+      "rasgos": [
+        { "nombre": "Forestal", "resumen": "+15 a Naturaleza y Vagabundear para forrajear y orientarse en bosques; medio miembro al acampar." },
+        { "nombre": "Perro de Presa", "resumen": "+25 a Caza para rastrear y +10 a Percepción." },
+        { "nombre": "Empatía Animal", "resumen": "Percibe el estado emocional de los animales normales." },
+        { "nombre": "Visión en la Oscuridad", "resumen": "Ve 30 m en Penumbra (15 m como Luz Intensa) y 3 m en Oscuridad Absoluta." },
+        { "nombre": "Aversión al Hierro", "resumen": "Penalización doble a las acciones con armadura metálica." }
+      ],
+      "bonos_habilidad": [ { "habilidad": "percepcion", "valor": 10 } ],
+      "culturas_sugeridas": ["anil", "forestal", "feerica", "artica"]
+    },
+    {
+      "id": "orco", "nombre": "Orco", "pagina": 36,
+      "mods": { "FUE": 5, "AGI": 0, "RES": 15, "INT": 0, "SAB": -5, "POR": -10 },
+      "pg": 35, "pg_max": 120, "pm": 0, "tsf": 10, "tsv": 0, "pt": 4, "nr": 0,
+      "tamano": "Mediano",
+      "resumen": "Humanoides encorvados y fuertes, temidos por todos; no todas las tribus sirven al Señor de las Tinieblas.",
+      "rasgos": [
+        { "nombre": "Visión en la Oscuridad", "resumen": "Ve con luna o estrellas como de día; 30 m en Penumbra y 3 m en Oscuridad Absoluta." },
+        { "nombre": "Endurecido por el Fuego", "resumen": "+30 a TS y defensa contra calor y fuego." },
+        { "nombre": "Sensibilidad al Sol", "resumen": "−60 a todo a pleno sol; −20 con nubes, al alba o al anochecer." },
+        { "nombre": "Artificio Perverso", "resumen": "+15 a Cerraduras y Trampas." },
+        { "nombre": "Supersticioso", "resumen": "No puede ser mago, campeón ni versátil." }
+      ],
+      "bonos_habilidad": [ { "habilidad": "cerraduras_trampas", "valor": 15 } ],
+      "vocaciones_prohibidas": ["mago", "campeon", "versatil"],
+      "culturas_sugeridas": ["subterranea", "anil", "montesa", "artica", "saqueadora"]
+    },
+    {
+      "id": "semiorco", "nombre": "Semiorco", "pagina": 38,
+      "mods": { "FUE": 5, "AGI": 0, "RES": 10, "INT": 0, "SAB": 0, "POR": -5 },
+      "pg": 30, "pg_max": 120, "pm": 0, "tsf": 5, "tsv": 0, "pt": 5, "nr": 0,
+      "tamano": "Mediano",
+      "resumen": "Mezcla escasa de humano y orco, rechazada por ambos; pragmáticos y discretos.",
+      "rasgos": [
+        { "nombre": "Visión en la Oscuridad", "resumen": "Ve 30 m en Penumbra (15 m como Luz Intensa) y 3 m en Oscuridad Absoluta." },
+        { "nombre": "Endurecido por el Fuego", "resumen": "+15 a TS y defensa contra calor y fuego." },
+        { "nombre": "Furtivo", "resumen": "+10 a Sigilo." }
+      ],
+      "bonos_habilidad": [ { "habilidad": "sigilo", "valor": 10 } ],
+      "culturas_sugeridas": ["subterranea", "forestal", "saqueadora", "montesa"]
+    },
+    {
+      "id": "trol_piedra", "nombre": "Trol de piedra", "pagina": 40,
+      "mods": { "FUE": 20, "AGI": -10, "RES": 15, "INT": -15, "SAB": -10, "POR": -10 },
+      "pg": 60, "pg_max": 250, "pm": 0, "tsf": 30, "tsv": 0, "pt": 3, "nr": 0,
+      "tamano": "Grande",
+      "resumen": "Enormes vagabundos salvajes de fuerza inmensa, a los que el sol convierte en piedra.",
+      "rasgos": [
+        { "nombre": "Visión en la Oscuridad", "resumen": "Ve con luna o estrellas como de día; 30 m en Penumbra y 3 m en Oscuridad Absoluta." },
+        { "nombre": "Bestia Descomunal", "resumen": "Tamaño Grande; reduce un nivel la gravedad de los críticos recibidos e ignora el Aturdimiento de ataques no mágicos." },
+        { "nombre": "Piel de Piedra", "resumen": "Su piel desnuda cuenta como armadura ligera." },
+        { "nombre": "Garras Afiladas", "resumen": "Ataque desarmado como garras Grandes en la tabla de bestias [7.7]." },
+        { "nombre": "Depredador Salvaje", "resumen": "+20 a Caza y Vagabundear, y a Sigilo en entornos naturales." },
+        { "nombre": "Maldición Solar", "resumen": "−30 a todo con luz de día; la luz solar directa lo petrifica mientras dure." },
+        { "nombre": "Supersticioso", "resumen": "No puede ser mago, campeón ni versátil." }
+      ],
+      "bonos_habilidad": [
+        { "habilidad": "caza", "valor": 20 },
+        { "habilidad": "vagabundear", "valor": 20 }
+      ],
+      "vocaciones_prohibidas": ["mago", "campeon", "versatil"],
+      "culturas_sugeridas": ["subterranea", "anil", "artica", "saqueadora"]
+    },
+    {
+      "id": "firbolg", "nombre": "Firbolg", "pagina": 42,
+      "mods": { "FUE": 15, "AGI": -5, "RES": 5, "INT": 0, "SAB": -10, "POR": 5 },
+      "pg": 50, "pg_max": 200, "pm": 1, "tsf": 0, "tsv": 10, "pt": 1, "nr": 1,
+      "tamano": "Grande",
+      "resumen": "Gigantes cornudos descendientes de antiguos reyes, malditos por el Señor de las Tinieblas.",
+      "rasgos": [
+        { "nombre": "Gigantesco", "resumen": "Tamaño Grande; reduce un nivel la gravedad de los críticos recibidos." },
+        { "nombre": "Vista Aguda", "resumen": "+15 a Percepción visual; −5 a las penalizaciones por alcance con proyectiles." },
+        { "nombre": "Imponente", "resumen": "+15 a Carisma." },
+        { "nombre": "Condenado", "resumen": "Pasión extra «Condena» (tabla [1.3]); en situaciones ligadas a ella, −20 a todo y +20 a los críticos que recibe." }
+      ],
+      "bonos_habilidad": [ { "habilidad": "carisma", "valor": 15 } ],
+      "condena": {
+        "_tabla": "[1.3]", "pagina": 42, "dado": "1d10",
+        "_nota": "Paráfrasis propia; consulta el texto exacto en el manual.",
+        "resultados": [
+          "Morirás ahogado.",
+          "Tu propia arma te traicionará.",
+          "Caerás a manos de los muertos.",
+          "Morirás consumido por el fuego.",
+          "Lo perderás todo para ganarte su confianza.",
+          "Una bestia de las tinieblas te acechará.",
+          "El trueno te traerá una pena sin fin.",
+          "La magia más oscura devorará tu alma.",
+          "El invierno te helará hasta los huesos.",
+          "Te mancharás las manos con sangre de tu linaje."
+        ]
+      },
+      "culturas_sugeridas": ["forestal", "noble", "montesa", "artica"]
+    }
+  ]
+}

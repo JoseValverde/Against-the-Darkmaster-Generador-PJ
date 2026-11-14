@@ -193,7 +193,7 @@ página del PDF de la Guía (pág. impresa 14 = página 3 del PDF).
   que el linaje diga otra cosa.
 - **Equipo inicial**: ropa de viaje, cinturón con vainas, un arma auxiliar,
   faltriquera, bolsa pequeña + atuendo cultural + objetos de trasfondo. Sin oro inicial.
-- **Trasfondos** [1.22a/b]: ~45 opciones con grado menor/mayor (coste 1/3 casi
+- **Trasfondos** [1.22a/b]: 40 opciones con grado menor/mayor (coste 1/3 casi
   siempre; Cambiaformas 2/4, Entrenamiento Excepcional 1/2).
 - **Pasiones**: Naturaleza, Lealtad, Motivación (hasta 3, texto libre).
   **Determinación** inicial 1 (0–5). **Senda Heroica**: cada 10 puntos de
@@ -202,6 +202,32 @@ página del PDF de la Guía (pág. impresa 14 = página 3 del PDF).
   crepuscular, cultura feérica, maga. Base FUE 0, AGI 10, RES 0, INT 25, SAB 5,
   POR 10 → con linaje AGI 20, INT 30, POR 15. DEF 20, TSF 15, TSV 10, 9 PM,
   NR 3, velocidad 15, tamaño Mediano. El motor debe reproducirlo exactamente.
+  La hoja completa (todas las habilidades y escuelas) está en
+  `tests/fixtures/syndel.json`, leída de la hoja rellenada al final de la Guía.
+
+## Reglas confirmadas en la fase 1 (datos)
+
+- **Escuelas Sortílegas**: cada escuela suma **su propia característica**
+  (campo `caracteristica` en `escuelas.json`), no la de PM. El bonificador
+  vocacional de Escuelas (+15 mago, etc.) se aplica a **todas** las escuelas.
+- **Acceso a escuelas** (cap. 12): comunes [2.4] para cualquiera, ejecutables
+  solo hasta 5ª urdimbre; vocacionales sin límite; de linaje sin límite y se
+  pagan con PD de cualquier categoría 1:1. Al subir de nivel solo se mejoran
+  escuelas ya conocidas. Solo se lanzan urdimbres ≤ nivel. Coste en PM = urdimbre.
+- **Magia Negra y Nigromancia** no son comunes ni de vocación ni de linaje
+  (`oscura: true`); solo accesibles por excepciones como Mago Innato.
+- **PM**: por nivel = floor(car. de PM / 10) + PM de vocación (+ trasfondos);
+  el PM de linaje se suma una sola vez.
+- **TS por nivel** [2.3]: misma progresión que el bonificador por rango
+  (+5 hasta nivel 10, +2 hasta 20, +1 después).
+- **PG de linaje**: va en la columna Lin. de Corpulencia (Syndel: 0 + 5 + 25 = 30).
+- **NR inicial** = linaje + cultura + trasfondos, limitado a 0-4.
+- **Cultura Saqueadora**: pensada para PNJ; para PJ solo con permiso de la mesa
+  (`requiere_permiso: true`).
+- **Bonificadores condicionales** (p. ej. Sigilo +20 en entorno natural) no
+  suman al total: la hoja de Syndel los pone entre paréntesis.
+- Los datos se validan con `node tests/validar-datos.mjs` (ids y referencias
+  cruzadas entre todos los JSON). Ejecutarlo tras cualquier cambio en `data/`.
 
 ---
 
@@ -214,6 +240,11 @@ página del PDF de la Guía (pág. impresa 14 = página 3 del PDF).
   (rama `main`). GitHub Pages se activa cuando exista `index.html`.
   El usuario tiene GitHub Desktop; las subidas desde aquí funcionan
   (credenciales en el llavero de macOS).
-- [ ] Fase 1 en adelante: ver PLAN.md.
+- [x] Fase 1: datos de reglas en `data/` (13 linajes, 13 culturas, 6 vocaciones,
+  23 habilidades + 14 especializadas, 40 trasfondos con efectos, 38 escuelas con
+  380 sortilegios, 24 armaduras, 40 armas, equipo genérico). Validador en `tests/`.
+  Pendiente para la fase 4: opciones de distorsión de sortilegios (solo
+  referencia de página por ahora).
+- [ ] Fase 2 en adelante: ver PLAN.md.
 
 Actualiza esta sección al cerrar cada fase.

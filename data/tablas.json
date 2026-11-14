@@ -1,0 +1,56 @@
+{
+  "_fuente": "Manual del Jugador",
+  "generacion_caracteristicas": {
+    "_tabla": "[1.1]",
+    "pagina": 16,
+    "filas": [
+      { "min": 1,  "max": 1,   "valor": -20 },
+      { "min": 2,  "max": 5,   "valor": -15 },
+      { "min": 6,  "max": 14,  "valor": -10 },
+      { "min": 15, "max": 23,  "valor": -5 },
+      { "min": 24, "max": 50,  "valor": 0 },
+      { "min": 51, "max": 59,  "valor": 5 },
+      { "min": 60, "max": 68,  "valor": 10 },
+      { "min": 69, "max": 77,  "valor": 15 },
+      { "min": 78, "max": 86,  "valor": 20 },
+      { "min": 87, "max": 95,  "valor": 25 },
+      { "min": 96, "max": 99,  "valor": 30 },
+      { "min": 100, "max": 100, "valor": 35 }
+    ]
+  },
+  "bonificador_por_rango": {
+    "_tabla": "[1.19]",
+    "pagina": 72,
+    "_regla": "Rangos 1-10: +5 cada uno. Rangos 11-20: +2 cada uno. Rango 21 en adelante: +1 cada uno.",
+    "tramos": [
+      { "hasta": 10, "por_rango": 5 },
+      { "hasta": 20, "por_rango": 2 },
+      { "hasta": null, "por_rango": 1 }
+    ]
+  },
+  "derivados": {
+    "pagina": 98,
+    "velocidad_base": 15,
+    "velocidad_variable": { "_opcional": true, "pagina": 98, "metros_por_5_agi": 1.5 },
+    "defensa": "max(AGI, 0), limitada por la AGI máx. en DEF de la armadura",
+    "tsf": "RES + 5 + TSF de linaje + especiales (nivel 1)",
+    "tsv": "SAB + 5 + TSV de linaje + especiales (nivel 1)",
+    "pg": "bonificador total de Corpulencia (incluye PG de linaje), con tope en PG Máx del linaje",
+    "pm": "floor(característica de PM / 10) + PM de linaje + PM por nivel de la vocación",
+    "caracteristica_pm": { "mago": "INT", "animista": "SAB", "_resto": "POR" },
+    "tamano_por_defecto": "Mediano",
+    "tamanos": ["Pequeño", "Mediano", "Grande", "Enorme", "Colosal"]
+  },
+  "determinacion": { "pagina": 102, "inicial": 1, "min": 0, "max": 5 },
+  "senda_heroica": { "pagina": 104, "marcas_por_hito": 10, "casillas": 100 },
+  "equipo_inicial_comun": {
+    "pagina": 99,
+    "objetos": [
+      "Ropa de viaje",
+      "Cinturón con vainas",
+      "Un arma auxiliar a elegir",
+      "Faltriquera",
+      "Bolsa pequeña o petate"
+    ]
+  }
+}

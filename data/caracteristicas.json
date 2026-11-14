@@ -1,0 +1,42 @@
+{
+  "_fuente": "Manual del Jugador, cap. 2 (pág. 15-17)",
+  "caracteristicas": [
+    { "id": "FUE", "nombre": "Fuerza", "pagina": 15, "resumen": "Potencia muscular. Armas cuerpo a cuerpo, correr, trepar, cargar peso." },
+    { "id": "AGI", "nombre": "Agilidad", "pagina": 15, "resumen": "Destreza, reflejos y equilibrio. Esquivar, proyectiles, moverse en silencio. Da la DEF." },
+    { "id": "RES", "nombre": "Resistencia", "pagina": 15, "resumen": "Aguante físico frente a fatiga, dolor, veneno y enfermedad. Base de Corpulencia y TSF." },
+    { "id": "INT", "nombre": "Intelecto", "pagina": 16, "resumen": "Razonamiento, memoria y astucia. Fija los PM de los magos." },
+    { "id": "SAB", "nombre": "Sabiduría", "pagina": 16, "resumen": "Intuición, voluntad y atención. Resiste miedo y magia; base de TSV. Fija los PM de los animistas." },
+    { "id": "POR", "nombre": "Porte", "pagina": 16, "resumen": "Presencia y carisma. Fija los PM de las vocaciones que no son mago ni animista." }
+  ],
+  "metodos": {
+    "aleatorio": {
+      "pagina": 16,
+      "tiradas": 6,
+      "dado": "1d100",
+      "tabla": "generacion_caracteristicas",
+      "resumen": "Tira 6 veces en la tabla [1.1] y asigna los valores como quieras."
+    },
+    "mejores_de_doce": {
+      "pagina": 17,
+      "opcional": true,
+      "tiradas": 12,
+      "conservar": 6,
+      "dado": "1d100",
+      "tabla": "generacion_caracteristicas",
+      "resumen": "Tira 12 veces, quédate con 6 y asígnalos como quieras."
+    },
+    "puntos": {
+      "pagina": 16,
+      "total": 50,
+      "paso": 5,
+      "min": 0,
+      "max": 25,
+      "conjuntos_predefinidos": [
+        [20, 15, 10, 5, 0, 0],
+        [25, 20, 5, 0, 0, 0],
+        [10, 10, 10, 10, 5, 5]
+      ],
+      "resumen": "Reparte 50 puntos en bloques de 5 (mín. 0, máx. 25 por característica) o usa un conjunto predefinido."
+    }
+  }
+}

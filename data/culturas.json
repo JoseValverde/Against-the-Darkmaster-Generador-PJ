@@ -1,0 +1,1046 @@
+{
+ "_fuente": "Manual del Jugador, cap. 4 (pág. 44-61), tablas [1.4], [1.5], [1.6]",
+ "_notas": {
+  "rangos": "Rangos culturales [1.4]: no cuentan para el límite de 2 rangos por nivel. Todas las culturas suman 21.",
+  "atuendo": "Elige una opción de cada línea.",
+  "escuelas": "Rangos extra en Escuelas Sortílegas; incluye_linaje = también vale una escuela de linaje del PJ.",
+  "pasiones": "Ideas de Pasiones resumidas; opcionales."
+ },
+ "culturas": [
+  {
+   "id": "anil",
+   "nombre": "Añil",
+   "pagina": 48,
+   "nr": 0,
+   "resumen": "Tribus nómadas de cazadores-recolectores guiadas por chamanes; tatuajes y escarificaciones narran la vida de cada uno.",
+   "pasiones": "Motivación: el augurio recibido en su ceremonia de mayoría de edad. Naturaleza: lo que cuentan sus tatuajes. Lealtad: los espíritus que protegen su clan.",
+   "atuendo": [
+    {
+     "opciones": [
+      "Tatuajes en espiral",
+      "Escarificaciones rituales",
+      "Tatuajes en franjas",
+      "Tatuajes aterradores"
+     ]
+    },
+    {
+     "opciones": [
+      "Pieles",
+      "Túnica sencilla",
+      "Taparrabos"
+     ]
+    },
+    {
+     "opciones": [
+      "Lanza corta",
+      "Arco y flechas",
+      "Bastón"
+     ]
+    },
+    {
+     "opciones": [
+      "Manojo de hierbas medicinales",
+      "Trampa de cazador",
+      "Adornos de hueso"
+     ]
+    }
+   ],
+   "rangos": {
+    "asta": 1,
+    "pelea": 1,
+    "proyectiles": 1,
+    "atletismo": 2,
+    "caza": 2,
+    "naturaleza": 4,
+    "vagabundear": 1,
+    "acrobacias": 2,
+    "percepcion": 1,
+    "sigilo": 2,
+    "canciones_relatos": 1,
+    "sanacion": 1,
+    "corpulencia": 2
+   }
+  },
+  {
+   "id": "artica",
+   "nombre": "Ártica",
+   "pagina": 49,
+   "nr": 0,
+   "resumen": "Pastores, cazadores y pescadores nómadas del Norte helado; reservados, generosos y enemigos acérrimos del Señor de las Tinieblas.",
+   "pasiones": "Motivación: presagios oscuros o un mal antiguo bajo el hielo. Lealtad: lenta de ganar, inquebrantable después.",
+   "atuendo": [
+    {
+     "opciones": [
+      "Pieles gruesas",
+      "Armadura de cuero",
+      "Túnica de ante y capa de piel"
+     ]
+    },
+    {
+     "opciones": [
+      "Arpón",
+      "Piolet",
+      "Arco corto y flechas",
+      "Red y daga"
+     ]
+    },
+    {
+     "opciones": [
+      "Máscara elegante",
+      "Máscara de madera de deriva",
+      "Máscara misteriosa"
+     ]
+    },
+    {
+     "opciones": [
+      "Aparejos de pesca y pescado ahumado",
+      "Crampones, cuerda y gafas para la nieve"
+     ]
+    }
+   ],
+   "rangos": {
+    "armadura": 1,
+    "asta": 1,
+    "pelea": 1,
+    "proyectiles": 2,
+    "atletismo": 2,
+    "caza": 3,
+    "naturaleza": 3,
+    "vagabundear": 2,
+    "acrobacias": 1,
+    "percepcion": 1,
+    "sigilo": 1,
+    "canciones_relatos": 1,
+    "corpulencia": 2
+   }
+  },
+  {
+   "id": "desertica",
+   "nombre": "Desértica",
+   "pagina": 50,
+   "nr": 1,
+   "resumen": "Caravanas nómadas de mercaderes y criadores de caballos, de orden social estricto y palabra sagrada.",
+   "pasiones": "Motivación: una desgracia que golpeó a su caravana. Naturaleza: un arrebato deshonroso que expiar. Lealtad: un juramento a un compañero extranjero.",
+   "atuendo": [
+    {
+     "opciones": [
+      "Caftán colorido sobre blusa de seda y pantalones",
+      "Armadura lamelar",
+      "Chaqueta de algodón y jubón de cuero"
+     ]
+    },
+    {
+     "opciones": [
+      "Arco compuesto, flechas y daga",
+      "Hacha de batalla o cimitarra y honda",
+      "Lanza corta y targe"
+     ]
+    },
+    {
+     "opciones": [
+      "Raciones en conserva y odre de agua",
+      "Caballo o camello",
+      "Tienda y saco de dormir"
+     ]
+    }
+   ],
+   "rangos": {
+    "armadura": 1,
+    "asta": 1,
+    "filo": 1,
+    "proyectiles": 1,
+    "atletismo": 2,
+    "equitacion": 2,
+    "naturaleza": 1,
+    "vagabundear": 2,
+    "acrobacias": 1,
+    "enganar": 2,
+    "percepcion": 1,
+    "canciones_relatos": 1,
+    "carisma": 2,
+    "culturas": 2,
+    "corpulencia": 1
+   }
+  },
+  {
+   "id": "esteparia",
+   "nombre": "Esteparia",
+   "pagina": 51,
+   "nr": 1,
+   "resumen": "Los Señores Jinetes de las llanuras: clanes de granjeros y ganaderos que honran el combate y la montura.",
+   "pasiones": "Motivación: alimentar o defender a familia y clan. Lealtad: a su thegn o a su rey.",
+   "atuendo": [
+    {
+     "opciones": [
+      "Cota de malla",
+      "Armadura de cuero reforzado",
+      "Chaqueta de lana y pantalones de cuero"
+     ]
+    },
+    {
+     "opciones": [
+      "Espada de guerra y lanza larga",
+      "Cimitarra, arco corto y flechas",
+      "Daga"
+     ]
+    },
+    {
+     "opciones": [
+      "Yelmo de metal y escudo",
+      "Un caballo",
+      "Una gavilla de jabalinas"
+     ]
+    }
+   ],
+   "rangos": {
+    "armadura": 1,
+    "asta": 2,
+    "filo": 1,
+    "proyectiles": 1,
+    "atletismo": 2,
+    "caza": 1,
+    "equitacion": 5,
+    "naturaleza": 1,
+    "acrobacias": 1,
+    "percepcion": 1,
+    "canciones_relatos": 1,
+    "carisma": 1,
+    "culturas": 1,
+    "corpulencia": 2
+   }
+  },
+  {
+   "id": "feerica",
+   "nombre": "Feérica",
+   "pagina": 52,
+   "nr": 2,
+   "resumen": "Comunidades ocultas por la magia en bosques e islas encantadas; viven entre fiestas y tienen valores extraños para los forasteros.",
+   "pasiones": "Motivación: qué les sacó de su aislamiento (¿un exilio absurdo?). Naturaleza: una rareza, como no poder mentir. Lealtad: amores imposibles o señores sobrenaturales.",
+   "atuendo": [
+    {
+     "opciones": [
+      "Ropa de seda bordada en oro o plata",
+      "Túnica corta y capa vaporosa"
+     ]
+    },
+    {
+     "opciones": [
+      "Espada larga y lanza corta",
+      "Espada corta, arco largo, carcaj y flechas",
+      "Daga en forma de hoja"
+     ]
+    },
+    {
+     "opciones": [
+      "Cordial reanimador",
+      "Laúd, lira o flauta",
+      "Equipo de curandero"
+     ]
+    }
+   ],
+   "escuelas": {
+    "rangos": 2,
+    "opciones": [
+     "detecciones",
+     "movimientos_naturaleza",
+     "luz_sonido",
+     "conocimiento_naturaleza"
+    ],
+    "incluye_linaje": true,
+    "reparto": "libre"
+   },
+   "rangos": {
+    "filo": 1,
+    "proyectiles": 2,
+    "atletismo": 1,
+    "naturaleza": 2,
+    "acrobacias": 1,
+    "enganar": 1,
+    "percepcion": 1,
+    "sigilo": 2,
+    "canciones_relatos": 2,
+    "carisma": 1,
+    "culturas": 1,
+    "sanacion": 1,
+    "taumaturgia": 3,
+    "escuelas_sortilegas": 2
+   }
+  },
+  {
+   "id": "forestal",
+   "nombre": "Forestal",
+   "pagina": 53,
+   "nr": 1,
+   "resumen": "Gente de frontera que vive de cazar, forrajear y comerciar al borde de la floresta; directa y hospitalaria.",
+   "pasiones": "Motivación: fortuna o tierras legendarias. Naturaleza: superviviente nato. Lealtad: el grupo al que juró guiar.",
+   "atuendo": [
+    {
+     "opciones": [
+      "Ropa sencilla",
+      "Ropa de caza",
+      "Armadura de cuero"
+     ]
+    },
+    {
+     "opciones": [
+      "Destral y escudo",
+      "Espada corta y jabalina",
+      "Arco de caza y flechas"
+     ]
+    },
+    {
+     "opciones": [
+      "Bota de vino y bizcochos horneados",
+      "Útiles para encender fuego",
+      "Cuchillo de caza y fardo de pieles"
+     ]
+    }
+   ],
+   "rangos": {
+    "armadura": 1,
+    "asta": 1,
+    "contundentes": 1,
+    "pelea": 1,
+    "proyectiles": 1,
+    "atletismo": 2,
+    "caza": 3,
+    "naturaleza": 2,
+    "vagabundear": 2,
+    "percepcion": 1,
+    "sigilo": 2,
+    "culturas": 2,
+    "corpulencia": 2
+   }
+  },
+  {
+   "id": "maritima",
+   "nombre": "Marítima",
+   "pagina": 54,
+   "nr": 1,
+   "resumen": "Marinos, mercaderes y algún pirata cuyo hogar es su barco; supersticiosos, políglotas y ávidos de noticias.",
+   "pasiones": "Motivación: un tesoro, o recuperar un barco perdido. Naturaleza: cambiante y supersticiosa. Lealtad: ayudar a otros a cruzar aguas peligrosas.",
+   "atuendo": [
+    {
+     "opciones": [
+      "Ropa elegante",
+      "Armadura lamelar",
+      "Ropa con manchas de sal"
+     ]
+    },
+    {
+     "opciones": [
+      "Falcata",
+      "Ballesta ligera con saetas",
+      "Látigo y daga"
+     ]
+    },
+    {
+     "opciones": [
+      "Cuerda y garfio",
+      "Frasco de cerveza o licor",
+      "Mapa y brújula solar"
+     ]
+    }
+   ],
+   "rangos": {
+    "armadura": 1,
+    "filo": 2,
+    "pelea": 1,
+    "proyectiles": 1,
+    "atletismo": 2,
+    "naturaleza": 1,
+    "vagabundear": 3,
+    "acrobacias": 1,
+    "percepcion": 1,
+    "canciones_relatos": 3,
+    "carisma": 1,
+    "culturas": 3,
+    "corpulencia": 1
+   }
+  },
+  {
+   "id": "montesa",
+   "nombre": "Montesa",
+   "pagina": 55,
+   "nr": 0,
+   "resumen": "Clanes de pastores de las tierras altas: rudos, orgullosos, amantes del canto y celosos de su familia.",
+   "pasiones": "Motivación: un verso profético o las gestas de sus antepasados. Lealtad: familia y clan, a toda prueba.",
+   "atuendo": [
+    {
+     "opciones": [
+      "Tartán con cinturón",
+      "Chaquetón de pieles y falda de lana",
+      "Jubón de cuero"
+     ]
+    },
+    {
+     "opciones": [
+      "Lanza corta y escudo pintado",
+      "Espadón",
+      "Bastón"
+     ]
+    },
+    {
+     "opciones": [
+      "Arpa o gaita",
+      "Cuerda y pitones de hierro",
+      "Faltriquera con hongos curativos secos"
+     ]
+    }
+   ],
+   "rangos": {
+    "armadura": 1,
+    "asta": 2,
+    "pelea": 2,
+    "proyectiles": 1,
+    "atletismo": 2,
+    "caza": 1,
+    "naturaleza": 1,
+    "vagabundear": 1,
+    "acrobacias": 2,
+    "percepcion": 1,
+    "sigilo": 2,
+    "canciones_relatos": 3,
+    "carisma": 1,
+    "corpulencia": 1
+   }
+  },
+  {
+   "id": "noble",
+   "nombre": "Noble",
+   "pagina": 56,
+   "nr": 2,
+   "resumen": "Casta privilegiada, educada y bien equipada, para la que el linaje y el apellido lo son todo.",
+   "pasiones": "Motivación: restaurar el honor familiar o recuperar una reliquia. Naturaleza: altivez o defensa de los débiles. Lealtad: la corte o una orden poderosa.",
+   "atuendo": [
+    {
+     "opciones": [
+      "Ropas elaboradas",
+      "Coraza esmaltada",
+      "Ropa verde oscuro y capa de viaje"
+     ]
+    },
+    {
+     "opciones": [
+      "Espadón",
+      "Arco compuesto, carcaj y flechas",
+      "Lucero del alba o maza y escudo",
+      "Daga"
+     ]
+    },
+    {
+     "opciones": [
+      "Pergamino, tinta y pluma",
+      "Un caballo",
+      "Cuerno de guerra grabado"
+     ]
+    }
+   ],
+   "escuelas": {
+    "rangos": 1,
+    "opciones": [
+     "detecciones",
+     "purificacion",
+     "salmos",
+     "sanacion"
+    ],
+    "incluye_linaje": true,
+    "reparto": "una"
+   },
+   "rangos": {
+    "armadura": 2,
+    "asta": 1,
+    "filo": 3,
+    "proyectiles": 1,
+    "atletismo": 1,
+    "caza": 1,
+    "equitacion": 1,
+    "enganar": 1,
+    "percepcion": 1,
+    "canciones_relatos": 1,
+    "carisma": 3,
+    "culturas": 2,
+    "sanacion": 1,
+    "escuelas_sortilegas": 1,
+    "corpulencia": 1
+   }
+  },
+  {
+   "id": "pastoral",
+   "nombre": "Pastoral",
+   "pagina": 57,
+   "nr": 1,
+   "resumen": "Aldeanos y granjeros sencillos y hospitalarios que aman los pequeños placeres y recelan de las aventuras (o eso dicen).",
+   "pasiones": "Motivación: la aventura les cae encima (un objeto misterioso, un mago errante). Naturaleza: curiosidad que les aleja de casa.",
+   "atuendo": [
+    {
+     "opciones": [
+      "Ropa colorida",
+      "Abrigo y chaleco",
+      "Ropas de viaje"
+     ]
+    },
+    {
+     "opciones": [
+      "Daga antigua",
+      "Honda de pastor",
+      "Bastón de viaje"
+     ]
+    },
+    {
+     "opciones": [
+      "Sombrero y pañuelo de bolsillo",
+      "Pipa, tabaco y bolsa llena de comida",
+      "Un poni"
+     ]
+    }
+   ],
+   "rangos": {
+    "pelea": 1,
+    "proyectiles": 1,
+    "atletismo": 2,
+    "equitacion": 1,
+    "naturaleza": 3,
+    "vagabundear": 1,
+    "acrobacias": 1,
+    "enganar": 1,
+    "percepcion": 1,
+    "sigilo": 2,
+    "canciones_relatos": 2,
+    "carisma": 1,
+    "culturas": 1,
+    "sanacion": 2,
+    "corpulencia": 1
+   }
+  },
+  {
+   "id": "saqueadora",
+   "nombre": "Saqueadora",
+   "pagina": 58,
+   "nr": 0,
+   "resumen": "Tribus de bandidos que viven del pillaje y respetan solo la fuerza. Pensada para PNJ; para PJ, solo si la mesa lo acepta.",
+   "pasiones": "Motivación: liberar a su pueblo del yugo del Señor de las Tinieblas. Naturaleza: orgullo de ser el mejor guerrero. Lealtad: un vínculo extraño que le hace cambiar.",
+   "atuendo": [
+    {
+     "opciones": [
+      "Armadura de cuero",
+      "Taparrabos",
+      "Cota de malla"
+     ]
+    },
+    {
+     "opciones": [
+      "Cimitarra",
+      "Maza pesada",
+      "Hacha de dos manos",
+      "Arco corto y flechas"
+     ]
+    },
+    {
+     "opciones": [
+      "Trofeos macabros",
+      "Cataplasma curativa",
+      "Chuleta de cordero a medio comer"
+     ]
+    }
+   ],
+   "requiere_permiso": true,
+   "rangos": {
+    "armadura": 3,
+    "asta": 1,
+    "contundentes": 2,
+    "filo": 3,
+    "pelea": 2,
+    "proyectiles": 2,
+    "atletismo": 1,
+    "caza": 1,
+    "equitacion": 1,
+    "acrobacias": 1,
+    "percepcion": 1,
+    "corpulencia": 3
+   }
+  },
+  {
+   "id": "subterranea",
+   "nombre": "Subterránea",
+   "pagina": 60,
+   "nr": 1,
+   "resumen": "Comunidades bajo tierra, de mineras a grandes fortalezas; trabajadoras, territoriales, amantes de gemas y metales.",
+   "pasiones": "Motivación: proteger su clan u hogar. Naturaleza: un código de honor o la codicia. Lealtad: improbable, hacia un compañero de otra cultura.",
+   "atuendo": [
+    {
+     "opciones": [
+      "Ropa cómoda de colores vivos",
+      "Cota de malla y capa pesada",
+      "Túnica de lana y jubón de cuero"
+     ]
+    },
+    {
+     "opciones": [
+      "Pico de guerra o hacha de guerra",
+      "Espada y escudo",
+      "Espada corta o daga"
+     ]
+    },
+    {
+     "opciones": [
+      "Casco de minero, yesquero y cuerda",
+      "Ballesta ligera con saetas",
+      "Frasco de cerveza y raciones en conserva"
+     ]
+    }
+   ],
+   "rangos": {
+    "armadura": 3,
+    "contundentes": 4,
+    "filo": 1,
+    "pelea": 1,
+    "proyectiles": 1,
+    "atletismo": 2,
+    "cerraduras_trampas": 2,
+    "percepcion": 2,
+    "canciones_relatos": 1,
+    "culturas": 1,
+    "corpulencia": 3
+   }
+  },
+  {
+   "id": "urbana",
+   "nombre": "Urbana",
+   "pagina": 61,
+   "nr": 1,
+   "resumen": "Gente de ciudades y pueblos: abierta, habituada a los extraños y más amiga de la palabra que de la espada.",
+   "pasiones": "Motivación: limpiar su nombre o frustrar un complot contra su ciudad. Lealtad: compañeros o un ser querido. Naturaleza: sociable y metomentodo.",
+   "atuendo": [
+    {
+     "opciones": [
+      "Ropa discreta",
+      "Jubón de cuero",
+      "Cota de malla"
+     ]
+    },
+    {
+     "opciones": [
+      "Espada larga",
+      "Hacha de guerra",
+      "Arco y flechas",
+      "Espada corta"
+     ]
+    },
+    {
+     "opciones": [
+      "Vendajes y ungüento curativo",
+      "Ganzúa",
+      "Linterna y aceite"
+     ]
+    }
+   ],
+   "rangos": {
+    "armadura": 1,
+    "asta": 1,
+    "filo": 1,
+    "pelea": 1,
+    "proyectiles": 1,
+    "atletismo": 1,
+    "acrobacias": 1,
+    "cerraduras_trampas": 1,
+    "enganar": 2,
+    "percepcion": 1,
+    "sigilo": 1,
+    "canciones_relatos": 2,
+    "carisma": 2,
+    "culturas": 4,
+    "sanacion": 1
+   }
+  }
+ ],
+ "linaje_cultura_aleatorios": {
+  "_tabla": "[1.5]",
+  "pagina": 46,
+  "dado": "1d100 (00 = 100)",
+  "_nota": "Ambientación humanocéntrica. Opción «La fortuna favorece al osado»: con características aleatorias (sin mejores de doce) y linaje+cultura aleatorios, +1 Determinación.",
+  "filas": [
+   {
+    "linaje": "enano",
+    "min": 1,
+    "max": 15,
+    "culturas": [
+     {
+      "cultura": "artica",
+      "min": 1,
+      "max": 5
+     },
+     {
+      "cultura": "forestal",
+      "min": 6,
+      "max": 15
+     },
+     {
+      "cultura": "montesa",
+      "min": 16,
+      "max": 30
+     },
+     {
+      "cultura": "subterranea",
+      "min": 31,
+      "max": 100
+     }
+    ]
+   },
+   {
+    "linaje": "mediano",
+    "min": 16,
+    "max": 28,
+    "culturas": [
+     {
+      "cultura": "montesa",
+      "min": 1,
+      "max": 5
+     },
+     {
+      "cultura": "pastoral",
+      "min": 6,
+      "max": 95
+     },
+     {
+      "cultura": "urbana",
+      "min": 96,
+      "max": 100
+     }
+    ]
+   },
+   {
+    "linaje": "humano",
+    "min": 29,
+    "max": 65,
+    "culturas": [
+     {
+      "cultura": "anil",
+      "min": 1,
+      "max": 10
+     },
+     {
+      "cultura": "artica",
+      "min": 11,
+      "max": 20
+     },
+     {
+      "cultura": "desertica",
+      "min": 21,
+      "max": 30
+     },
+     {
+      "cultura": "esteparia",
+      "min": 31,
+      "max": 40
+     },
+     {
+      "cultura": "forestal",
+      "min": 41,
+      "max": 50
+     },
+     {
+      "cultura": "maritima",
+      "min": 51,
+      "max": 60
+     },
+     {
+      "cultura": "montesa",
+      "min": 61,
+      "max": 70
+     },
+     {
+      "cultura": "noble",
+      "min": 71,
+      "max": 80
+     },
+     {
+      "cultura": "pastoral",
+      "min": 81,
+      "max": 90
+     },
+     {
+      "cultura": "urbana",
+      "min": 91,
+      "max": 100
+     }
+    ]
+   },
+   {
+    "linaje": "humano_mitico",
+    "min": 66,
+    "max": 75,
+    "culturas": [
+     {
+      "cultura": "maritima",
+      "min": 1,
+      "max": 30
+     },
+     {
+      "cultura": "noble",
+      "min": 31,
+      "max": 60
+     },
+     {
+      "cultura": "urbana",
+      "min": 61,
+      "max": 100
+     }
+    ]
+   },
+   {
+    "linaje": "pueblo_salvaje",
+    "min": 76,
+    "max": 78,
+    "culturas": [
+     {
+      "cultura": "anil",
+      "min": 1,
+      "max": 40
+     },
+     {
+      "cultura": "artica",
+      "min": 41,
+      "max": 60
+     },
+     {
+      "cultura": "feerica",
+      "min": 61,
+      "max": 80
+     },
+     {
+      "cultura": "forestal",
+      "min": 81,
+      "max": 100
+     }
+    ]
+   },
+   {
+    "linaje": "semielfo",
+    "min": 79,
+    "max": 81,
+    "culturas": [
+     {
+      "cultura": "feerica",
+      "min": 1,
+      "max": 20
+     },
+     {
+      "cultura": "forestal",
+      "min": 21,
+      "max": 25
+     },
+     {
+      "cultura": "maritima",
+      "min": 26,
+      "max": 55
+     },
+     {
+      "cultura": "montesa",
+      "min": 56,
+      "max": 60
+     },
+     {
+      "cultura": "noble",
+      "min": 61,
+      "max": 80
+     },
+     {
+      "cultura": "urbana",
+      "min": 81,
+      "max": 100
+     }
+    ]
+   },
+   {
+    "linaje": "elfo_crepuscular",
+    "min": 82,
+    "max": 85,
+    "culturas": [
+     {
+      "cultura": "anil",
+      "min": 1,
+      "max": 30
+     },
+     {
+      "cultura": "feerica",
+      "min": 31,
+      "max": 90
+     },
+     {
+      "cultura": "forestal",
+      "min": 91,
+      "max": 100
+     }
+    ]
+   },
+   {
+    "linaje": "elfo_argenteo",
+    "min": 86,
+    "max": 90,
+    "culturas": [
+     {
+      "cultura": "feerica",
+      "min": 1,
+      "max": 50
+     },
+     {
+      "cultura": "maritima",
+      "min": 51,
+      "max": 80
+     },
+     {
+      "cultura": "noble",
+      "min": 81,
+      "max": 100
+     }
+    ]
+   },
+   {
+    "linaje": "elfo_estelar",
+    "min": 91,
+    "max": 93,
+    "culturas": [
+     {
+      "cultura": "feerica",
+      "min": 1,
+      "max": 50
+     },
+     {
+      "cultura": "maritima",
+      "min": 51,
+      "max": 70
+     },
+     {
+      "cultura": "noble",
+      "min": 71,
+      "max": 100
+     }
+    ]
+   },
+   {
+    "linaje": "semiorco",
+    "min": 94,
+    "max": 95,
+    "culturas": [
+     {
+      "cultura": "anil",
+      "min": 1,
+      "max": 10
+     },
+     {
+      "cultura": "desertica",
+      "min": 11,
+      "max": 20
+     },
+     {
+      "cultura": "forestal",
+      "min": 21,
+      "max": 40
+     },
+     {
+      "cultura": "montesa",
+      "min": 41,
+      "max": 70
+     },
+     {
+      "cultura": "saqueadora",
+      "min": 71,
+      "max": 80
+     },
+     {
+      "cultura": "subterranea",
+      "min": 81,
+      "max": 100
+     }
+    ]
+   },
+   {
+    "linaje": "firbolg",
+    "min": 96,
+    "max": 97,
+    "culturas": [
+     {
+      "cultura": "artica",
+      "min": 1,
+      "max": 25
+     },
+     {
+      "cultura": "forestal",
+      "min": 26,
+      "max": 55
+     },
+     {
+      "cultura": "montesa",
+      "min": 56,
+      "max": 80
+     },
+     {
+      "cultura": "noble",
+      "min": 81,
+      "max": 100
+     }
+    ]
+   },
+   {
+    "linaje": "orco",
+    "min": 98,
+    "max": 99,
+    "culturas": [
+     {
+      "cultura": "anil",
+      "min": 1,
+      "max": 10
+     },
+     {
+      "cultura": "artica",
+      "min": 11,
+      "max": 20
+     },
+     {
+      "cultura": "montesa",
+      "min": 21,
+      "max": 40
+     },
+     {
+      "cultura": "saqueadora",
+      "min": 41,
+      "max": 70
+     },
+     {
+      "cultura": "subterranea",
+      "min": 71,
+      "max": 100
+     }
+    ]
+   },
+   {
+    "linaje": "trol_piedra",
+    "min": 100,
+    "max": 100,
+    "culturas": [
+     {
+      "cultura": "anil",
+      "min": 1,
+      "max": 25
+     },
+     {
+      "cultura": "artica",
+      "min": 26,
+      "max": 50
+     },
+     {
+      "cultura": "saqueadora",
+      "min": 51,
+      "max": 75
+     },
+     {
+      "cultura": "subterranea",
+      "min": 76,
+      "max": 100
+     }
+    ]
+   }
+  ]
+ }
+}
