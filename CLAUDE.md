@@ -209,7 +209,11 @@ página del PDF de la Guía (pág. impresa 14 = página 3 del PDF).
 
 - [x] Requisitos cerrados con el usuario (noviembre 2026).
 - [x] Plan de trabajo: [PLAN.md](PLAN.md).
-- [ ] Fase 0: git init, `.gitignore`, conectar el repo (falta la URL exacta).
+- [x] Fase 0: repo git en esta carpeta, conectado a
+  https://github.com/JoseValverde/Against-the-Darkmaster---Generador-de-PJ
+  (rama `main`). GitHub Pages se activa cuando exista `index.html`.
+  El usuario tiene GitHub Desktop; las subidas desde aquí funcionan
+  (credenciales en el llavero de macOS).
 - [ ] Fase 1 en adelante: ver PLAN.md.
 
 Actualiza esta sección al cerrar cada fase.
