@@ -99,6 +99,49 @@ Subagentes con otro modelo solo si el usuario lo pide.
 
 ---
 
+## Design Context (diseño visual; copia de .impeccable.md)
+
+### Users
+Jugadores y directores de juego de *Against the Darkmaster* (edición española),
+empezando por la mesa del autor y abierto a cualquiera por enlace. Lo usan en
+casa preparando partida (ordenador) y en la propia mesa de juego (móvil).
+Tarea: crear un personaje de nivel 1 válido paso a paso, o de un clic al azar,
+y sacarlo impreso o en PDF. Muchos no se saben las reglas de memoria: la app
+debe guiar sin abrumar y explicar con referencias de página al manual.
+
+### Brand Personality
+**Artesanal, cálido, ochentero.** Como un manual de rol de los 80 impreso a dos
+tintas y cuidado a mano: papel, tinta, rúbricas. Emociones: complicidad de mesa,
+confianza (las cuentas están bien), ganas de jugar.
+
+### Aesthetic Direction
+- Referencia: la hoja oficial de personaje y los manuales clásicos de rol
+  impresos a dos tintas (negro + un rojo de rúbrica), con títulos en versalitas
+  de imprenta antigua y tablas limpias.
+- Anti-referencias (explícitas del usuario): **videojuego/MMO** (brillos, metal,
+  botones dorados en relieve), **app corporativa** (formularios grises, tarjetas
+  SaaS), **fantasía de feria** (pergamino manchado falso, góticas ilegibles,
+  texturas recargadas), **hoja de cálculo** (tablas densas sin jerarquía).
+- Tema: sigue al sistema por defecto, con interruptor. Claro = papel crudo y
+  tinta parda; oscuro = la misma hoja «a la luz de una vela»: fondo pardo muy
+  oscuro, tinta marfil, la rúbrica roja aclarada. Nada de negro ni blanco puros.
+- Tipografía: IM Fell English SC (titulares en versalitas de imprenta antigua)
+  + Alegreya Sans (interfaz, cifras tabulares). Prioridad a la legibilidad.
+
+### Design Principles
+1. **Dos tintas.** Tinta + papel + un único acento rojo de rúbrica, usado poco y
+   con intención (paso activo, errores, totales clave).
+2. **La hoja manda.** La estructura y el vocabulario imitan la hoja oficial
+   (Carac., Rangos, Voc., Lin., Esp., Obj., TOTAL) para que lo creado aquí se
+   reconozca en papel.
+3. **Guiar, no regañar.** Cada problema se dice en su paso, en frase clara y
+   con la página del manual; los avisos no bloquean.
+4. **Números que se leen.** Cifras tabulares, totales destacados por peso y
+   tamaño, columnas alineadas; jerarquía antes que densidad.
+5. **Móvil de mesa.** Todo usable con el pulgar; nada importante escondido.
+
+---
+
 ## Derechos de autor (innegociable)
 
 - La web lleva **mecánica + resúmenes propios + referencia de página** del manual.
@@ -142,6 +185,31 @@ REF Against the Darkmaster/   solo local, ignorada por git
 El motor (`js/engine`) no toca el DOM: así se prueba con Node y la UI solo lo llama.
 
 ---
+
+## Interfaz (fase 3)
+
+- `index.html` + `css/estilos.css` + `js/ui/` (sin build). `app.js` arranca, guarda
+  el estado y repinta; un archivo por paso en `js/ui/pasos/`; `resumen.js` (panel
+  lateral), `mesa.js` (configuración de mesa), `estado.js` (borrador, mesa, tema),
+  `comun.js` (componentes), `dom.js` (`h()` para crear elementos).
+- Repintado: `ctx.actualizar(fn)` repinta el paso entero conservando foco, cursor
+  y scroll (atributo `data-foco`); con `{ parcial: true }` solo resumen, pasos y
+  problemas (para campos de texto).
+- Mesa por enlace: parámetros `m`, `d12`, `fo`, `vv`, `es`, `sq`, `l` (linajes
+  separados por puntos). La URL manda sobre lo guardado en el navegador.
+- localStorage (`vsd-borrador`, `vsd-mesa`, `vsd-tema`, `vsd-paso`), siempre en
+  try/catch.
+- El motor tiene `pasoAleatorio(D, rng, pj, mesa, paso)`: rehace un paso y repara
+  los pasos posteriores que queden inválidos. Probado en `tests/aleatorio.test.mjs`.
+- **Probar en local**: hace falta servirlo por http (módulos ES y `fetch` de los
+  JSON no funcionan con `file://`). Hay un `.claude/launch.json` en `rolApp/` que
+  lanza `python3 -m http.server 8642` sobre esta carpeta. A mano:
+  `python3 -m http.server 8642` dentro de la carpeta y abrir http://localhost:8642.
+- Fuentes desde Google Fonts (IM Fell English SC, IM Fell English, Alegreya Sans).
+  **Pendiente fase 7**: alojarlas en `assets/fonts/` (privacidad de visitantes
+  en la UE; pedir permiso al usuario para descargarlas).
+- Tablas anchas: `.paso` es contenedor (`container-type`); las columnas `.col-opc`
+  se ocultan cuando el paso mide menos de 720 px. TOTAL siempre visible.
 
 ## Fuentes de reglas (carpeta REF)
 
@@ -269,6 +337,9 @@ página del PDF de la Guía (pág. impresa 14 = página 3 del PDF).
   Pendiente para la fase 4: opciones de distorsión de sortilegios (solo
   referencia de página por ahora).
 - [x] Fase 2: motor de reglas con 35 pruebas en verde (`npm test`).
-- [ ] Fase 3 en adelante: ver PLAN.md. La fase 3 (asistente, UI) va con Sonnet.
+- [x] Fase 3: asistente de 7 pasos en `index.html` + `js/ui/` + `css/estilos.css`,
+  con aleatorio por paso, PJ de un clic, mesa por enlace, borrador y tema.
+- [ ] Fase 4 en adelante: ver PLAN.md. La fase 4 empieza con Opus (datos de
+  distorsión y armas en la hoja), y su UI con Sonnet.
 
 Actualiza esta sección al cerrar cada fase.

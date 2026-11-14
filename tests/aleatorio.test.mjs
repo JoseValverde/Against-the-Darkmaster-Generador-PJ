@@ -63,3 +63,20 @@ test('La restricción de Porte del elfo estelar se respeta al asignar', () => {
   const base = asignarCaracteristicas([25, 20, 10, 5, 0, -5], 'guerrero', D.linajes.get('elfo_estelar'));
   assert.equal(base.POR, 25);
 });
+
+test('Aleatorio por paso: cada paso deja el PJ válido partiendo de uno válido', async () => {
+  const { pasoAleatorio } = await import('../js/engine/aleatorio.js');
+  const pasos = ['caracteristicas', 'linaje_cultura', 'vocacion', 'trasfondos_equipo', 'pasiones', 'nombre'];
+  const fallos = [];
+  for (let s = 1; s <= 120; s++) {
+    const mesa = MESAS[s % MESAS.length];
+    const rng = crearRng(s);
+    let pj = generarPJ(D, rng, mesa);
+    for (const paso of pasos) {
+      pj = pasoAleatorio(D, rng, pj, mesa, paso);
+      const e = calcular(pj, D, mesa).problemas.filter((p) => p.nivel === 'error');
+      if (e.length) fallos.push(`semilla ${s}, paso ${paso}: ${e.map((x) => x.mensaje).join(' | ')}`);
+    }
+  }
+  assert.deepEqual(fallos.slice(0, 8), [], `${fallos.length} fallos`);
+});

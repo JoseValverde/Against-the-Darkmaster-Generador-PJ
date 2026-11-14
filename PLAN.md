@@ -65,7 +65,7 @@ errores esperados y 400 PJ aleatorios válidos.
 - Generador aleatorio que produce PJ coherentes (no solo válidos).
 - Pruebas: el ejemplo de Syndel de la guía y los PJ pregenerados deben dar exactamente sus números.
 
-### 3 · Asistente de creación (UI)
+### 3 · Asistente de creación (UI) — ✅ hecha
 - Pasos: Características → Linaje y cultura → Vocación y PD → Trasfondos y equipo → Derivados → Pasiones → Nombre.
 - Aleatorio por paso y PJ completo de un clic; validación visible (qué falta, qué sobra).
 - Configuración de mesa en la URL (método, linajes, opcionales).

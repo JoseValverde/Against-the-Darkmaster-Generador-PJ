@@ -6,4 +6,5 @@ export { bonoPorRangos, bonoTSPorNivel, pmPorCaracteristica } from './reglas.js'
 export {
   crearRng, d100, generarPJ, tirarCaracteristicas, asignarCaracteristicas, tirarLinajeCultura,
   linajesPermitidos, culturasPermitidas, vocacionesPara, nombreAleatorio, pasionAleatoria, PRIORIDAD,
+  pasoAleatorio, eleccionesLinajeCultura, bonosCombateAleatorios, desarrolloNivel1Aleatorio,
 } from './aleatorio.js';

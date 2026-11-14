@@ -421,7 +421,7 @@ function validarCaracteristicas(pj, D, mesa, lin, ignorados, problema) {
 }
 
 function validarBonosCombate(pj, voc, D, problema) {
-  const elegidas = pj.bonos_combate || [];
+  const elegidas = (pj.bonos_combate || []).filter(Boolean); // huecos vacíos permitidos mientras se elige
   if (!voc) return;
   const huecos = voc.bonos_combate.length;
   if (elegidas.length > huecos) problema('error', 'vocacion', `${voc.nombre} tiene ${huecos} bonificador(es) de Combate y has elegido ${elegidas.length}.`);

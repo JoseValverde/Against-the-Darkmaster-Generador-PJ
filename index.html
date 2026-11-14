@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generador de PJ · Against the Darkmaster</title>
+  <meta name="description" content="Generador de personajes para el juego de rol Against the Darkmaster: paso a paso o de un clic, con las reglas del Manual del Jugador.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3 L28 16 L16 29 L4 16 Z' fill='none' stroke='%238a2a1c' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script>
+    // Tema antes de pintar, para evitar parpadeo
+    try { const t = localStorage.getItem('vsd-tema'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="saltar" href="#paso">Saltar al paso actual</a>
+
+  <header class="cabecera">
+    <div class="titulo">
+      <p class="titulo-pre">Generador de personajes para</p>
+      <h1>Against the Darkmaster</h1>
+    </div>
+    <nav class="acciones" aria-label="Acciones">
+      <button type="button" class="btn btn-tinta" id="btn-aleatorio">Personaje al azar</button>
+      <button type="button" class="btn" id="btn-nuevo">Empezar de cero</button>
+      <button type="button" class="btn" id="btn-mesa" aria-expanded="false" aria-controls="mesa">Mesa</button>
+      <button type="button" class="btn btn-icono" id="btn-tema" aria-label="Cambiar tema">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <section id="mesa" class="mesa" hidden aria-labelledby="mesa-titulo"></section>
+
+  <div class="marco">
+    <nav class="pasos" aria-label="Pasos de creación">
+      <ol id="lista-pasos"></ol>
+    </nav>
+
+    <main id="paso" class="paso" tabindex="-1" aria-live="polite"></main>
+
+    <aside class="resumen" aria-label="Resumen del personaje">
+      <details id="resumen-plegable" open>
+        <summary>Tu personaje</summary>
+        <div id="resumen"></div>
+      </details>
+    </aside>
+  </div>
+
+  <footer class="pie">
+    <p>Herramienta de aficionados, no oficial. Las reglas se resumen con palabras propias y remiten a las páginas del <em>Manual del Jugador</em> de <em>Against the Darkmaster</em>: consúltalo para el texto completo.</p>
+  </footer>
+
+  <div id="aviso-carga" class="carga" role="status">Abriendo el manual…</div>
+  <script type="module" src="js/ui/app.js"></script>
+</body>
+</html>

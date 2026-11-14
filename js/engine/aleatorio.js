@@ -349,7 +349,7 @@ function resolverElecciones(D, rng, def, grado, pj, lin, voc, mesa) {
       }
       case 'rasgo_linaje': v = lin.rasgos.find((r) => r.nombre === 'Supersticioso')?.nombre || elegir(rng, lin.rasgos).nombre; break;
       case 'opcion': v = elegir(rng, e.opciones); break;
-      default: v = '(por definir)';
+      default: v = ''; // texto libre: lo escribe el jugador (queda como aviso)
     }
     if (v == null) return null;
     eleccion[e.id] = v;
@@ -362,4 +362,116 @@ function resolverElecciones(D, rng, def, grado, pj, lin, voc, mesa) {
   if (def.id === 'entrenamiento_excepcional' && D.tipo(eleccion.habilidad) === 'especializada' && !mesa.especializadas) return null;
   // Guardián: la escuela debe tener sentido para el PJ (vocacional, de linaje o común)
   return eleccion;
+}
+
+// ---------------------------------------------------------------------------
+// Aleatorio por paso del asistente
+
+/** Elecciones que dependen del linaje y la cultura (especialización, escuelas, atuendo). */
+export function eleccionesLinajeCultura(D, rng, pj) {
+  const lin = D.linajes.get(pj.linaje), cul = D.culturas.get(pj.cultura);
+  const voc = pj.vocacion ? D.vocaciones.get(pj.vocacion) : null;
+  const r = { eleccion_linaje: {}, escuelas_linaje: {}, escuelas_cultura: {}, atuendo: [] };
+  if (lin?.eleccion_habilidad) r.eleccion_linaje = { habilidad: habilidadFavorita(D, rng, voc || { bonos_vocacionales: {} }, pj) };
+  if (lin?.escuelas_linaje) r.escuelas_linaje = repartir(rng, lin.escuelas_linaje.escuelas, lin.escuelas_linaje.rangos);
+  if (cul?.escuelas) {
+    const opciones = [...cul.escuelas.opciones, ...(cul.escuelas.incluye_linaje ? lin?.escuelas_linaje?.escuelas || [] : [])];
+    const preferidas = voc ? opciones.filter((e) => voc.escuelas_vocacionales.includes(e)) : [];
+    const pool = preferidas.length ? preferidas : opciones;
+    r.escuelas_cultura = cul.escuelas.reparto === 'una' ? { [elegir(rng, pool)]: cul.escuelas.rangos } : repartir(rng, pool, cul.escuelas.rangos, true);
+  }
+  if (cul) r.atuendo = cul.atuendo.map((l) => elegir(rng, l.opciones));
+  return r;
+}
+
+/** Bonificadores de Combate según las características. */
+export function bonosCombateAleatorios(D, rng, pj) {
+  const voc = D.vocaciones.get(pj.vocacion);
+  if (!voc) return [];
+  return [...D.habilidades.values()].filter((h) => h.categoria === 'combate')
+    .map((h) => ({ id: h.id, peso: (pj.base[h.caracteristica] || 0) + rng() * 15 }))
+    .sort((a, b) => b.peso - a.peso).map((x) => x.id).slice(0, voc.bonos_combate.length);
+}
+
+/** Reparto de PD de nivel 1 coherente con lo ya elegido. */
+export function desarrolloNivel1Aleatorio(D, rng, pj, mesaEntrada = {}) {
+  const mesa = { ...mesaPorDefecto(), ...mesaEntrada };
+  return desarrolloAleatorio(D, rng, pj, D.vocaciones.get(pj.vocacion), D.linajes.get(pj.linaje), mesa);
+}
+
+/**
+ * Rehace al azar un paso del asistente y lo que depende de él, conservando lo demás.
+ * Si faltan pasos previos imprescindibles (p. ej. linaje para la vocación), los rellena también.
+ * Devuelve un PJ nuevo; no modifica el recibido.
+ */
+export function pasoAleatorio(D, rng, pjEntrada, mesaEntrada = {}, paso) {
+  const mesa = { ...mesaPorDefecto(), ...mesaEntrada };
+  const pj = pasoAleatorioSinReparar(D, rng, pjEntrada, mesa, paso);
+  return repararDependientes(D, rng, pj, mesa, paso);
+}
+
+const ORDEN_PASOS = ['caracteristicas', 'linaje_cultura', 'vocacion', 'trasfondos_equipo', 'derivados', 'pasiones', 'nombre'];
+
+/** Rehace al azar los pasos posteriores que hayan quedado con errores tras cambiar `paso`. */
+function repararDependientes(D, rng, pj, mesa, paso) {
+  const desde = ORDEN_PASOS.indexOf(paso);
+  const errorEn = (p) => calcular(pj, D, mesa).problemas.some((x) => x.nivel === 'error' && x.paso === p);
+  if (desde < ORDEN_PASOS.indexOf('trasfondos_equipo') && pj.vocacion && errorEn('trasfondos_equipo')) {
+    pj.trasfondos = elegirTrasfondos(D, rng, pj, D.linajes.get(pj.linaje), D.vocaciones.get(pj.vocacion), mesa);
+  }
+  if (desde < ORDEN_PASOS.indexOf('vocacion') && pj.vocacion && errorEn('vocacion')) {
+    pj.bonos_combate = bonosCombateAleatorios(D, rng, pj);
+    pj.desarrollo = [desarrolloNivel1Aleatorio(D, rng, pj, mesa), ...(pj.desarrollo || []).slice(1)];
+  } else if (paso === 'vocacion' && errorEn('trasfondos_equipo')) {
+    pj.trasfondos = elegirTrasfondos(D, rng, pj, D.linajes.get(pj.linaje), D.vocaciones.get(pj.vocacion), mesa);
+    pj.desarrollo = [desarrolloNivel1Aleatorio(D, rng, pj, mesa), ...(pj.desarrollo || []).slice(1)];
+  }
+  return pj;
+}
+
+function pasoAleatorioSinReparar(D, rng, pjEntrada, mesa, paso) {
+  let pj = JSON.parse(JSON.stringify(pjEntrada));
+  const completo = () => generarPJ(D, rng, mesa, { linaje: pj.linaje || undefined, cultura: pj.cultura || undefined, vocacion: pj.vocacion || undefined });
+
+  if (paso === 'caracteristicas') {
+    let metodo = pj.metodo;
+    if (mesa.metodo && mesa.metodo !== 'libre' && !(mesa.metodo === 'aleatorio' && metodo === 'mejores_de_doce' && mesa.mejores_de_doce)) metodo = mesa.metodo;
+    if (metodo === 'mejores_de_doce' && !mesa.mejores_de_doce) metodo = 'aleatorio';
+    const { tiradas, valores } = tirarCaracteristicas(D, rng, metodo);
+    pj.metodo = metodo; pj.tiradas = tiradas;
+    pj.base = asignarCaracteristicas(valores, pj.vocacion, D.linajes.get(pj.linaje));
+    delete pj.ui_asignacion;
+    return pj;
+  }
+  if (paso === 'linaje_cultura') {
+    const nuevo = generarPJ(D, rng, mesa, { vocacion: pj.vocacion || undefined, metodo: pj.metodo });
+    pj.linaje = nuevo.linaje; pj.cultura = nuevo.cultura; pj.linaje_cultura_aleatorio = !!nuevo.linaje_cultura_aleatorio;
+    Object.assign(pj, eleccionesLinajeCultura(D, rng, pj));
+    const lin = D.linajes.get(pj.linaje);
+    if (lin.restriccion_porte) pj.base = asignarCaracteristicas(Object.values(pj.base), pj.vocacion, lin);
+    return pj;
+  }
+  if (paso === 'vocacion') {
+    if (!pj.linaje || !pj.cultura) { const c = completo(); pj.linaje = c.linaje; pj.cultura = c.cultura; Object.assign(pj, eleccionesLinajeCultura(D, rng, pj)); }
+    const lin = D.linajes.get(pj.linaje);
+    pj.vocacion = elegir(rng, vocacionesPara(D, lin).map((v) => v.id));
+    pj.bonos_combate = bonosCombateAleatorios(D, rng, pj);
+    pj.desarrollo = [desarrolloNivel1Aleatorio(D, rng, pj, mesa), ...(pj.desarrollo || []).slice(1)];
+    return pj;
+  }
+  if (paso === 'trasfondos_equipo') {
+    if (!pj.linaje || !pj.vocacion) pj = { ...completo(), nombre: pj.nombre, pasiones: pj.pasiones };
+    pj.trasfondos = elegirTrasfondos(D, rng, pj, D.linajes.get(pj.linaje), D.vocaciones.get(pj.vocacion), mesa);
+    // Los trasfondos pueden cambiar PD o escuelas de linaje: se rehace el reparto de nivel 1
+    pj.desarrollo = [desarrolloNivel1Aleatorio(D, rng, pj, mesa), ...(pj.desarrollo || []).slice(1)];
+    return pj;
+  }
+  if (paso === 'pasiones') {
+    pj.pasiones = { ...pj.pasiones, naturaleza: pasionAleatoria(rng, 'naturaleza'), lealtad: pasionAleatoria(rng, 'lealtad'), motivacion: pasionAleatoria(rng, 'motivacion') };
+    const lin = D.linajes.get(pj.linaje);
+    if (lin?.condena) pj.pasiones.condena = elegir(rng, lin.condena.resultados);
+    return pj;
+  }
+  if (paso === 'nombre') { pj.nombre = nombreAleatorio(rng, pj.linaje); return pj; }
+  return pj;
 }
