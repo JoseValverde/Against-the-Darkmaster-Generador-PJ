@@ -228,6 +228,29 @@ página del PDF de la Guía (pág. impresa 14 = página 3 del PDF).
   suman al total: la hoja de Syndel los pone entre paréntesis.
 - Los datos se validan con `node tests/validar-datos.mjs` (ids y referencias
   cruzadas entre todos los JSON). Ejecutarlo tras cualquier cambio en `data/`.
+- **Ids únicos entre habilidades, especializadas y escuelas**: la escuela de
+  curación es `sanacion_sortilega` (la habilidad es `sanacion`). El validador
+  lo comprueba.
+
+## Motor de reglas (fase 2)
+
+- Código en `js/engine/`, API pública en `js/engine/index.js`. Sin DOM.
+- `calcular(pj, D, mesa)` devuelve la hoja completa (características,
+  habilidades, escuelas, PD por nivel, derivados, PT, rasgos, equipo inicial,
+  recordatorios) y `problemas`: `{ nivel: 'error' | 'aviso', paso, mensaje }`.
+  `paso` es uno de `PASOS` (modelo.js) para que la UI lo muestre en su paso.
+  `valido` = no hay errores. Los avisos (PD sin gastar, pasiones vacías…) no
+  bloquean.
+- Modelo de entrada en `modelo.js` (`pjVacio`, `mesaPorDefecto`). El desarrollo
+  va **por nivel** (`desarrollo[0]` = nivel 1) con `compras`, `pago` y
+  `transferencias`, ya preparado para la subida de nivel.
+- `generarPJ(D, rng, mesa, fijo)` crea un PJ completo y coherente; `crearRng(semilla)`
+  permite repetirlo. Pasos sueltos: `tirarCaracteristicas`, `asignarCaracteristicas`,
+  `tirarLinajeCultura`, `nombreAleatorio`, `pasionAleatoria`.
+- Pruebas: `npm test` (validador de datos + `node --test tests/`). Incluye Syndel
+  número a número, ejemplos de PM y NR del manual, casos de error y 400 PJ
+  aleatorios que deben salir sin errores. `package.json` solo declara
+  `"type": "module"` y el script de pruebas: no hay dependencias.
 
 ---
 
@@ -245,6 +268,7 @@ página del PDF de la Guía (pág. impresa 14 = página 3 del PDF).
   380 sortilegios, 24 armaduras, 40 armas, equipo genérico). Validador en `tests/`.
   Pendiente para la fase 4: opciones de distorsión de sortilegios (solo
   referencia de página por ahora).
-- [ ] Fase 2 en adelante: ver PLAN.md.
+- [x] Fase 2: motor de reglas con 35 pruebas en verde (`npm test`).
+- [ ] Fase 3 en adelante: ver PLAN.md. La fase 3 (asistente, UI) va con Sonnet.
 
 Actualiza esta sección al cerrar cada fase.

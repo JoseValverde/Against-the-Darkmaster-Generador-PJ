@@ -54,7 +54,9 @@ para la fase 4.
 - Las tablas cuyo texto sale desordenado del PDF (p. ej. [1.4], [1.7]) se verifican mirando la página renderizada.
 - Cada entrada lleva resumen propio + `pagina` del manual.
 
-### 2 · Motor de reglas (sin interfaz, con pruebas)
+### 2 · Motor de reglas (sin interfaz, con pruebas) — ✅ hecha
+`js/engine/` con 35 pruebas (`npm test`): Syndel exacto, ejemplos del manual,
+errores esperados y 400 PJ aleatorios válidos.
 - Totales de característica (base + linaje + especial).
 - Habilidades: característica + rangos (tabla [1.19]) + vocación + linaje + especial + objeto (no acumulable).
 - PD por categoría, transferencia 2:1, máx. 2 rangos por habilidad y nivel, rangos culturales fuera del límite, especializadas (2 rangos/PD o 2 PD/rango según vocación).

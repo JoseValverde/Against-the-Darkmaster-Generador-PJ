@@ -4,64 +4,240 @@
   "entrada": {
     "nivel": 1,
     "metodo": "puntos",
-    "base": { "FUE": 0, "AGI": 10, "RES": 0, "INT": 25, "SAB": 5, "POR": 10 },
+    "base": {
+      "FUE": 0,
+      "AGI": 10,
+      "RES": 0,
+      "INT": 25,
+      "SAB": 5,
+      "POR": 10
+    },
     "linaje": "elfo_crepuscular",
     "cultura": "feerica",
     "vocacion": "mago",
-    "atuendo": ["Ropa de seda bordada en oro o plata", "Daga en forma de hoja", "Cordial reanimador"],
-    "escuelas_cultura": { "detecciones": 1, "luz_sonido": 1 },
-    "transferencias": [ { "desde": ["aventura", "conocimiento"], "hacia": "corpulencia" } ],
-    "pd_gastados": {
-      "latrocinio": { "percepcion": 1 },
-      "conocimiento": { "carisma": 1, "culturas": 1, "taumaturgia": 2 },
-      "sortilegios": { "control_mental": 1, "frio_arcano": 1, "ilusiones": 1, "movimientos_arcanos": 1, "tormenta_arcana": 1 },
-      "corpulencia": { "corpulencia": 1 }
+    "atuendo": [
+      "Ropa de seda bordada en oro o plata",
+      "Daga en forma de hoja",
+      "Cordial reanimador"
+    ],
+    "escuelas_cultura": {
+      "detecciones": 1,
+      "luz_sonido": 1
     },
     "trasfondos": [
-      { "id": "afinidad_magica", "grado": "menor", "eleccion": { "escuela": "tormenta_arcana" } },
-      { "id": "guardian_conocimientos_ocultos", "grado": "menor", "eleccion": { "escuela": "control_mental" } },
-      { "id": "maestro_conocimiento", "grado": "menor", "eleccion": { "habilidad": "canciones_relatos" } }
+      {
+        "id": "afinidad_magica",
+        "grado": "menor",
+        "eleccion": {
+          "escuela": "tormenta_arcana"
+        }
+      },
+      {
+        "id": "guardian_conocimientos_ocultos",
+        "grado": "menor",
+        "eleccion": {
+          "escuela": "control_mental"
+        }
+      },
+      {
+        "id": "maestro_conocimiento",
+        "grado": "menor",
+        "eleccion": {
+          "habilidad": "canciones_relatos"
+        }
+      }
     ],
-    "nombre": "Syndel, la Bruja Feérica"
+    "nombre": "Syndel, la Bruja Feérica",
+    "desarrollo": [
+      {
+        "compras": {
+          "percepcion": 1,
+          "carisma": 1,
+          "culturas": 1,
+          "taumaturgia": 2,
+          "control_mental": 1,
+          "frio_arcano": 1,
+          "ilusiones": 1,
+          "movimientos_arcanos": 1,
+          "tormenta_arcana": 1,
+          "corpulencia": 1
+        },
+        "pago": {},
+        "transferencias": [
+          {
+            "desde": [
+              "aventura",
+              "conocimiento"
+            ],
+            "hacia": "corpulencia"
+          }
+        ]
+      }
+    ],
+    "bonos_combate": [],
+    "pasiones": {
+      "naturaleza": "Salvaje como una tormenta de verano",
+      "lealtad": "",
+      "motivacion": ""
+    }
   },
   "esperado": {
-    "caracteristicas": { "FUE": 0, "AGI": 20, "RES": 0, "INT": 30, "SAB": 5, "POR": 15 },
-    "tsf": 15, "tsv": 10,
-    "defensa_cc": 20, "defensa_proyectiles": 20,
-    "pg": 30, "pm": 9, "nr": 3, "velocidad": 15, "tamano": "Mediano",
+    "caracteristicas": {
+      "FUE": 0,
+      "AGI": 20,
+      "RES": 0,
+      "INT": 30,
+      "SAB": 5,
+      "POR": 15
+    },
+    "tsf": 15,
+    "tsv": 10,
+    "defensa_cc": 20,
+    "defensa_proyectiles": 20,
+    "pg": 30,
+    "pm": 9,
+    "nr": 3,
+    "velocidad": 15,
+    "tamano": "Mediano",
     "determinacion": 1,
     "habilidades": {
-      "armadura":           { "rangos": 0, "total": 0 },
-      "asta":               { "rangos": 0, "total": 0 },
-      "contundentes":       { "rangos": 0, "total": 0 },
-      "filo":               { "rangos": 1, "total": 5 },
-      "pelea":              { "rangos": 0, "total": 0 },
-      "proyectiles":        { "rangos": 2, "lin": 10, "total": 40 },
-      "atletismo":          { "rangos": 1, "total": 5 },
-      "caza":               { "rangos": 0, "total": 30 },
-      "equitacion":         { "rangos": 0, "total": 20 },
-      "naturaleza":         { "rangos": 2, "total": 15 },
-      "vagabundear":        { "rangos": 0, "total": 5 },
-      "acrobacias":         { "rangos": 1, "lin": 10, "total": 35 },
-      "cerraduras_trampas": { "rangos": 0, "total": 30 },
-      "enganar":            { "rangos": 1, "voc": 5, "total": 40 },
-      "percepcion":         { "rangos": 2, "lin": 10, "total": 25 },
-      "sigilo":             { "rangos": 2, "total": 30, "_condicional": "+20 en entorno natural" },
-      "canciones_relatos":  { "rangos": 3, "voc": 10, "total": 40 },
-      "carisma":            { "rangos": 2, "voc": 10, "total": 35 },
-      "culturas":           { "rangos": 2, "voc": 15, "total": 55 },
-      "sanacion":           { "rangos": 1, "voc": 5, "total": 15 },
-      "taumaturgia":        { "rangos": 5, "voc": 15, "total": 70 },
-      "corpulencia":        { "rangos": 1, "lin": 25, "total": 30 }
+      "armadura": {
+        "rangos": 0,
+        "total": 0
+      },
+      "asta": {
+        "rangos": 0,
+        "total": 0
+      },
+      "contundentes": {
+        "rangos": 0,
+        "total": 0
+      },
+      "filo": {
+        "rangos": 1,
+        "total": 5
+      },
+      "pelea": {
+        "rangos": 0,
+        "total": 0
+      },
+      "proyectiles": {
+        "rangos": 2,
+        "lin": 10,
+        "total": 40
+      },
+      "atletismo": {
+        "rangos": 1,
+        "total": 5
+      },
+      "caza": {
+        "rangos": 0,
+        "total": 30
+      },
+      "equitacion": {
+        "rangos": 0,
+        "total": 20
+      },
+      "naturaleza": {
+        "rangos": 2,
+        "total": 15
+      },
+      "vagabundear": {
+        "rangos": 0,
+        "total": 5
+      },
+      "acrobacias": {
+        "rangos": 1,
+        "lin": 10,
+        "total": 35
+      },
+      "cerraduras_trampas": {
+        "rangos": 0,
+        "total": 30
+      },
+      "enganar": {
+        "rangos": 1,
+        "voc": 5,
+        "total": 40
+      },
+      "percepcion": {
+        "rangos": 2,
+        "lin": 10,
+        "total": 25
+      },
+      "sigilo": {
+        "rangos": 2,
+        "total": 30,
+        "_condicional": "+20 en entorno natural"
+      },
+      "canciones_relatos": {
+        "rangos": 3,
+        "voc": 10,
+        "total": 40
+      },
+      "carisma": {
+        "rangos": 2,
+        "voc": 10,
+        "total": 35
+      },
+      "culturas": {
+        "rangos": 2,
+        "voc": 15,
+        "total": 55
+      },
+      "sanacion": {
+        "rangos": 1,
+        "voc": 5,
+        "total": 15
+      },
+      "taumaturgia": {
+        "rangos": 5,
+        "voc": 15,
+        "total": 70
+      },
+      "corpulencia": {
+        "rangos": 1,
+        "lin": 25,
+        "total": 30
+      }
     },
     "escuelas": {
-      "control_mental":     { "caracteristica": "POR", "rangos": 3, "total": 45 },
-      "detecciones":        { "caracteristica": "SAB", "rangos": 1, "total": 25 },
-      "frio_arcano":        { "caracteristica": "INT", "rangos": 1, "total": 50 },
-      "ilusiones":          { "caracteristica": "INT", "rangos": 1, "total": 50 },
-      "luz_sonido":         { "caracteristica": "INT", "rangos": 1, "total": 50 },
-      "movimientos_arcanos":{ "caracteristica": "INT", "rangos": 1, "total": 50 },
-      "tormenta_arcana":    { "caracteristica": "INT", "rangos": 1, "esp": 10, "total": 60 }
+      "control_mental": {
+        "caracteristica": "POR",
+        "rangos": 3,
+        "total": 45
+      },
+      "detecciones": {
+        "caracteristica": "SAB",
+        "rangos": 1,
+        "total": 25
+      },
+      "frio_arcano": {
+        "caracteristica": "INT",
+        "rangos": 1,
+        "total": 50
+      },
+      "ilusiones": {
+        "caracteristica": "INT",
+        "rangos": 1,
+        "total": 50
+      },
+      "luz_sonido": {
+        "caracteristica": "INT",
+        "rangos": 1,
+        "total": 50
+      },
+      "movimientos_arcanos": {
+        "caracteristica": "INT",
+        "rangos": 1,
+        "total": 50
+      },
+      "tormenta_arcana": {
+        "caracteristica": "INT",
+        "rangos": 1,
+        "esp": 10,
+        "total": 60
+      }
     }
   }
 }

@@ -1,0 +1,9 @@
+{
+  "name": "generador-pj-darkmaster",
+  "private": true,
+  "type": "module",
+  "description": "Generador web de personajes para Against the Darkmaster (sin build ni dependencias).",
+  "scripts": {
+    "test": "node tests/validar-datos.mjs && node --test tests/"
+  }
+}

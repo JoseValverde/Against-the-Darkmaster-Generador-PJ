@@ -30,6 +30,8 @@ const CUL = unicos(cul.culturas, 'culturas');
 const VOC = unicos(voc.vocaciones, 'vocaciones');
 const ESC = unicos(esc.escuelas, 'escuelas');
 unicos(tra.trasfondos, 'trasfondos');
+for (const id of HAB) if (ESP.has(id) || ESC.has(id)) err(`id compartido entre habilidad y especializada/escuela: ${id}`);
+for (const id of ESP) if (ESC.has(id)) err(`id compartido entre especializada y escuela: ${id}`);
 unicos(eq.armaduras.lista, 'armaduras');
 unicos(eq.armas.lista, 'armas');
 
