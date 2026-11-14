@@ -1,0 +1,13 @@
+# Material con derechos de autor: NUNCA se sube (ver CLAUDE.md)
+REF Against the Darkmaster/
+REF*/
+*.pdf
+!assets/hoja-pj.pdf
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Herramientas
+node_modules/
+.claude/settings.local.json
