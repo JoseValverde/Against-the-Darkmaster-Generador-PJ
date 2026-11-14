@@ -2,13 +2,22 @@
    Dos tintas: papel crudo, tinta parda y un rojo de rúbrica.
    De noche, la misma hoja a la luz de una vela. */
 
+/* Fuentes alojadas en el propio sitio (SIL Open Font License, ver assets/fonts/LICENCIAS.md). Subconjunto latino. */
+@font-face { font-family: 'Alegreya Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('../assets/fonts/alegreya-sans-400.woff2') format('woff2'); }
+@font-face { font-family: 'Alegreya Sans'; font-style: italic; font-weight: 400; font-display: swap; src: url('../assets/fonts/alegreya-sans-400-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Alegreya Sans'; font-style: normal; font-weight: 500; font-display: swap; src: url('../assets/fonts/alegreya-sans-500.woff2') format('woff2'); }
+@font-face { font-family: 'Alegreya Sans'; font-style: normal; font-weight: 700; font-display: swap; src: url('../assets/fonts/alegreya-sans-700.woff2') format('woff2'); }
+@font-face { font-family: 'IM Fell English SC'; font-style: normal; font-weight: 400; font-display: swap; src: url('../assets/fonts/im-fell-english-sc-400.woff2') format('woff2'); }
+@font-face { font-family: 'IM Fell English'; font-style: normal; font-weight: 400; font-display: swap; src: url('../assets/fonts/im-fell-english-400.woff2') format('woff2'); }
+@font-face { font-family: 'IM Fell English'; font-style: italic; font-weight: 400; font-display: swap; src: url('../assets/fonts/im-fell-english-400-italic.woff2') format('woff2'); }
+
 :root {
   --papel: oklch(0.958 0.016 86);
   --papel-2: oklch(0.928 0.021 83);
   --papel-3: oklch(0.895 0.026 80);
   --tinta: oklch(0.27 0.028 52);
   --tinta-2: oklch(0.44 0.026 56);
-  --tinta-3: oklch(0.58 0.022 62);
+  --tinta-3: oklch(0.51 0.022 62); /* 5,1:1 sobre papel (AA) */
   --linea: oklch(0.8 0.022 76);
   --linea-fuerte: oklch(0.62 0.024 66);
   --rubrica: oklch(0.47 0.15 31);
@@ -440,7 +449,7 @@ label.btn { position: relative; }
 body.modo-hoja .marco, body.modo-hoja .mesa, body.modo-hoja .pie { display: none !important; }
 .vista-hoja { padding: var(--space-md) 12px var(--space-3xl); }
 .hoja-paginas {
-  --papel: oklch(0.985 0.006 86); --tinta: oklch(0.22 0.02 52); --tinta-2: oklch(0.42 0.02 56); --tinta-3: oklch(0.58 0.02 62);
+  --papel: oklch(0.985 0.006 86); --tinta: oklch(0.22 0.02 52); --tinta-2: oklch(0.42 0.02 56); --tinta-3: oklch(0.51 0.02 62);
   --linea: oklch(0.78 0.015 76); --linea-fuerte: oklch(0.55 0.02 66); --rubrica: oklch(0.47 0.15 31); --sobre-rubrica: oklch(0.98 0.01 86);
 }
 .hoja-barra { display: flex; flex-wrap: wrap; gap: var(--space-sm) var(--space-md); align-items: center; justify-content: space-between; max-width: 820px; margin: 0 auto var(--space-md); }

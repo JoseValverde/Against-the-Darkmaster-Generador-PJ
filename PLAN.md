@@ -81,7 +81,7 @@ errores esperados y 400 PJ aleatorios válidos.
 - Hoja imprimible HTML que replica la estructura de las 3 páginas (A4, también "Guardar como PDF").
 - Biblioteca de personajes en el navegador + exportar/importar JSON.
 
-### 7 · Acabado
+### 7 · Acabado — ✅ hecha
 - Tema claro (hoja) y oscuro, responsive móvil/ordenador, accesibilidad (teclado, contraste), revisión de textos.
 
 ### 8 · Publicación

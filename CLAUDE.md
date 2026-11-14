@@ -204,9 +204,11 @@ El motor (`js/engine`) no toca el DOM: así se prueba con Node y la UI solo lo l
   JSON no funcionan con `file://`). Hay un `.claude/launch.json` en `rolApp/` que
   lanza `python3 -m http.server 8642` sobre esta carpeta. A mano:
   `python3 -m http.server 8642` dentro de la carpeta y abrir http://localhost:8642.
-- Fuentes desde Google Fonts (IM Fell English SC, IM Fell English, Alegreya Sans).
-  **Pendiente fase 7**: alojarlas en `assets/fonts/` (privacidad de visitantes
-  en la UE; pedir permiso al usuario para descargarlas).
+- Fuentes **alojadas en `assets/fonts/`** (subconjunto latino, woff2, OFL; ver
+  `assets/fonts/LICENCIAS.md`), declaradas con `@font-face` al principio de
+  `estilos.css`. La web no hace ninguna petición a terceros.
+- Caché del servidor local: tras cambiar archivos, el navegador puede servir la
+  versión vieja (también de «/» aparte de «index.html»); forzar recarga.
 - Tablas anchas: `.paso` es contenedor (`container-type`); las columnas `.col-opc`
   se ocultan cuando el paso mide menos de 660 px. TOTAL siempre visible.
 
@@ -378,6 +380,9 @@ página del PDF de la Guía (pág. impresa 14 = página 3 del PDF).
   JSON) y `js/ui/hoja.js` («Ver hoja»: 3 páginas A4 con la estructura oficial +
   grimorio; imprimir o guardar PDF desde el navegador; estilos `.h-*`). El usuario
   la probó en local y funciona. El relleno del PDF oficial se descartó.
-- [ ] Fase 7 (acabado; alojar fuentes) y 8 (GitHub Pages): ver PLAN.md.
+- [x] Fase 7 (acabado): fuentes propias (sin Google), contraste AA revisado en
+  ambos temas (`--tinta-3` claro oscurecido a L 0,51 → 5,1:1), todos los controles
+  con nombre accesible, hoja revisada en móvil.
+- [ ] Fase 8 (publicación en GitHub Pages): ver PLAN.md.
 
 Actualiza esta sección al cerrar cada fase.
