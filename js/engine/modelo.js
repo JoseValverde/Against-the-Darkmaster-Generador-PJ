@@ -22,6 +22,8 @@ export const VERSION_MODELO = 1;
  * - trasfondos: [{ id, grado: 'menor' | 'mayor', eleccion: { ... } }]
  * - pasiones: { naturaleza, lealtad, motivacion, condena?, destino? }
  * - equipo: { armadura, escudo, yelmo, piezas: [], armas: [], objetos: [] } (ids de equipo.json o texto libre)
+ * - px: experiencia acumulada; el nivel lo marca la longitud de `desarrollo` y no puede superar el que dan los PX
+ * - senda_marcas / revelaciones: Senda Heroica; cada 10 marcas, un Hito canjeable por una Revelación
  */
 export function pjVacio() {
   return {
@@ -43,6 +45,9 @@ export function pjVacio() {
     trasfondos: [],
     pasiones: { naturaleza: '', lealtad: '', motivacion: '' },
     determinacion_extra: 0,
+    px: 10,                // puntos de experiencia acumulados (se empieza con 10)
+    senda_marcas: 0,       // marcas de la Senda Heroica (Determinación gastada)
+    revelaciones: [],      // [{ tipo: 'caracteristica' | 'corpulencia' | 'pm' | 'objeto', car?, texto? }]
     equipo: { armadura: null, escudo: null, yelmo: null, piezas: [], armas: [], objetos: [] },
     notas: '',
   };

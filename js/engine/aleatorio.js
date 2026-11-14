@@ -248,12 +248,15 @@ function repartir(rng, opciones, total, variado = false) {
 }
 
 /** Reparte los PD de nivel 1 por prioridades: bonificador vocacional, rangos culturales y característica. */
-function desarrolloAleatorio(D, rng, pj, voc, lin, mesa) {
-  const previa = calcular({ ...pj, desarrollo: [{ compras: {}, pago: {}, transferencias: [] }] }, D, mesa);
-  const presupuesto = { ...previa.pd.niveles[0].presupuesto };
+function desarrolloAleatorio(D, rng, pj, voc, lin, mesa, indice = 0) {
+  // Se calcula el PJ con los niveles anteriores y este nivel vacío, para saber presupuesto y escuelas conocidas
+  const previa = calcular({ ...pj, desarrollo: [...(pj.desarrollo || []).slice(0, indice), { compras: {}, pago: {}, transferencias: [] }] }, D, mesa);
+  const presupuesto = { ...previa.pd.niveles[indice].presupuesto };
   const compras = {};
   const transferencias = [];
-  const escuelasPosibles = new Set([...voc.escuelas_vocacionales, ...previa.escuelas.filter((e) => e.acceso !== 'sin_acceso').map((e) => e.id)]);
+  // Nivel 1: cualquier escuela accesible. Después: solo las que ya tiene (las nuevas se aprenden en juego)
+  const conocidas = previa.escuelas.filter((e) => e.acceso !== 'sin_acceso').map((e) => e.id);
+  const escuelasPosibles = new Set(indice === 0 ? [...voc.escuelas_vocacionales, ...conocidas] : conocidas);
   const filas = new Map([...previa.habilidades, ...previa.escuelas].map((f) => [f.id, f]));
   const candidatos = (cat) => {
     if (cat === 'sortilegios') {
@@ -409,8 +412,13 @@ export function bonosCombateAleatorios(D, rng, pj) {
 
 /** Reparto de PD de nivel 1 coherente con lo ya elegido. */
 export function desarrolloNivel1Aleatorio(D, rng, pj, mesaEntrada = {}) {
+  return desarrolloNivelAleatorio(D, rng, pj, mesaEntrada, 0);
+}
+
+/** Reparto de PD al azar para el nivel `indice + 1`, respetando lo comprado en niveles anteriores. */
+export function desarrolloNivelAleatorio(D, rng, pj, mesaEntrada = {}, indice = 0) {
   const mesa = { ...mesaPorDefecto(), ...mesaEntrada };
-  return desarrolloAleatorio(D, rng, pj, D.vocaciones.get(pj.vocacion), D.linajes.get(pj.linaje), mesa);
+  return desarrolloAleatorio(D, rng, pj, D.vocaciones.get(pj.vocacion), D.linajes.get(pj.linaje), mesa, indice);
 }
 
 /**

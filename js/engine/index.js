@@ -9,3 +9,6 @@ export {
   pasoAleatorio, eleccionesLinajeCultura, bonosCombateAleatorios, desarrolloNivel1Aleatorio,
 } from './aleatorio.js';
 export { equipoSugerido, equipoDesdeAtuendo, filasArmas, sortilegiosConocidos } from './equipo.js';
+export { subirNivel, bajarNivel, pxParaNivel, subirNivelesAleatorio } from './progresion.js';
+export { desarrolloNivelAleatorio } from './aleatorio.js';
+export { nivelPorPX, pxSiguienteNivel } from './reglas.js';

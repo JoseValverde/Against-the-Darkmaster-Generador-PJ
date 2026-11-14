@@ -30,3 +30,15 @@ export function valorCaracteristicaTirada(tabla, tirada) {
 }
 
 export const limitar = (v, min, max) => Math.min(max, Math.max(min, v));
+
+/** Nivel que permiten unos PX según la tabla [1.25] (mínimo 1). */
+export function nivelPorPX(progresion, px) {
+  let nivel = 1;
+  for (const [n, req] of Object.entries(progresion.px_por_nivel)) if (px >= req) nivel = Math.max(nivel, Number(n));
+  return Math.min(nivel, progresion.nivel_maximo);
+}
+
+/** PX necesarios para llegar al nivel siguiente, o null si ya está en el máximo. */
+export function pxSiguienteNivel(progresion, nivel) {
+  return nivel >= progresion.nivel_maximo ? null : progresion.px_por_nivel[String(nivel + 1)];
+}

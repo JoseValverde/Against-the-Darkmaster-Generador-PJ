@@ -315,6 +315,7 @@ página del PDF de la Guía (pág. impresa 14 = página 3 del PDF).
 - `generarPJ(D, rng, mesa, fijo)` crea un PJ completo y coherente; `crearRng(semilla)`
   permite repetirlo. Pasos sueltos: `tirarCaracteristicas`, `asignarCaracteristicas`,
   `tirarLinajeCultura`, `nombreAleatorio`, `pasionAleatoria`.
+- Node 16 **no tiene `structuredClone`**: en `js/engine/` copiar con JSON (la UI sí puede usarlo).
 - Pruebas: `npm test` (validador de datos + `node --test tests/`). Incluye Syndel
   número a número, ejemplos de PM y NR del manual, casos de error y 400 PJ
   aleatorios que deben salir sin errores. `package.json` solo declara
@@ -354,6 +355,24 @@ página del PDF de la Guía (pág. impresa 14 = página 3 del PDF).
     mi atuendo» (elige en las alternativas, conserva armas añadidas a mano);
     paso V con el Grimorio plegable por escuela (lanzable ya o a qué nivel,
     PM, parámetros, resumen y distorsiones).
-- [ ] Fase 5 en adelante: ver PLAN.md.
+- [~] Fase 5 (subida de nivel): **datos y motor hechos** (Opus).
+  - `tablas.json`: `progresion` (PX por nivel [1.25], nivel máx. 10, PX inicial 10,
+    logros de ejemplo [1.26] resumidos) y `senda_heroica` (Hito cada 10 marcas,
+    4 Revelaciones).
+  - Modelo: `px`, `senda_marcas`, `revelaciones` [{ tipo, car?, texto? }]. El nivel
+    es la longitud de `desarrollo`; si supera lo que dan los PX es error, si queda
+    por debajo es aviso «puedes subir».
+  - Revelaciones aplicadas: +5 a una característica; +10 especial a Corpulencia y
+    +10 al PG máx.; +3 PM; objeto = recordatorio. Más Revelaciones que Hitos = error.
+  - `js/engine/progresion.js`: `subirNivel`, `bajarNivel`, `pxParaNivel`,
+    `subirNivelesAleatorio`; `desarrolloNivelAleatorio(D, rng, pj, mesa, indice)`
+    reparte PD de cualquier nivel (al subir solo escuelas ya conocidas).
+  - **Pendiente (Sonnet)**: interfaz → en el paso III, pestañas por nivel
+    (Nivel 1, 2…) con «Subir de nivel» / «Quitar el último», campo de PX con el
+    aviso de que puede subir y «Repartir al azar» por nivel; en el paso V, Senda
+    Heroica (marcas 0-100, Hitos, añadir Revelación eligiendo tipo y
+    característica) y la lista de logros como ayuda; en el resumen, Nivel y PX /
+    Próx. nivel.
+- [ ] Fase 6 en adelante: ver PLAN.md.
 
 Actualiza esta sección al cerrar cada fase.

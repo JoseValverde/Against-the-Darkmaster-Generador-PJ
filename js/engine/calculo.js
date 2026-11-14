@@ -3,7 +3,7 @@
 // No toca el DOM ni modifica `pj`.
 
 import { CARACTERISTICAS, CATEGORIAS, mesaPorDefecto } from './modelo.js';
-import { bonoPorRangos, bonoTSPorNivel, pmPorCaracteristica, ajusteVelocidadAGI, limitar } from './reglas.js';
+import { bonoPorRangos, bonoTSPorNivel, pmPorCaracteristica, ajusteVelocidadAGI, limitar, nivelPorPX, pxSiguienteNivel } from './reglas.js';
 import { filasArmas, sortilegiosConocidos } from './equipo.js';
 
 const RASGOS_PORTE = ['Justo y Sabio', 'Grácil y Elegante', 'Bendecido por las Estrellas'];
@@ -66,6 +66,20 @@ export function calcular(pjEntrada, D, mesaEntrada = {}) {
     }
     espCar[c] += e.valor;
   }
+  // Revelaciones de la Senda Heroica (cada una cuesta un Hito = 10 marcas)
+  const revelaciones = pj.revelaciones || [];
+  const hitos = Math.floor((Number(pj.senda_marcas) || 0) / D.tablas.senda_heroica.marcas_por_hito);
+  if (revelaciones.length > hitos) problema('error', 'derivados', `Tienes ${revelaciones.length} Revelación(es) y solo ${hitos} Hito(s) en la Senda Heroica (1 por cada 10 marcas).`);
+  for (const r of revelaciones) {
+    if (r.tipo === 'caracteristica') {
+      if (CARACTERISTICAS.includes(r.car)) espCar[r.car] += 5;
+      else problema('error', 'derivados', 'Revelación: elige qué característica sube.');
+    } else if (r.tipo === 'objeto') recordatorios.push(`Revelación: ${r.texto || 'mejora de un objeto con Pasión (anótala)'}.`);
+    else if (!['corpulencia', 'pm'].includes(r.tipo)) problema('error', 'derivados', `Revelación desconocida: ${r.tipo}.`);
+  }
+  const revCorpulencia = revelaciones.filter((r) => r.tipo === 'corpulencia').length;
+  const revPM = revelaciones.filter((r) => r.tipo === 'pm').length;
+
   for (const c of CARACTERISTICAS) {
     const base = Number(pj.base?.[c]) || 0;
     const linaje = lin ? lin.mods[c] : 0;
@@ -263,6 +277,7 @@ export function calcular(pjEntrada, D, mesaEntrada = {}) {
     return m;
   };
   const esp = bonoCol('esp');
+  if (revCorpulencia) esp.set('corpulencia', (esp.get('corpulencia') || 0) + 10 * revCorpulencia);
   const obj = bonoCol('obj');
   // Educación Heterodoxa menor: la habilidad no puede tener bonificador vocacional
   for (const t of tras.filter((x) => x.def.id === 'educacion_heterodoxa')) {
@@ -299,7 +314,7 @@ export function calcular(pjEntrada, D, mesaEntrada = {}) {
   // ---------- Derivados ----------
   const corp = habilidades.find((h) => h.id === 'corpulencia');
   const pgExtra = efectosDe('pg').reduce((a, e) => a + e.valor, 0);
-  const pgMax = (lin?.pg_max || 0) + efectosDe('pg_max').reduce((a, e) => a + e.valor, 0);
+  const pgMax = (lin?.pg_max || 0) + efectosDe('pg_max').reduce((a, e) => a + e.valor, 0) + 10 * revCorpulencia;
   const pgSinTope = corp.total + pgExtra;
   const pg = lin ? Math.min(pgSinTope, pgMax) : pgSinTope;
   if (lin && pgSinTope > pgMax) problema('aviso', 'derivados', `Tus PG (${pgSinTope}) superan el máximo del linaje; se quedan en ${pgMax}.`);
@@ -312,8 +327,18 @@ export function calcular(pjEntrada, D, mesaEntrada = {}) {
     caracteristica: carPM, por_caracteristica: carPM ? pmPorCaracteristica(T[carPM]) : 0,
     por_vocacion: voc?.pm_por_nivel || 0, por_trasfondos: pmPorNivelTras, por_nivel: pmPorNivel,
     linaje: lin?.pm || 0, transferidos: pd.pm_extra, restringidos: pmEscuela,
-    total: pmPorNivel * nivel + (lin?.pm || 0) + pd.pm_extra,
+    revelaciones: 3 * revPM,
+    total: pmPorNivel * nivel + (lin?.pm || 0) + pd.pm_extra + 3 * revPM,
   };
+
+  // ---------- Experiencia y nivel ----------
+  const prog = D.tablas.progresion;
+  const pxActual = Number.isFinite(Number(pj.px)) ? Number(pj.px) : prog.px_inicial;
+  const nivelPX = nivelPorPX(prog, pxActual);
+  const px = { actual: pxActual, nivel_por_px: nivelPX, siguiente: pxSiguienteNivel(prog, nivel), puede_subir: nivel < nivelPX, hitos, marcas: Number(pj.senda_marcas) || 0 };
+  if (nivel > prog.nivel_maximo) problema('error', 'vocacion', `El nivel máximo es ${prog.nivel_maximo}.`);
+  else if (nivel > nivelPX) problema('error', 'vocacion', `Nivel ${nivel} con ${pxActual} PX: necesitas ${prog.px_por_nivel[String(nivel)]} PX.`);
+  else if (nivel < nivelPX) problema('aviso', 'vocacion', `Con ${pxActual} PX puedes subir a nivel ${nivelPX}.`);
 
   const ts = (car, extraLin) => ({ car: T[car], nivel: bonoTSPorNivel(nivel), lin: extraLin || 0, esp: 0, total: T[car] + bonoTSPorNivel(nivel) + (extraLin || 0) });
   const tsf = ts('RES', lin?.tsf);
@@ -355,6 +380,10 @@ export function calcular(pjEntrada, D, mesaEntrada = {}) {
   const rasgos = [
     ...(lin?.rasgos || []).filter((r) => !ignorados.has(r.nombre)).map((r) => ({ origen: 'linaje', nombre: r.nombre, resumen: r.resumen })),
     ...tras.map((t) => ({ origen: 'trasfondo', nombre: `${t.def.nombre} (${t.grado})`, resumen: t.grado === 'mayor' ? `${t.def.menor.texto} ${t.def.mayor.texto}` : t.def.menor.texto })),
+    ...revelaciones.map((r) => {
+      const def = D.tablas.senda_heroica.revelaciones.find((x) => x.id === r.tipo);
+      return { origen: 'revelacion', nombre: `Revelación: ${def?.nombre || r.tipo}${r.car ? ` (${r.car})` : ''}`, resumen: r.texto || def?.resumen || '' };
+    }),
   ];
   const pasiones = { ...pj.pasiones };
   const pasionesExtra = [];
@@ -383,7 +412,7 @@ export function calcular(pjEntrada, D, mesaEntrada = {}) {
       tsf, tsv,
       defensa_cc: defensa.cc, defensa_proyectiles: defensa.proy, agi_max_def: defensa.agiMax,
       penalizador_movimiento: defensa.penMov, penalizador_bc: defensa.penBC, penalizador_percepcion: defensa.penPer,
-      pg, pg_max: pgMax, pm, nr, nivel_social: nivelSocial,
+      pg, pg_max: pgMax, pm, px, nr, nivel_social: nivelSocial,
       velocidad, tamano: lin?.tamano || 'Mediano', determinacion,
     },
     pt: { total: ptTotal, gastado: ptGastado },
