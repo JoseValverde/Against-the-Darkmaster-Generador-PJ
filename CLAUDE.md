@@ -339,7 +339,22 @@ página del PDF de la Guía (pág. impresa 14 = página 3 del PDF).
 - [x] Fase 2: motor de reglas con 35 pruebas en verde (`npm test`).
 - [x] Fase 3: asistente de 7 pasos en `index.html` + `js/ui/` + `css/estilos.css`,
   con aleatorio por paso, PJ de un clic, mesa por enlace, borrador y tema.
-- [ ] Fase 4 en adelante: ver PLAN.md. La fase 4 empieza con Opus (datos de
-  distorsión y armas en la hoja), y su UI con Sonnet.
+- [~] Fase 4 (magia y equipo): **datos y motor hechos** (Opus).
+  - `escuelas.json`: 185 sortilegios con `distorsion` [{urdimbre, texto}],
+    265 opciones condensadas o reescritas con palabras propias.
+  - `data/atuendo_equipo.json`: qué armas/protecciones da cada opción de atuendo
+    (53 de 112); `{ elige: [...] }` para las alternativas «o»; `nota` cuando se
+    usa un arma de la tabla en lugar de la del texto (arco de caza → arco corto…).
+  - `js/engine/equipo.js`: `equipoSugerido`, `equipoDesdeAtuendo`, `filasArmas`
+    (BC = mejor habilidad + su penalizador + penalizador de armadura al BC),
+    `sortilegiosConocidos`. La hoja trae `armas` y `grimorio`. Afinidad Mágica
+    mayor da +1 nivel para lanzar de la escuela predilecta. El generador equipa
+    según el atuendo y añade un arma auxiliar si no lleva ninguna corta.
+  - **Pendiente (Sonnet)**: interfaz de la fase 4 → en el paso IV, tabla «Armas y
+    Ataques» con añadir/quitar armas (arma auxiliar a elegir), botón «Equiparme
+    con mi atuendo» con selector para las alternativas y sus notas; un bloque
+    «Grimorio» (paso V o III) con los sortilegios conocidos por escuela, cuáles se
+    pueden lanzar ya, coste en PM y opciones de distorsión en un desplegable.
+- [ ] Fase 5 en adelante: ver PLAN.md.
 
 Actualiza esta sección al cerrar cada fase.

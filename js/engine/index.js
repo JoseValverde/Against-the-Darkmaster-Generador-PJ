@@ -8,3 +8,4 @@ export {
   linajesPermitidos, culturasPermitidas, vocacionesPara, nombreAleatorio, pasionAleatoria, PRIORIDAD,
   pasoAleatorio, eleccionesLinajeCultura, bonosCombateAleatorios, desarrolloNivel1Aleatorio,
 } from './aleatorio.js';
+export { equipoSugerido, equipoDesdeAtuendo, filasArmas, sortilegiosConocidos } from './equipo.js';

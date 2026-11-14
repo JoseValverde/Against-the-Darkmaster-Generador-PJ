@@ -4,6 +4,7 @@
 
 import { CARACTERISTICAS, CATEGORIAS, mesaPorDefecto } from './modelo.js';
 import { bonoPorRangos, bonoTSPorNivel, pmPorCaracteristica, ajusteVelocidadAGI, limitar } from './reglas.js';
+import { filasArmas, sortilegiosConocidos } from './equipo.js';
 
 const RASGOS_PORTE = ['Justo y Sabio', 'Grácil y Elegante', 'Bendecido por las Estrellas'];
 const NOMBRE_CAR = { FUE: 'Fuerza', AGI: 'Agilidad', RES: 'Resistencia', INT: 'Intelecto', SAB: 'Sabiduría', POR: 'Porte' };
@@ -286,8 +287,9 @@ export function calcular(pjEntrada, D, mesaEntrada = {}) {
     const acceso = accesoEscuela(e.id);
     const f = fila(e.id, e, e.caracteristica, { acceso: acceso || 'sin_acceso' });
     const tope = acceso === 'comun' ? 5 : 10;
+    const predilecta = tras.some((t) => t.def.id === 'afinidad_magica' && t.grado === 'mayor' && t.eleccion.escuela === e.id);
     f.urdimbre_conocida = Math.min(f.rangos.total, 10);
-    f.urdimbre_ejecutable = Math.min(f.rangos.total, nivel, tope);
+    f.urdimbre_ejecutable = Math.min(f.rangos.total, nivel + (predilecta ? 1 : 0), tope);
     return f;
   });
   // Condicionales de linaje que la hoja pone entre paréntesis
@@ -364,9 +366,14 @@ export function calcular(pjEntrada, D, mesaEntrada = {}) {
   for (const c of condicionales) recordatorios.push(`${D.nombre(c.habilidad)} +${c.valor} ${c.cuando}.`);
   if (tras.some((t) => t.def.id === 'entrenamiento_elfico' && t.grado === 'mayor')) recordatorios.push('Entrenamiento Élfico: puedes usar AGI en vez de FUE para Filo con espada corta, larga o cimitarra.');
 
+  const armas = filasArmas(D, pj, [...habilidades, ...especializadas], defensa.penBC, (m) => problema('aviso', 'trasfondos_equipo', m));
+  const grimorio = sortilegiosConocidos(D, escuelas);
+
   return {
     nivel,
     caracteristicas,
+    armas,
+    grimorio,
     habilidades,
     especializadas,
     escuelas,

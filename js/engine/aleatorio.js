@@ -4,6 +4,7 @@
 import { CARACTERISTICAS, CATEGORIAS, pjVacio, mesaPorDefecto } from './modelo.js';
 import { valorCaracteristicaTirada } from './reglas.js';
 import { calcular } from './calculo.js';
+import { equipoDesdeAtuendo } from './equipo.js';
 
 /** Generador pseudoaleatorio con semilla (mulberry32). */
 export function crearRng(semilla = Date.now()) {
@@ -213,7 +214,20 @@ export function generarPJ(D, rng, mesaEntrada = {}, fijo = {}) {
   if (lin.condena) pj.pasiones.condena = elegir(rng, lin.condena.resultados);
   if (pj.trasfondos.some((t) => t.id === 'marca_destino' && t.grado === 'mayor')) pj.pasiones.destino = 'Mi marca guarda la clave de mi destino.';
   pj.nombre = nombreAleatorio(rng, linaje);
+  pj.equipo = equipoAleatorio(D, rng, pj);
   return pj;
+}
+
+/** Equipo según el atuendo, eligiendo al azar en las alternativas y añadiendo el arma auxiliar. */
+function equipoAleatorio(D, rng, pj) {
+  const elecciones = {};
+  for (const tx of pj.atuendo || []) {
+    for (const a of D.atuendoEquipo[tx]?.armas || []) if (a.elige) elecciones[tx] = elegir(rng, a.elige);
+  }
+  const equipo = equipoDesdeAtuendo(D, pj, elecciones);
+  // Arma auxiliar a elegir (equipo inicial común): una de mano si no lleva ninguna corta
+  if (!equipo.armas.some((id) => ['Mano', 'Corta'].includes(D.armas.get(id)?.longitud))) equipo.armas.push(elegir(rng, ['daga', 'porra', 'espada_corta']));
+  return equipo;
 }
 
 function habilidadFavorita(D, rng, voc, pj) {
@@ -449,6 +463,7 @@ function pasoAleatorioSinReparar(D, rng, pjEntrada, mesa, paso) {
     Object.assign(pj, eleccionesLinajeCultura(D, rng, pj));
     const lin = D.linajes.get(pj.linaje);
     if (lin.restriccion_porte) pj.base = asignarCaracteristicas(Object.values(pj.base), pj.vocacion, lin);
+    pj.equipo = equipoAleatorio(D, rng, pj);
     return pj;
   }
   if (paso === 'vocacion') {
@@ -464,6 +479,7 @@ function pasoAleatorioSinReparar(D, rng, pjEntrada, mesa, paso) {
     pj.trasfondos = elegirTrasfondos(D, rng, pj, D.linajes.get(pj.linaje), D.vocaciones.get(pj.vocacion), mesa);
     // Los trasfondos pueden cambiar PD o escuelas de linaje: se rehace el reparto de nivel 1
     pj.desarrollo = [desarrolloNivel1Aleatorio(D, rng, pj, mesa), ...(pj.desarrollo || []).slice(1)];
+    pj.equipo = equipoAleatorio(D, rng, pj);
     return pj;
   }
   if (paso === 'pasiones') {

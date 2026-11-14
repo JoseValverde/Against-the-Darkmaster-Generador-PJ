@@ -1,0 +1,329 @@
+{
+ "_fuente": "Atuendo cultural (Manual del Jugador, cap. 4, tabla [1.6]) cruzado con las tablas de armas [2.24] y armaduras [2.23].",
+ "_notas": "Qué armas y protecciones de las tablas corresponden a cada opción de atuendo. {'elige': [...]} = el texto ofrece una alternativa ('o'). Las opciones que no aparecen no son armas ni protecciones.",
+ "opciones": {
+  "Pieles": {
+   "proteccion": [
+    "pieles_pelaje"
+   ]
+  },
+  "Pieles gruesas": {
+   "proteccion": [
+    "pieles_pelaje"
+   ]
+  },
+  "Chaquetón de pieles y falda de lana": {
+   "proteccion": [
+    "pieles_pelaje"
+   ],
+   "nota": "Un chaquetón de pieles cuenta como Pieles/Pelaje."
+  },
+  "Armadura de cuero": {
+   "proteccion": [
+    "armadura_de_cuero"
+   ]
+  },
+  "Armadura lamelar": {
+   "proteccion": [
+    "armadura_lamelar"
+   ]
+  },
+  "Chaqueta de algodón y jubón de cuero": {
+   "proteccion": [
+    "jubon_de_cuero"
+   ]
+  },
+  "Cota de malla": {
+   "proteccion": [
+    "cota_de_malla"
+   ]
+  },
+  "Armadura de cuero reforzado": {
+   "proteccion": [
+    "cuero_reforzado"
+   ]
+  },
+  "Jubón de cuero": {
+   "proteccion": [
+    "jubon_de_cuero"
+   ]
+  },
+  "Coraza esmaltada": {
+   "proteccion": [
+    "coraza"
+   ]
+  },
+  "Cota de malla y capa pesada": {
+   "proteccion": [
+    "cota_de_malla"
+   ]
+  },
+  "Túnica de lana y jubón de cuero": {
+   "proteccion": [
+    "jubon_de_cuero"
+   ]
+  },
+  "Yelmo de metal y escudo": {
+   "proteccion": [
+    "yelmo_de_metal",
+    "escudo_grande"
+   ],
+   "nota": "«Escudo» sin más: se toma el escudo grande."
+  },
+  "Lanza corta": {
+   "armas": [
+    "lanza_corta"
+   ]
+  },
+  "Arco y flechas": {
+   "armas": [
+    "arco_corto"
+   ],
+   "nota": "Arco sin especificar: se toma el arco corto."
+  },
+  "Bastón": {
+   "armas": [
+    "baston"
+   ]
+  },
+  "Bastón de viaje": {
+   "armas": [
+    "baston"
+   ]
+  },
+  "Arpón": {
+   "armas": [
+    "lanza_arrojadiza"
+   ],
+   "nota": "Un arpón se maneja como una lanza arrojadiza."
+  },
+  "Piolet": {
+   "nota": "Sin equivalente en la tabla de armas; el DJ decide (p. ej., maza ligera)."
+  },
+  "Arco corto y flechas": {
+   "armas": [
+    "arco_corto"
+   ]
+  },
+  "Red y daga": {
+   "armas": [
+    "daga"
+   ],
+   "proteccion": [
+    "red"
+   ]
+  },
+  "Arco compuesto, flechas y daga": {
+   "armas": [
+    "arco_compuesto",
+    "daga"
+   ]
+  },
+  "Hacha de batalla o cimitarra y honda": {
+   "armas": [
+    {
+     "elige": [
+      "hacha_de_guerra",
+      "cimitarra"
+     ]
+    },
+    "honda"
+   ],
+   "nota": "Hacha de batalla: se usa el hacha de guerra."
+  },
+  "Lanza corta y targe": {
+   "armas": [
+    "lanza_corta"
+   ],
+   "proteccion": [
+    "escudo_pequeno"
+   ],
+   "nota": "El targe es un escudo pequeño."
+  },
+  "Espada de guerra y lanza larga": {
+   "armas": [
+    "espada_de_guerra",
+    "lanza_larga"
+   ]
+  },
+  "Cimitarra, arco corto y flechas": {
+   "armas": [
+    "cimitarra",
+    "arco_corto"
+   ]
+  },
+  "Daga": {
+   "armas": [
+    "daga"
+   ]
+  },
+  "Una gavilla de jabalinas": {
+   "armas": [
+    "jabalina_arrojadiza"
+   ]
+  },
+  "Espada larga y lanza corta": {
+   "armas": [
+    "espada_larga",
+    "lanza_corta"
+   ]
+  },
+  "Espada corta, arco largo, carcaj y flechas": {
+   "armas": [
+    "espada_corta",
+    "arco_largo"
+   ]
+  },
+  "Daga en forma de hoja": {
+   "armas": [
+    "daga"
+   ]
+  },
+  "Destral y escudo": {
+   "armas": [
+    "destral"
+   ],
+   "proteccion": [
+    "escudo_grande"
+   ],
+   "nota": "«Escudo» sin más: se toma el escudo grande."
+  },
+  "Espada corta y jabalina": {
+   "armas": [
+    "espada_corta",
+    "jabalina_arrojadiza"
+   ]
+  },
+  "Arco de caza y flechas": {
+   "armas": [
+    "arco_corto"
+   ],
+   "nota": "El arco de caza es el arco corto."
+  },
+  "Cuchillo de caza y fardo de pieles": {
+   "armas": [
+    "daga"
+   ],
+   "nota": "Un cuchillo de caza se maneja como una daga."
+  },
+  "Falcata": {
+   "armas": [
+    "falcata"
+   ]
+  },
+  "Ballesta ligera con saetas": {
+   "armas": [
+    "ballesta_ligera"
+   ]
+  },
+  "Látigo y daga": {
+   "armas": [
+    "latigo",
+    "daga"
+   ]
+  },
+  "Lanza corta y escudo pintado": {
+   "armas": [
+    "lanza_corta"
+   ],
+   "proteccion": [
+    "escudo_grande"
+   ],
+   "nota": "«Escudo» sin más: se toma el escudo grande."
+  },
+  "Espadón": {
+   "armas": [
+    "espadon"
+   ]
+  },
+  "Arco compuesto, carcaj y flechas": {
+   "armas": [
+    "arco_compuesto"
+   ]
+  },
+  "Lucero del alba o maza y escudo": {
+   "armas": [
+    {
+     "elige": [
+      "maza_pesada",
+      "maza_ligera"
+     ]
+    }
+   ],
+   "proteccion": [
+    "escudo_grande"
+   ],
+   "nota": "El lucero del alba no está en la tabla: se usa la maza pesada."
+  },
+  "Daga antigua": {
+   "armas": [
+    "daga"
+   ]
+  },
+  "Honda de pastor": {
+   "armas": [
+    "honda"
+   ]
+  },
+  "Cimitarra": {
+   "armas": [
+    "cimitarra"
+   ]
+  },
+  "Maza pesada": {
+   "armas": [
+    "maza_pesada"
+   ]
+  },
+  "Hacha de dos manos": {
+   "armas": [
+    "hacha_pesada"
+   ],
+   "nota": "Hacha de dos manos: se usa el hacha pesada."
+  },
+  "Pico de guerra o hacha de guerra": {
+   "armas": [
+    {
+     "elige": [
+      "pico",
+      "hacha_de_guerra"
+     ]
+    }
+   ]
+  },
+  "Espada y escudo": {
+   "armas": [
+    "espada_de_guerra"
+   ],
+   "proteccion": [
+    "escudo_grande"
+   ],
+   "nota": "Espada sin especificar: espada de guerra; escudo grande."
+  },
+  "Espada corta o daga": {
+   "armas": [
+    {
+     "elige": [
+      "espada_corta",
+      "daga"
+     ]
+    }
+   ]
+  },
+  "Espada larga": {
+   "armas": [
+    "espada_larga"
+   ]
+  },
+  "Hacha de guerra": {
+   "armas": [
+    "hacha_de_guerra"
+   ]
+  },
+  "Espada corta": {
+   "armas": [
+    "espada_corta"
+   ]
+  }
+ }
+}

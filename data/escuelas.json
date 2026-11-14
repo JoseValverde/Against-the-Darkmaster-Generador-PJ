@@ -7,7 +7,8 @@
   "pm": "Coste en PM = urdimbre. PM por nivel = floor(car. de PM / 10) + PM de vocación; + PM de linaje una sola vez.",
   "caracteristica": "Cada escuela suma su propia característica (la de su ficha), no la de PM.",
   "bono_vocacional": "El bonificador vocacional de Escuelas Sortílegas se aplica a todas las escuelas del PJ.",
-  "resumenes": "Resúmenes propios; el detalle y las opciones de distorsión están en la página indicada."
+  "resumenes": "Resúmenes propios; el detalle completo está en la página indicada.",
+  "distorsion": "Opciones de distorsión resumidas: '+N urdimbre' sube la urdimbre (y su coste en PM) a cambio del efecto. Repetibles salvo que digan 'una sola vez'. Nunca por encima del nivel del PJ."
  },
  "comunes": [
   "conocimiento_naturaleza",
@@ -43,7 +44,17 @@
      "area": "1 objetivo",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Detiene temporalmente el estado Moribundo."
+     "resumen": "Detiene temporalmente el estado Moribundo.",
+     "distorsion": [
+      {
+       "urdimbre": 4,
+       "texto": "Duración: 1 hora por nivel."
+      },
+      {
+       "urdimbre": 9,
+       "texto": "Duración: 1 día por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -53,7 +64,13 @@
      "area": "1 objetivo",
      "duracion": "1 min/nvl",
      "salvacion": true,
-     "resumen": "Un humanoide se calma y no actúa con agresividad."
+     "resumen": "Un humanoide se calma y no actúa con agresividad.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -63,7 +80,13 @@
      "area": "1 objetivo",
      "duracion": "1 asl/nvl",
      "salvacion": false,
-     "resumen": "Inmunidad al miedo."
+     "resumen": "Inmunidad al miedo.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -73,7 +96,17 @@
      "area": "1 objetivo",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Ignora el estado Cansado."
+     "resumen": "Ignora el estado Cansado.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+1 objetivo."
+      },
+      {
+       "urdimbre": 4,
+       "texto": "Duración: 10 minutos por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -83,7 +116,13 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Cura daño espiritual; impide alzarse como muerto viviente."
+     "resumen": "Cura daño espiritual; impide alzarse como muerto viviente.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "Recupera 5 puntos más de daño espiritual."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -93,7 +132,17 @@
      "area": "6 m radio",
      "duracion": "1 asl/nvl",
      "salvacion": false,
-     "resumen": "Aliados cercanos ganan bonificador a ataque y habilidades."
+     "resumen": "Aliados cercanos ganan bonificador a ataque y habilidades.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+5 al bonificador."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "+3 m de radio."
+      }
+     ]
     },
     {
      "urdimbre": 7,
@@ -158,7 +207,13 @@
      "area": "hechicero",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Bonificador a Carisma con personajes no hostiles."
+     "resumen": "Bonificador a Carisma con personajes no hostiles.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 10 minutos por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -168,7 +223,13 @@
      "area": "hechicero",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Bonificador a la DEF propia."
+     "resumen": "Bonificador a la DEF propia.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 10 minutos por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -188,7 +249,13 @@
      "area": "1 objetivo",
      "duracion": "1 asl/10 puntos fallo",
      "salvacion": true,
-     "resumen": "Aterroriza a muertos vivientes y siervos oscuros."
+     "resumen": "Aterroriza a muertos vivientes y siervos oscuros.",
+     "distorsion": [
+      {
+       "urdimbre": 4,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -198,7 +265,13 @@
      "area": "20 m radio",
      "duracion": "1 asl/nvl",
      "salvacion": false,
-     "resumen": "El siguiente sortilegio se transfiere a un aliado dispuesto."
+     "resumen": "El siguiente sortilegio se transfiere a un aliado dispuesto.",
+     "distorsion": [
+      {
+       "urdimbre": 4,
+       "texto": "El receptor no tiene que estar en el área si sabes dónde está y él sabe que le pasas el sortilegio."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -208,7 +281,13 @@
      "area": "1 objetivo",
      "duracion": "1 asl/10 puntos fallo",
      "salvacion": true,
-     "resumen": "Deja Cansado a un objetivo."
+     "resumen": "Deja Cansado a un objetivo.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 7,
@@ -274,7 +353,17 @@
      "area": "1 objetivo",
      "duracion": "C",
      "salvacion": true,
-     "resumen": "Calma a un humanoide."
+     "resumen": "Calma a un humanoide.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+15 m de alcance."
+      },
+      {
+       "urdimbre": 4,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -284,7 +373,17 @@
      "area": "1 objetivo",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Refuerza la determinación de un ser vivo."
+     "resumen": "Refuerza la determinación de un ser vivo.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+15 m de alcance."
+      },
+      {
+       "urdimbre": 4,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -294,7 +393,17 @@
      "area": "1 objetivo",
      "duracion": "C",
      "salvacion": true,
-     "resumen": "Infunde un miedo inexplicable."
+     "resumen": "Infunde un miedo inexplicable.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+15 m de alcance."
+      },
+      {
+       "urdimbre": 4,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -304,7 +413,17 @@
      "area": "1 objetivo",
      "duracion": "C",
      "salvacion": true,
-     "resumen": "Duerme a un humanoide."
+     "resumen": "Duerme a un humanoide.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+15 m de alcance."
+      },
+      {
+       "urdimbre": 4,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -314,7 +433,17 @@
      "area": "1 objetivo",
      "duracion": "C",
      "salvacion": true,
-     "resumen": "El objetivo te toma por un viejo amigo."
+     "resumen": "El objetivo te toma por un viejo amigo.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+15 m de alcance."
+      },
+      {
+       "urdimbre": 4,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -334,7 +463,13 @@
      "area": "1 objetivo",
      "duracion": "C",
      "salvacion": true,
-     "resumen": "El objetivo se mueve como si llevara cadenas."
+     "resumen": "El objetivo se mueve como si llevara cadenas.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 8,
@@ -389,7 +524,13 @@
      "area": "6 m radio",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Pregunta a un animal pequeño por algo reciente."
+     "resumen": "Pregunta a un animal pequeño por algo reciente.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Puedes seguir preguntando al animal mientras te concentres."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -409,7 +550,17 @@
      "area": "15 m radio",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Los espíritus revelan información sobre un tema."
+     "resumen": "Los espíritus revelan información sobre un tema.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "El DJ revela un dato más sobre el tema."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "La respuesta llega clara, sin ambigüedad ni engaño."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -419,7 +570,13 @@
      "area": "hechicero",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Visión de los peligros del camino."
+     "resumen": "Visión de los peligros del camino.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "El DJ revela también algo útil sobre el peligro (una sola vez)."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -429,7 +586,13 @@
      "area": "hechicero",
      "duracion": "4 horas",
      "salvacion": false,
-     "resumen": "Trance de visión divina."
+     "resumen": "Trance de visión divina.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Entiendes la visión sin margen de error."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -439,7 +602,17 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Una sombra de un muerto responde a una pregunta."
+     "resumen": "Una sombra de un muerto responde a una pregunta.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "La sombra revela un dato más."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "Puedes llamar a muertos de hasta 10 años por nivel (una sola vez)."
+      }
+     ]
     },
     {
      "urdimbre": 7,
@@ -504,7 +677,17 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Detecta siervos oscuros, maldiciones o magia maligna."
+     "resumen": "Detecta siervos oscuros, maldiciones o magia maligna.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Sabes también qué tipo de maldición o magia maligna es."
+      },
+      {
+       "urdimbre": 1,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -514,7 +697,17 @@
      "area": "30 m radio",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Percibe seres vivos en el área."
+     "resumen": "Percibe seres vivos en el área.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+30 m de radio."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 1 minuto por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -534,7 +727,21 @@
      "area": "15 m radio",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Detecta objetos mágicos y sortilegios activos."
+     "resumen": "Detecta objetos mágicos y sortilegios activos.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Ubicas cada fuente de magia con 1,5 m de precisión."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "Detecta también magia latente o pasiva."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 1 minuto por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -574,7 +781,21 @@
      "area": "1 objetivo",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "La tierra te indica la dirección de tu presa."
+     "resumen": "La tierra te indica la dirección de tu presa.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 1 minuto por nivel."
+      },
+      {
+       "urdimbre": 1,
+       "texto": "Basta con una buena descripción del objetivo."
+      },
+      {
+       "urdimbre": 1,
+       "texto": "+30 m de alcance."
+      }
+     ]
     },
     {
      "urdimbre": 9,
@@ -620,7 +841,17 @@
      "area": "hechicero",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Recuerdas a la perfección un suceso reciente."
+     "resumen": "Recuerdas a la perfección un suceso reciente.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Recuerdos de hasta 3 meses por nivel."
+      },
+      {
+       "urdimbre": 5,
+       "texto": "Recuerdos de hasta 10 años por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -630,7 +861,17 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Tasa una gema, joya u objeto artesanal."
+     "resumen": "Tasa una gema, joya u objeto artesanal.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "Sabes si está encantado y cuánto poder tiene, más o menos."
+      },
+      {
+       "urdimbre": 5,
+       "texto": "Sabes si tiene valor histórico o cultural, y una idea de cuál."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -650,7 +891,13 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": true,
-     "resumen": "Sabes si alguien conoce un tema."
+     "resumen": "Sabes si alguien conoce un tema.",
+     "distorsion": [
+      {
+       "urdimbre": 4,
+       "texto": "Lees más a fondo la mente del objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -736,7 +983,13 @@
      "area": "3 m radio",
      "duracion": "1 min/nvl",
      "salvacion": true,
-     "resumen": "Duerme a varios humanoides."
+     "resumen": "Duerme a varios humanoides.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+3 niveles de criaturas afectadas."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -756,7 +1009,13 @@
      "area": "1 objetivo",
      "duracion": "1 asl/nvl",
      "salvacion": true,
-     "resumen": "Provoca Temor."
+     "resumen": "Provoca Temor.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -766,7 +1025,13 @@
      "area": "1 objetivo",
      "duracion": "1 asl/5 fallo",
      "salvacion": true,
-     "resumen": "Deja al objetivo confuso e inactivo."
+     "resumen": "Deja al objetivo confuso e inactivo.",
+     "distorsion": [
+      {
+       "urdimbre": 4,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -786,7 +1051,13 @@
      "area": "1 objetivo",
      "duracion": "1 hora/nvl",
      "salvacion": true,
-     "resumen": "Sugiere una acción al objetivo."
+     "resumen": "Sugiere una acción al objetivo.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "El objetivo olvida quién le dio la sugerencia."
+      }
+     ]
     },
     {
      "urdimbre": 7,
@@ -796,7 +1067,13 @@
      "area": "1 objetivo",
      "duracion": "C",
      "salvacion": true,
-     "resumen": "Deja Retenido a un humanoide."
+     "resumen": "Deja Retenido a un humanoide.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 1 asalto por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 8,
@@ -872,7 +1149,13 @@
      "area": "1 objetivo",
      "duracion": "10 min/nvl",
      "salvacion": false,
-     "resumen": "Visión en la oscuridad."
+     "resumen": "Visión en la oscuridad.",
+     "distorsion": [
+      {
+       "urdimbre": 5,
+       "texto": "Ve 30 m en Oscuridad Absoluta como con Luz Intensa."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -882,7 +1165,21 @@
      "area": "1 objetivo",
      "duracion": "1 asl",
      "salvacion": false,
-     "resumen": "Acciones más rápidas."
+     "resumen": "Acciones más rápidas.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+1 asalto de duración."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "+1 objetivo."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "Sin penalizador al terminar el efecto."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -892,7 +1189,13 @@
      "area": "1 objetivo",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "PG temporales extra."
+     "resumen": "PG temporales extra.",
+     "distorsion": [
+      {
+       "urdimbre": 5,
+       "texto": "Otro cuarto de los PG totales como PG temporales."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -922,7 +1225,13 @@
      "area": "1 objetivo",
      "duracion": "1 asl",
      "salvacion": false,
-     "resumen": "Gran bonificador a FUE y doble daño base cuerpo a cuerpo."
+     "resumen": "Gran bonificador a FUE y doble daño base cuerpo a cuerpo.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+1 asalto de duración."
+      }
+     ]
     },
     {
      "urdimbre": 9,
@@ -967,7 +1276,13 @@
      "area": "hechicero",
      "duracion": "1 asl/nvl",
      "salvacion": false,
-     "resumen": "Bonificador a las tiradas de evaluación."
+     "resumen": "Bonificador a las tiradas de evaluación.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+20 a la DEF contra ataques por sorpresa (una sola vez)."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -977,7 +1292,17 @@
      "area": "hechicero",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Bonificador a la habilidad de Armadura."
+     "resumen": "Bonificador a la habilidad de Armadura.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "+10 al bonificador."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 10 minutos por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -987,7 +1312,13 @@
      "area": "hechicero",
      "duracion": "1 asl/nvl",
      "salvacion": false,
-     "resumen": "Endurece como piedra una zona del cuerpo."
+     "resumen": "Endurece como piedra una zona del cuerpo.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+1 zona del cuerpo."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -1083,7 +1414,21 @@
      "area": "15 m radio",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Detecta objetos mágicos y sortilegios activos."
+     "resumen": "Detecta objetos mágicos y sortilegios activos.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Ubicas cada fuente de magia con 1,5 m de precisión."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "Detecta también magia latente o pasiva."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 1 minuto por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -1093,7 +1438,17 @@
      "area": "hechicero",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Comprende lo básico de un texto extranjero."
+     "resumen": "Comprende lo básico de un texto extranjero.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Funciona también con idiomas hablados."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "Entiendes el texto como si fuera tu lengua materna."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -1103,7 +1458,17 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Detecta siervos oscuros, maldiciones o magia maligna."
+     "resumen": "Detecta siervos oscuros, maldiciones o magia maligna.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Sabes también qué tipo de maldición o magia maligna es."
+      },
+      {
+       "urdimbre": 1,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -1113,7 +1478,17 @@
      "area": "15 m radio",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Percibe criaturas u objetos invisibles."
+     "resumen": "Percibe criaturas u objetos invisibles.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 1 minuto por nivel."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "Ves lo invisible y lo atacas sin penalizador."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -1123,7 +1498,13 @@
      "area": "15 m radio",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Detecta trampas."
+     "resumen": "Detecta trampas.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 1 minuto por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -1133,7 +1514,13 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Lee el aura: Motivación, Naturaleza y Lealtad."
+     "resumen": "Lee el aura: Motivación, Naturaleza y Lealtad.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Revela una Pasión más."
+      }
+     ]
     },
     {
      "urdimbre": 7,
@@ -1143,7 +1530,21 @@
      "area": "1 objetivo",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Encuentra la ruta a algo conocido."
+     "resumen": "Encuentra la ruta a algo conocido.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 1 minuto por nivel."
+      },
+      {
+       "urdimbre": 1,
+       "texto": "Basta con una buena descripción del objetivo."
+      },
+      {
+       "urdimbre": 1,
+       "texto": "+30 m de alcance."
+      }
+     ]
     },
     {
      "urdimbre": 8,
@@ -1153,7 +1554,13 @@
      "area": "15 m radio",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Ve a través de ilusiones, disfraces y ocultaciones."
+     "resumen": "Ve a través de ilusiones, disfraces y ocultaciones.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 1 minuto por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 9,
@@ -1198,7 +1605,13 @@
      "area": "1 objetivo",
      "duracion": "P",
      "salvacion": false,
-     "resumen": "Convierte un bastón en Bastón de Mago."
+     "resumen": "Convierte un bastón en Bastón de Mago.",
+     "distorsion": [
+      {
+       "urdimbre": 5,
+       "texto": "+5 a la ejecución de sortilegios."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -1208,7 +1621,17 @@
      "area": "10 m radio",
      "duracion": "10 min/nvl",
      "salvacion": false,
-     "resumen": "Runa protectora sobre un objeto."
+     "resumen": "Runa protectora sobre un objeto.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+10 m de radio."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "Duración: 1 hora por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -1228,7 +1651,17 @@
      "area": "1 objetivo",
      "duracion": "10 min/nvl",
      "salvacion": false,
-     "resumen": "Runa de buena suerte."
+     "resumen": "Runa de buena suerte.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Duración: 1 hora por nivel."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "+5 al bonificador de la habilidad."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -1238,7 +1671,13 @@
      "area": "1 objetivo",
      "duracion": "varía",
      "salvacion": false,
-     "resumen": "Inscribe un sortilegio en runas para usar después."
+     "resumen": "Inscribe un sortilegio en runas para usar después.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "+1 a la urdimbre máxima del sortilegio inscrito."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -1258,7 +1697,13 @@
      "area": "1 objetivo",
      "duracion": "1 asl/nvl",
      "salvacion": false,
-     "resumen": "Runa que mejora la parada de un arma o escudo."
+     "resumen": "Runa que mejora la parada de un arma o escudo.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "El bonificador de parada vale también contra proyectiles."
+      }
+     ]
     },
     {
      "urdimbre": 8,
@@ -1313,7 +1758,13 @@
      "area": "1 objetivo",
      "duracion": "C",
      "salvacion": true,
-     "resumen": "Penaliza ataques y habilidades del objetivo."
+     "resumen": "Penaliza ataques y habilidades del objetivo.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -1323,7 +1774,13 @@
      "area": "1 objetivo",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Oculta un objeto pequeño como parte de tu cuerpo."
+     "resumen": "Oculta un objeto pequeño como parte de tu cuerpo.",
+     "distorsion": [
+      {
+       "urdimbre": 5,
+       "texto": "Objetos de hasta el tamaño de una espada corta."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -1333,7 +1790,13 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Birla un objeto ligero a distancia."
+     "resumen": "Birla un objeto ligero a distancia.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+3 kg de peso máximo."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -1343,7 +1806,13 @@
      "area": "hechicero",
      "duracion": "1 hora/nvl",
      "salvacion": false,
-     "resumen": "Adoptas la cara y la voz de otro."
+     "resumen": "Adoptas la cara y la voz de otro.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Puedes copiar a alguien concreto visto en las últimas 24 horas (talla parecida a la tuya)."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -1428,7 +1897,13 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Mano gélida que daña al tocar."
+     "resumen": "Mano gélida que daña al tocar.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "+2 m de alcance."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -1438,7 +1913,13 @@
      "area": "1 objetivo",
      "duracion": "1 asl/5 fallo",
      "salvacion": true,
-     "resumen": "Entumece y aletarga a un ser vivo."
+     "resumen": "Entumece y aletarga a un ser vivo.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Penalizador −20 más (máx. −100)."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -1448,7 +1929,17 @@
      "area": "3 m radio",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Enfría el aire de una zona."
+     "resumen": "Enfría el aire de una zona.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+3 m de radio."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "+20 a los ataques de frío dentro del área (una sola vez)."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -1458,7 +1949,13 @@
      "area": "3 m × 3 m × 15 cm",
      "duracion": "1 asl/nvl",
      "salvacion": false,
-     "resumen": "Muro de frío intenso."
+     "resumen": "Muro de frío intenso.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Muro +3 m de largo."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -1468,7 +1965,13 @@
      "area": "1 objetivo",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Protección contra el frío."
+     "resumen": "Protección contra el frío.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -1478,7 +1981,13 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Rayo de escarcha."
+     "resumen": "Rayo de escarcha.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "Rayo de hielo sólido con daño de aplastamiento."
+      }
+     ]
     },
     {
      "urdimbre": 7,
@@ -1488,7 +1997,13 @@
      "area": "6 m radio",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Bola de frío que estalla."
+     "resumen": "Bola de frío que estalla.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+10 m de alcance."
+      }
+     ]
     },
     {
      "urdimbre": 8,
@@ -1508,7 +2023,13 @@
      "area": "cono 15 m x 3 m",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Cono de frío."
+     "resumen": "Cono de frío.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "Cono +2 m de largo."
+      }
+     ]
     },
     {
      "urdimbre": 10,
@@ -1543,7 +2064,17 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Prende un objeto inflamable."
+     "resumen": "Prende un objeto inflamable.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "+2 m de alcance."
+      },
+      {
+       "urdimbre": 1,
+       "texto": "En su lugar, apaga un fuego pequeño (1,5 m de radio)."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -1553,7 +2084,13 @@
      "area": "1 herida",
      "duracion": "P",
      "salvacion": false,
-     "resumen": "Cauteriza hemorragias leves (a costa de daño)."
+     "resumen": "Cauteriza hemorragias leves (a costa de daño).",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Cura hemorragias un grado más graves."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -1563,7 +2100,13 @@
      "area": "cubo de 30 cm/nvl",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Calienta materia inerte al rojo."
+     "resumen": "Calienta materia inerte al rojo.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "Duración: 1 asalto por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -1573,7 +2116,13 @@
      "area": "3 m × 3 m × 15 cm",
      "duracion": "1 asl/nvl",
      "salvacion": false,
-     "resumen": "Muro de fuego."
+     "resumen": "Muro de fuego.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Muro +3 m de largo."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -1583,7 +2132,13 @@
      "area": "1 objetivo",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Protección contra el fuego."
+     "resumen": "Protección contra el fuego.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -1593,7 +2148,17 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Rayo de fuego."
+     "resumen": "Rayo de fuego.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+2 % por punto de daño base de que ardan objetos inflamables."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "+10 m de alcance."
+      }
+     ]
     },
     {
      "urdimbre": 7,
@@ -1603,7 +2168,13 @@
      "area": "1 arma",
      "duracion": "1 asl/nvl",
      "salvacion": false,
-     "resumen": "Envuelve un arma en llamas."
+     "resumen": "Envuelve un arma en llamas.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Crítico adicional un grado más grave (máx. letal)."
+      }
+     ]
     },
     {
      "urdimbre": 8,
@@ -1613,7 +2184,17 @@
      "area": "3 m radio",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Bola de fuego."
+     "resumen": "Bola de fuego.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+2 % por punto de daño base de que ardan objetos inflamables."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "+10 m de alcance."
+      }
+     ]
     },
     {
      "urdimbre": 9,
@@ -1659,7 +2240,13 @@
      "area": "3 m radio",
      "duracion": "10 min/nvl",
      "salvacion": false,
-     "resumen": "Sonido ilusorio."
+     "resumen": "Sonido ilusorio.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "Concentrándote, mueves el origen del sonido."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -1669,7 +2256,13 @@
      "area": "1 objetivo",
      "duracion": "24 horas",
      "salvacion": false,
-     "resumen": "Camufla algo inmóvil."
+     "resumen": "Camufla algo inmóvil.",
+     "distorsion": [
+      {
+       "urdimbre": 4,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -1679,7 +2272,21 @@
      "area": "3 m radio",
      "duracion": "10 min/nvl",
      "salvacion": false,
-     "resumen": "Imagen ilusoria estática."
+     "resumen": "Imagen ilusoria estática.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+3 m de radio."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "+30 m de alcance."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "+10 minutos por nivel de duración."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -1689,7 +2296,17 @@
      "area": "1 objetivo",
      "duracion": "24 horas",
      "salvacion": false,
-     "resumen": "Invisibilidad."
+     "resumen": "Invisibilidad.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "No se rompe al lanzar sortilegios (sí al atacar o ser golpeado)."
+      },
+      {
+       "urdimbre": 4,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -1699,7 +2316,13 @@
      "area": "hechicero",
      "duracion": "1 asl/nvl",
      "salvacion": false,
-     "resumen": "Doble ilusorio del hechicero."
+     "resumen": "Doble ilusorio del hechicero.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+1 señuelo."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -1719,7 +2342,21 @@
      "area": "3 m radio",
      "duracion": "10 min/nvl",
      "salvacion": false,
-     "resumen": "Ilusión con movimiento."
+     "resumen": "Ilusión con movimiento.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+3 m de radio."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "+30 m de alcance."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "+10 minutos por nivel de duración."
+      }
+     ]
     },
     {
      "urdimbre": 8,
@@ -1776,7 +2413,17 @@
      "area": "3 m radio",
      "duracion": "1 hora/nvl",
      "salvacion": false,
-     "resumen": "Luz tenue."
+     "resumen": "Luz tenue.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "La luz sigue a la criatura u objeto sobre el que la lanzas."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "+3 m de radio."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -1796,7 +2443,13 @@
      "area": "5 m radio",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Controla el volumen de los sonidos."
+     "resumen": "Controla el volumen de los sonidos.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+5 m de radio y de alcance."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -1816,7 +2469,17 @@
      "area": "6 m radio",
      "duracion": "1 asl/nvl",
      "salvacion": true,
-     "resumen": "Luces de colores que embelesan."
+     "resumen": "Luces de colores que embelesan.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+3 m de radio."
+      },
+      {
+       "urdimbre": 4,
+       "texto": "Duración: 1 minuto por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -1826,7 +2489,13 @@
      "area": "5 m radio",
      "duracion": "10 min/nvl",
      "salvacion": false,
-     "resumen": "Oscuridad absoluta."
+     "resumen": "Oscuridad absoluta.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+5 m de radio."
+      }
+     ]
     },
     {
      "urdimbre": 7,
@@ -1891,7 +2560,13 @@
      "area": "hechicero",
      "duracion": "1 asl",
      "salvacion": false,
-     "resumen": "Proeza acrobática: saltar, balancearse."
+     "resumen": "Proeza acrobática: saltar, balancearse.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Encadenas otro balanceo en vez de aterrizar."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -1901,7 +2576,13 @@
      "area": "hechicero",
      "duracion": "1 asl",
      "salvacion": false,
-     "resumen": "Gran bonificador al siguiente disparo."
+     "resumen": "Gran bonificador al siguiente disparo.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+10 al bonificador."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -1951,7 +2632,13 @@
      "area": "1,5m radio",
      "duracion": "P",
      "salvacion": false,
-     "resumen": "Trampa mágica de abrojos."
+     "resumen": "Trampa mágica de abrojos.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Quien la active, además, TSF o queda Derribado."
+      }
+     ]
     },
     {
      "urdimbre": 8,
@@ -2026,7 +2713,13 @@
      "area": "hechicero",
      "duracion": "1 asl/nvl",
      "salvacion": false,
-     "resumen": "Bonificador al ataque con el Arma Personal."
+     "resumen": "Bonificador al ataque con el Arma Personal.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+5 al bonificador."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -2036,7 +2729,13 @@
      "area": "hechicero",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Lanzas el Arma Personal a un enemigo."
+     "resumen": "Lanzas el Arma Personal a un enemigo.",
+     "distorsion": [
+      {
+       "urdimbre": 5,
+       "texto": "El arma vuelve a tu mano tras golpear."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -2056,7 +2755,13 @@
      "area": "hechicero",
      "duracion": "1 asl/nvl",
      "salvacion": false,
-     "resumen": "Tu arma cuenta como más larga para el orden de ataque."
+     "resumen": "Tu arma cuenta como más larga para el orden de ataque.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "El arma cuenta un nivel más larga."
+      }
+     ]
     },
     {
      "urdimbre": 7,
@@ -2122,7 +2827,13 @@
      "area": "1 objetivo",
      "duracion": "1 min/nvl",
      "salvacion": true,
-     "resumen": "Hace temblar un objeto ligero."
+     "resumen": "Hace temblar un objeto ligero.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+2 kg de peso máximo."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -2142,7 +2853,17 @@
      "area": "1 objetivo",
      "duracion": "1 min/nvl",
      "salvacion": true,
-     "resumen": "Aumenta la impedimenta del objetivo."
+     "resumen": "Aumenta la impedimenta del objetivo.",
+     "distorsion": [
+      {
+       "urdimbre": 5,
+       "texto": "Un nivel más de impedimenta."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -2152,7 +2873,13 @@
      "area": "1 objetivo",
      "duracion": "C",
      "salvacion": true,
-     "resumen": "Telequinesis de algo ligero."
+     "resumen": "Telequinesis de algo ligero.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+5 kg de peso máximo."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -2162,7 +2889,13 @@
      "area": "1 ataque",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Desvía un proyectil."
+     "resumen": "Desvía un proyectil.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -2182,7 +2915,13 @@
      "area": "1 ataque",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Desvía un ataque cuerpo a cuerpo."
+     "resumen": "Desvía un ataque cuerpo a cuerpo.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 8,
@@ -2237,7 +2976,13 @@
      "area": "10 l/nvl",
      "duracion": "P",
      "salvacion": false,
-     "resumen": "Brota agua potable."
+     "resumen": "Brota agua potable.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "El agua refresca y reanima."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -2257,7 +3002,13 @@
      "area": "3 m × 3 m × 15 cm",
      "duracion": "1 asl/nvl",
      "salvacion": false,
-     "resumen": "Muro de agua."
+     "resumen": "Muro de agua.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Muro +3 m de largo."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -2267,7 +3018,17 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Chorro de agua a presión."
+     "resumen": "Chorro de agua a presión.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Con crítico, Atletismo difícil (−20) o Derribado (una sola vez)."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "+10 m de alcance."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -2277,7 +3038,13 @@
      "area": "6 m radio",
      "duracion": "1 asl/nvl",
      "salvacion": false,
-     "resumen": "Lluvia torrencial."
+     "resumen": "Lluvia torrencial.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "+10 m de radio."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -2287,7 +3054,13 @@
      "area": "30 m³",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Abre un corredor en el agua."
+     "resumen": "Abre un corredor en el agua.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+10 m³ de radio."
+      }
+     ]
     },
     {
      "urdimbre": 7,
@@ -2297,7 +3070,13 @@
      "area": "3 m × 3 m × 6 m",
      "duracion": "-",
      "salvacion": true,
-     "resumen": "Ola rompiente."
+     "resumen": "Ola rompiente.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Ola +3 m de largo."
+      }
+     ]
     },
     {
      "urdimbre": 8,
@@ -2307,7 +3086,13 @@
      "area": "6 m radio",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Remolino."
+     "resumen": "Remolino.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+10 m de alcance."
+      }
+     ]
     },
     {
      "urdimbre": 9,
@@ -2362,7 +3147,13 @@
      "area": "1 objetivo",
      "duracion": "P",
      "salvacion": false,
-     "resumen": "Bendice una Rama Sagrada personal."
+     "resumen": "Bendice una Rama Sagrada personal.",
+     "distorsion": [
+      {
+       "urdimbre": 5,
+       "texto": "+5 a DEF y TS."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -2372,7 +3163,13 @@
      "area": "10 l/nvl",
      "duracion": "P",
      "salvacion": false,
-     "resumen": "Brota agua potable."
+     "resumen": "Brota agua potable.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "El agua refresca y reanima."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -2382,7 +3179,13 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Repara un objeto roto."
+     "resumen": "Repara un objeto roto.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+2,5 kg de peso máximo."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -2392,7 +3195,17 @@
      "area": "1 objetivo",
      "duracion": "10 min/nvl",
      "salvacion": false,
-     "resumen": "Crea un duplicado de madera de un objeto."
+     "resumen": "Crea un duplicado de madera de un objeto.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+2,5 kg de peso máximo."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 1 hora por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -2402,7 +3215,13 @@
      "area": "hechicero",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Espíritus traen un banquete."
+     "resumen": "Espíritus traen un banquete.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "Comida para un compañero más."
+      }
+     ]
     },
     {
      "urdimbre": 7,
@@ -2468,7 +3287,17 @@
      "area": "1 objetivo",
      "duracion": "1 asl/nvl",
      "salvacion": false,
-     "resumen": "Vuelve quebradizo un objeto de piedra o metal."
+     "resumen": "Vuelve quebradizo un objeto de piedra o metal.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "+3 m de alcance."
+      },
+      {
+       "urdimbre": 1,
+       "texto": "+3 kg de peso máximo."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -2488,7 +3317,13 @@
      "area": "1 cristal",
      "duracion": "24 horas",
      "salvacion": false,
-     "resumen": "Crea un cristal de poder mágico."
+     "resumen": "Crea un cristal de poder mágico.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "El cristal guarda 1 PM más."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -2498,7 +3333,21 @@
      "area": "3 m × 3 m × 15 cm",
      "duracion": "1 asl/nvl",
      "salvacion": false,
-     "resumen": "Muro de tierra."
+     "resumen": "Muro de tierra.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Muro de piedra maciza en vez de tierra."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "Muro +3 m de largo."
+      },
+      {
+       "urdimbre": 4,
+       "texto": "Duración: permanente."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -2508,7 +3357,13 @@
      "area": "cono 3 m",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Andanada de esquirlas de piedra."
+     "resumen": "Andanada de esquirlas de piedra.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "Cono +2 m de largo."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -2518,7 +3373,17 @@
      "area": "3 m × 3 m × 3 m",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Abre un foso."
+     "resumen": "Abre un foso.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Foso +3 m de largo."
+      },
+      {
+       "urdimbre": 4,
+       "texto": "Duración: permanente."
+      }
+     ]
     },
     {
      "urdimbre": 7,
@@ -2583,7 +3448,13 @@
      "area": "1 objetivo",
      "duracion": "1 asl",
      "salvacion": false,
-     "resumen": "Salto prodigioso."
+     "resumen": "Salto prodigioso.",
+     "distorsion": [
+      {
+       "urdimbre": 4,
+       "texto": "Un salto más en la misma acción."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -2593,7 +3464,13 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Caída lenta sin daño."
+     "resumen": "Caída lenta sin daño.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -2603,7 +3480,13 @@
      "area": "1 objetivo",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Trepa cualquier superficie."
+     "resumen": "Trepa cualquier superficie.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Duración: 10 minutos por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -2613,7 +3496,13 @@
      "area": "1 objetivo",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Levitar."
+     "resumen": "Levitar.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Duración: 10 minutos por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -2623,7 +3512,13 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": true,
-     "resumen": "Teletransporte corto."
+     "resumen": "Teletransporte corto.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+10 m de distancia de llegada."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -2643,7 +3538,13 @@
      "area": "1 objetivo",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Volar."
+     "resumen": "Volar.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+20 m por asalto de vuelo."
+      }
+     ]
     },
     {
      "urdimbre": 8,
@@ -2709,7 +3610,13 @@
      "area": "hechicero",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Camina por ramas."
+     "resumen": "Camina por ramas.",
+     "distorsion": [
+      {
+       "urdimbre": 4,
+       "texto": "También puedes esprintar."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -2729,7 +3636,13 @@
      "area": "hechicero",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Respira bajo el agua."
+     "resumen": "Respira bajo el agua.",
+     "distorsion": [
+      {
+       "urdimbre": 4,
+       "texto": "Duración: 10 minutos por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -2739,7 +3652,17 @@
      "area": "hechicero",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Camina sobre el agua."
+     "resumen": "Camina sobre el agua.",
+     "distorsion": [
+      {
+       "urdimbre": 4,
+       "texto": "También puedes esprintar."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "Las aguas agitadas cuentan como terreno normal, sin tirar Atletismo."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -2814,7 +3737,13 @@
      "area": "hechicero",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Bonificador a Carisma."
+     "resumen": "Bonificador a Carisma.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 10 minutos por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -2824,7 +3753,13 @@
      "area": "6 m radio",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Aliados repiten TS contra efectos que les afecten."
+     "resumen": "Aliados repiten TS contra efectos que les afecten.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+10 a esa TS para los afectados."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -2834,7 +3769,13 @@
      "area": "6 m radio",
      "duracion": "1 asl/nvl",
      "salvacion": false,
-     "resumen": "Aliados en formación ganan DEF y ataque."
+     "resumen": "Aliados en formación ganan DEF y ataque.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+5 al bonificador."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -2864,7 +3805,13 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Un aliado se reposiciona gratis."
+     "resumen": "Un aliado se reposiciona gratis.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 7,
@@ -2969,7 +3916,13 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Lesión persistente pasa a normal."
+     "resumen": "Lesión persistente pasa a normal.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -3045,7 +3998,17 @@
      "area": "3 m radio",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Bonificador contra el miedo para el grupo."
+     "resumen": "Bonificador contra el miedo para el grupo.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+3 m de radio."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 1 asalto por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -3055,7 +4018,13 @@
      "area": "1 objetivo",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Protege del calor o frío extremos."
+     "resumen": "Protege del calor o frío extremos.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 10 minutos por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -3085,7 +4054,17 @@
      "area": "3 m radio",
      "duracion": "C",
      "salvacion": true,
-     "resumen": "Protección contra la magia hostil."
+     "resumen": "Protección contra la magia hostil.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+3 m de radio."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 1 asalto por nivel del hechicero."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -3095,7 +4074,17 @@
      "area": "3 m radio",
      "duracion": "C",
      "salvacion": true,
-     "resumen": "Bonificador a defensa y TS para el grupo."
+     "resumen": "Bonificador a defensa y TS para el grupo.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+3 m de radio."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 1 asalto por nivel del hechicero."
+      }
+     ]
     },
     {
      "urdimbre": 7,
@@ -3160,7 +4149,13 @@
      "area": "3 m radio",
      "duracion": "1 hora/nvl",
      "salvacion": false,
-     "resumen": "Alarma mágica en una zona."
+     "resumen": "Alarma mágica en una zona.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "Una persona por nivel no dispara la alarma."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -3170,7 +4165,17 @@
      "area": "1 objetivo",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Cierra mágicamente una puerta o recipiente."
+     "resumen": "Cierra mágicamente una puerta o recipiente.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Duración: 1 hora por nivel."
+      },
+      {
+       "urdimbre": 5,
+       "texto": "Duración: 1 día por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -3180,7 +4185,13 @@
      "area": "1 sortilegio",
      "duracion": "1 asl",
      "salvacion": true,
-     "resumen": "Contiene un efecto mágico."
+     "resumen": "Contiene un efecto mágico.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+1 asalto de duración."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -3275,7 +4286,17 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Recupera algo de PG."
+     "resumen": "Recupera algo de PG.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "Otro 10 % de PG, con un minuto más de espera."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "Curación instantánea."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -3285,7 +4306,13 @@
      "area": "1 herida",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Reduce la hemorragia."
+     "resumen": "Reduce la hemorragia.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "−1 PG por asalto de hemorragia más."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -3305,7 +4332,13 @@
      "area": "1 lesión",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Acelera la recuperación de una lesión leve."
+     "resumen": "Acelera la recuperación de una lesión leve.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Lesiones un grado más graves."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -3315,7 +4348,13 @@
      "area": "1 objetivo",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Recupera PG cada asalto."
+     "resumen": "Recupera PG cada asalto.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+1 PG por asalto."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -3390,7 +4429,17 @@
      "area": "6 m radio",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Sabe si algo se oculta en la zona."
+     "resumen": "Sabe si algo se oculta en la zona.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 1 minuto por nivel."
+      },
+      {
+       "urdimbre": 4,
+       "texto": "Intuyes qué se oculta (criatura, objeto, pasadizo…)."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -3400,7 +4449,21 @@
      "area": "1 objetivo",
      "duracion": "1 hora/nvl",
      "salvacion": false,
-     "resumen": "Símbolo secreto."
+     "resumen": "Símbolo secreto.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 1 día por nivel."
+      },
+      {
+       "urdimbre": 4,
+       "texto": "Duración: 1 mes por nivel."
+      },
+      {
+       "urdimbre": 6,
+       "texto": "Duración: permanente."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -3410,7 +4473,13 @@
      "area": "1 objetivo",
      "duracion": "10 min/nvl",
      "salvacion": false,
-     "resumen": "El objetivo cree que llevas una credencial."
+     "resumen": "El objetivo cree que llevas una credencial.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -3420,7 +4489,13 @@
      "area": "6 m radio",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Dificulta encontrar lo oculto en la zona."
+     "resumen": "Dificulta encontrar lo oculto en la zona.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 10 minutos por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -3430,7 +4505,17 @@
      "area": "1 objetivo",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Rastrea al autor de un sortilegio."
+     "resumen": "Rastrea al autor de un sortilegio.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 1 minuto por nivel."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "Sabes la posición exacta del autor."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -3450,7 +4535,17 @@
      "area": "1 objetivo",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Ruta exacta a algo concreto."
+     "resumen": "Ruta exacta a algo concreto.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 1 minuto por nivel."
+      },
+      {
+       "urdimbre": 1,
+       "texto": "+30 m de alcance."
+      }
+     ]
     },
     {
      "urdimbre": 8,
@@ -3506,7 +4601,13 @@
      "area": "hechicero",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Camuflaje en la vegetación."
+     "resumen": "Camuflaje en la vegetación.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Duración: 10 minutos por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -3516,7 +4617,13 @@
      "area": "hechicero",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Rastreo como un sabueso."
+     "resumen": "Rastreo como un sabueso.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Duración: 10 minutos por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -3526,7 +4633,17 @@
      "area": "hechicero",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Visión nocturna."
+     "resumen": "Visión nocturna.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Duración: 10 minutos por nivel."
+      },
+      {
+       "urdimbre": 5,
+       "texto": "Ve 30 m en Oscuridad Absoluta como con Luz Intensa."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -3536,7 +4653,13 @@
      "area": "hechicero",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Aspecto de árbol mientras no te mueves."
+     "resumen": "Aspecto de árbol mientras no te mueves.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Duración: 10 minutos por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -3546,7 +4669,13 @@
      "area": "hechicero",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Astucia del zorro."
+     "resumen": "Astucia del zorro.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Duración: 10 minutos por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -3556,7 +4685,17 @@
      "area": "hechicero",
      "duracion": "1 asl/nvl",
      "salvacion": false,
-     "resumen": "Garras de bestia."
+     "resumen": "Garras de bestia.",
+     "distorsion": [
+      {
+       "urdimbre": 4,
+       "texto": "Duración: 1 minuto por nivel."
+      },
+      {
+       "urdimbre": 1,
+       "texto": "+10 al resultado máximo de tus garras (máx. 150)."
+      }
+     ]
     },
     {
      "urdimbre": 7,
@@ -3566,7 +4705,13 @@
      "area": "hechicero",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Aspecto de un animal."
+     "resumen": "Aspecto de un animal.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Duración: 10 minutos por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 8,
@@ -3632,7 +4777,13 @@
      "area": "3 m radio",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Percibe trampas cerca."
+     "resumen": "Percibe trampas cerca.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Duración: 1 minuto por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -3682,7 +4833,13 @@
      "area": "1 objetivo",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "No dejas rastro."
+     "resumen": "No dejas rastro.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 8,
@@ -3737,7 +4894,17 @@
      "area": "10 m radio",
      "duracion": "1 asl/nvl",
      "salvacion": false,
-     "resumen": "La vegetación estorba a los enemigos."
+     "resumen": "La vegetación estorba a los enemigos.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+10 m de radio."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 1 minuto por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -3747,7 +4914,17 @@
      "area": "hechicero",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Hablar con las plantas."
+     "resumen": "Hablar con las plantas.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 10 minutos por nivel."
+      },
+      {
+       "urdimbre": 5,
+       "texto": "Una planta consciente cumple una orden no suicida."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -3757,7 +4934,13 @@
      "area": "1 hierba",
      "duracion": "P",
      "salvacion": false,
-     "resumen": "Duplica el efecto de una hierba curativa."
+     "resumen": "Duplica el efecto de una hierba curativa.",
+     "distorsion": [
+      {
+       "urdimbre": 5,
+       "texto": "Triplica el efecto de la dosis."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -3777,7 +4960,13 @@
      "area": "1,5 km radio",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Localiza una planta concreta."
+     "resumen": "Localiza una planta concreta.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+1,5 km de radio."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -3787,7 +4976,17 @@
      "area": "1 planta",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Elimina efectos dañinos de una planta."
+     "resumen": "Elimina efectos dañinos de una planta.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+1 objetivo."
+      },
+      {
+       "urdimbre": 1,
+       "texto": "Disipa además la magia dañina que afecte a la planta."
+      }
+     ]
     },
     {
      "urdimbre": 7,
@@ -3852,7 +5051,13 @@
      "area": "1 animal",
      "duracion": "1 min/nvl",
      "salvacion": true,
-     "resumen": "Duerme a un animal."
+     "resumen": "Duerme a un animal.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+1 animal."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -3862,7 +5067,13 @@
      "area": "hechicero",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Hablar con animales."
+     "resumen": "Hablar con animales.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 10 minutos por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -3882,7 +5093,21 @@
      "area": "1 animal",
      "duracion": "1 min",
      "salvacion": false,
-     "resumen": "Convoca un animal cercano."
+     "resumen": "Convoca un animal cercano.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+1 minuto de duración."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "+1 al nivel máximo de lo invocado."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "+1 criatura invocada."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -3892,7 +5117,13 @@
      "area": "1 animal",
      "duracion": "C",
      "salvacion": true,
-     "resumen": "Controla a un animal."
+     "resumen": "Controla a un animal.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+1 animal."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -3902,7 +5133,13 @@
      "area": "1 animal",
      "duracion": "1 asl/5 fallo",
      "salvacion": true,
-     "resumen": "Retiene a un animal."
+     "resumen": "Retiene a un animal.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+1 animal."
+      }
+     ]
     },
     {
      "urdimbre": 7,
@@ -3967,7 +5204,13 @@
      "area": "cono 6 m",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Brisa intensa."
+     "resumen": "Brisa intensa.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Cono +3 m de largo."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -3977,7 +5220,13 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Arco eléctrico."
+     "resumen": "Arco eléctrico.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+10 m de alcance."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -3987,7 +5236,17 @@
      "area": "3 m × 3 m × 15 cm",
      "duracion": "1 asl/nvl",
      "salvacion": false,
-     "resumen": "Muro de viento."
+     "resumen": "Muro de viento.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Muro +3 m de largo."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "Muro de nubes eléctricas en vez de viento."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -3997,7 +5256,21 @@
      "area": "1,5 m radio",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Nube de descargas."
+     "resumen": "Nube de descargas.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+1,5 m de radio."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 1 asalto por nivel."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "Crítico un grado más grave (máx. letal)."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -4007,7 +5280,17 @@
      "area": "3 m radio",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Burbuja de calma contra el viento."
+     "resumen": "Burbuja de calma contra el viento.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 1 asalto por nivel."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "+3 m de radio."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -4027,7 +5310,13 @@
      "area": "1 arma",
      "duracion": "1 asl/nvl",
      "salvacion": false,
-     "resumen": "Arma cargada de electricidad."
+     "resumen": "Arma cargada de electricidad.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Crítico adicional un grado más grave (máx. letal)."
+      }
+     ]
     },
     {
      "urdimbre": 8,
@@ -4037,7 +5326,13 @@
      "area": "3 m radio",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Bola de relámpagos."
+     "resumen": "Bola de relámpagos.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+10 m de alcance."
+      }
+     ]
     },
     {
      "urdimbre": 9,
@@ -4082,7 +5377,13 @@
      "area": "1 objetivo",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Ves por los ojos de un animal."
+     "resumen": "Ves por los ojos de un animal.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "+30 m de alcance."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -4092,7 +5393,17 @@
      "area": "6 m radio",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Percibes cuántos seres racionales hay y dónde."
+     "resumen": "Percibes cuántos seres racionales hay y dónde.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "Duración: 1 asalto por nivel."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "+3 m de radio."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -4102,7 +5413,13 @@
      "area": "1 objetivo",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Oyes desde un punto lejano."
+     "resumen": "Oyes desde un punto lejano.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "+3 m de alcance."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -4122,7 +5439,13 @@
      "area": "1 objetivo",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Ves desde un punto lejano."
+     "resumen": "Ves desde un punto lejano.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "+3 m de alcance."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -4195,7 +5518,13 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": true,
-     "resumen": "Dolor que inflige daño."
+     "resumen": "Dolor que inflige daño.",
+     "distorsion": [
+      {
+       "urdimbre": 5,
+       "texto": "Daño igual a su valor de Magullado (una sola vez)."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -4205,7 +5534,21 @@
      "area": "hechicero",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Hablar con siervos del Señor de las Tinieblas."
+     "resumen": "Hablar con siervos del Señor de las Tinieblas.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Duración: 10 minutos por nivel."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "Habla con cualquier criatura inteligente."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "Concentrándote, una pregunta por asalto a un siervo oscuro; debe decir la verdad si falla una TSV (una sola vez)."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -4225,7 +5568,13 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Inflige un crítico leve."
+     "resumen": "Inflige un crítico leve.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Crítico un grado más grave (máx. letal)."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -4235,7 +5584,21 @@
      "area": "1 demonio",
      "duracion": "1 hora/nvl",
      "salvacion": true,
-     "resumen": "Invoca un demonio."
+     "resumen": "Invoca un demonio.",
+     "distorsion": [
+      {
+       "urdimbre": 3,
+       "texto": "Duración: 1 día por nivel."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "Invoca un licántropo."
+      },
+      {
+       "urdimbre": 5,
+       "texto": "Invoca un vampiro."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -4245,7 +5608,13 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Relámpago negro."
+     "resumen": "Relámpago negro.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+10 m de alcance."
+      }
+     ]
     },
     {
      "urdimbre": 7,
@@ -4265,7 +5634,13 @@
      "area": "cono 15 m × 6 m",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Aliento cáustico."
+     "resumen": "Aliento cáustico.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "Cono +2 m de largo."
+      }
+     ]
     },
     {
      "urdimbre": 9,
@@ -4308,7 +5683,21 @@
      "area": "1 objetivo",
      "duracion": "C",
      "salvacion": false,
-     "resumen": "Habla con espíritus o muertos vivientes."
+     "resumen": "Habla con espíritus o muertos vivientes.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "+1 objetivo."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "El espíritu no te ataca salvo que lo ataques (a tus aliados sí)."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "Duración: 1 minuto por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 2,
@@ -4318,7 +5707,17 @@
      "area": "1 objetivo",
      "duracion": "1 min/nvl",
      "salvacion": false,
-     "resumen": "Anima brevemente un cadáver."
+     "resumen": "Anima brevemente un cadáver.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "+1 objetivo."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "Puede animar cadáveres Grandes."
+      }
+     ]
     },
     {
      "urdimbre": 3,
@@ -4328,7 +5727,13 @@
      "area": "1 objetivo",
      "duracion": "P",
      "salvacion": true,
-     "resumen": "Domina a un muerto viviente."
+     "resumen": "Domina a un muerto viviente.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 4,
@@ -4338,7 +5743,17 @@
      "area": "1 objetivo",
      "duracion": "-",
      "salvacion": false,
-     "resumen": "Una sombra de un muerto responde."
+     "resumen": "Una sombra de un muerto responde.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "La sombra revela un dato más."
+      },
+      {
+       "urdimbre": 3,
+       "texto": "Puedes llamar a muertos de hasta 10 años por nivel."
+      }
+     ]
     },
     {
      "urdimbre": 5,
@@ -4348,7 +5763,21 @@
      "area": "1 objetivo",
      "duracion": "P",
      "salvacion": false,
-     "resumen": "Alza un esclavo muerto viviente."
+     "resumen": "Alza un esclavo muerto viviente.",
+     "distorsion": [
+      {
+       "urdimbre": 1,
+       "texto": "El esclavo sube 1 nivel (+5 a PG y BC)."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "+1 objetivo."
+      },
+      {
+       "urdimbre": 2,
+       "texto": "Puede animar cadáveres Grandes."
+      }
+     ]
     },
     {
      "urdimbre": 6,
@@ -4358,7 +5787,13 @@
      "area": "1 objetivo",
      "duracion": "C",
      "salvacion": true,
-     "resumen": "Drena la vida del objetivo."
+     "resumen": "Drena la vida del objetivo.",
+     "distorsion": [
+      {
+       "urdimbre": 2,
+       "texto": "+1 objetivo."
+      }
+     ]
     },
     {
      "urdimbre": 7,

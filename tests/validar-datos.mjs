@@ -12,6 +12,7 @@ const voc = leer('vocaciones.json');
 const tra = leer('trasfondos.json');
 const esc = leer('escuelas.json');
 const eq = leer('equipo.json');
+const atu = leer('atuendo_equipo.json');
 
 const errores = [];
 const err = (m) => errores.push(m);
@@ -89,6 +90,14 @@ for (const e of esc.escuelas) {
 }
 for (const e of esc.comunes) if (!ESC.has(e)) err(`escuelas comunes: ${e}`);
 
+const ARMAS = new Set(eq.armas.lista.map((a) => a.id));
+const PROT = new Set(eq.armaduras.lista.map((a) => a.id));
+const OPC_ATUENDO = new Set(cul.culturas.flatMap((c) => c.atuendo.flatMap((l) => l.opciones)));
+for (const [texto, m] of Object.entries(atu.opciones)) {
+  if (!OPC_ATUENDO.has(texto)) err(`atuendo_equipo: «${texto}» no es una opción de atuendo`);
+  for (const x of m.armas || []) for (const id of x.elige || [x]) if (!ARMAS.has(id)) err(`atuendo_equipo «${texto}»: arma ${id}`);
+  for (const id of m.proteccion || []) if (!PROT.has(id)) err(`atuendo_equipo «${texto}»: protección ${id}`);
+}
 for (const a of eq.armas.lista) for (const h of a.habilidades) if (!HAB.has(h.habilidad)) err(`arma ${a.id}: habilidad ${h.habilidad}`);
 
 const r = tab.bonificador_por_rango.tramos;

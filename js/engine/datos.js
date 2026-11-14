@@ -1,6 +1,6 @@
 // Carga e indexado de los JSON de data/. El motor solo trabaja con el objeto indexado.
 
-export const ARCHIVOS = ['caracteristicas', 'habilidades', 'tablas', 'linajes', 'culturas', 'vocaciones', 'trasfondos', 'escuelas', 'equipo'];
+export const ARCHIVOS = ['caracteristicas', 'habilidades', 'tablas', 'linajes', 'culturas', 'vocaciones', 'trasfondos', 'escuelas', 'equipo', 'atuendo_equipo'];
 
 /** Carga los JSON en el navegador. `base` es la URL de la carpeta data/. */
 export async function cargarDatos(base = './data/') {
@@ -38,6 +38,7 @@ export function indexarDatos(raw) {
     caracteristicaPM: raw.vocaciones.caracteristica_pm,
     nivelesRiqueza: raw.equipo.riqueza.niveles,
     tablaLinajeCultura: raw.culturas.linaje_cultura_aleatorios,
+    atuendoEquipo: raw.atuendo_equipo.opciones,
   };
   /** Tipo de un id: 'habilidad' | 'especializada' | 'escuela' | null */
   D.tipo = (id) => (habilidades.has(id) ? 'habilidad' : especializadas.has(id) ? 'especializada' : escuelas.has(id) ? 'escuela' : null);
