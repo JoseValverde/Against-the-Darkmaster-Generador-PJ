@@ -6,7 +6,7 @@
 |---|---|
 | Modo de creación | Asistente por los 7 pasos de la guía, con "aleatorio" en cada paso y PJ completo de un clic |
 | Alcance de reglas | Núcleo de la guía + magia completa (escuelas y sortilegios) + armas y armaduras + subida de nivel |
-| Salida | Hoja imprimible propia (A4, 3 páginas) · relleno del PDF oficial de la hoja (libre) · guardar/cargar |
+| Salida | Hoja imprimible propia (A4, 3 páginas + grimorio) · guardar/cargar. Relleno del PDF oficial descartado |
 | Opcionales | Mejores de doce · Fortuna favorece al osado · Velocidad variable · Habilidades especializadas |
 | Configuración de mesa | El DJ fija método, linajes permitidos y opcionales; se comparte por enlace |
 | Trasfondos | Efectos numéricos automáticos; lo narrativo queda como recordatorio |
@@ -31,7 +31,6 @@ Generador pj - Against the Darkmaster/
   js/
     engine/       reglas puras: cálculos, validación, aleatorio
     ui/           pasos del asistente, hoja, biblioteca
-    pdf/          relleno de la hoja oficial (pdf-lib)
   data/           JSON: linajes, culturas, vocaciones, habilidades,
                   trasfondos, escuelas y sortilegios, armas, armaduras, tablas
   assets/         hoja-pj.pdf (libre), fuentes, iconos
@@ -78,9 +77,8 @@ errores esperados y 400 PJ aleatorios válidos.
 ### 5 · Subida de nivel — ✅ hecha
 - PD por nivel, PM por nivel, PX y Próx. nvl., TS que crecen con el nivel, historial de qué se compró en cada nivel.
 
-### 6 · Salidas
+### 6 · Salidas — ✅ hecha (sin relleno del PDF oficial, descartado)
 - Hoja imprimible HTML que replica la estructura de las 3 páginas (A4, también "Guardar como PDF").
-- Relleno del PDF oficial: escribir los datos encima de la hoja con pdf-lib, en el navegador.
 - Biblioteca de personajes en el navegador + exportar/importar JSON.
 
 ### 7 · Acabado
@@ -93,9 +91,8 @@ errores esperados y 400 PJ aleatorios válidos.
 
 1. **Primer PJ válido de nivel 1** (fases 0–3 con núcleo de la guía) → ya usable.
 2. **PJ completo** (fase 4 + hoja imprimible + guardar) → listo para mesa.
-3. **Versión 1** (subida de nivel + PDF oficial + publicación).
+3. **Versión 1** (subida de nivel + publicación).
 
 ## Riesgos conocidos
 - Tablas del PDF que se extraen desordenadas → verificación visual página a página.
 - Trasfondos con efectos muy variados → algunos quedarán como recordatorio manual.
-- Relleno del PDF oficial → hay que calibrar posiciones campo a campo.

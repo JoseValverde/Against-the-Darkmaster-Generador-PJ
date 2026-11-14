@@ -39,7 +39,7 @@ que construir sobre algo ya decidido.**
 | 3 · Asistente (UI) | Sonnet | Interfaz sobre un motor ya probado |
 | 4 · Magia y equipo | Opus para extraer datos · Sonnet para la UI | Mixta |
 | 5 · Subida de nivel | Opus | Reglas de progresión |
-| 6 · Salidas (hoja, PDF, guardado) | Sonnet (Opus si calibrar el PDF oficial se complica) | Construcción |
+| 6 · Salidas (hoja, guardado) | Sonnet | Construcción |
 | 7 · Acabado visual | Sonnet | Interfaz |
 | 8 · Publicación | Sonnet | Rutina |
 
@@ -83,8 +83,8 @@ Subagentes con otro modelo solo si el usuario lo pide.
 ### Salidas
 - **Hoja imprimible propia** (HTML, A4, estructura de las 3 páginas de la hoja
   oficial; también "Guardar como PDF" del navegador).
-- **Relleno del PDF oficial** de la hoja: escribir los datos encima con pdf-lib
-  en el navegador. El PDF es una imagen sin campos: hay que calibrar coordenadas.
+- ~~Relleno del PDF oficial~~: **descartado por el usuario** (noviembre 2026). La hoja
+  imprimible propia es la salida en papel/PDF; no retomarlo salvo que lo pida.
 - **Guardar/cargar**: biblioteca en el navegador (localStorage, siempre dentro de
   try/catch) + exportar/importar JSON. Sin cuentas, sin servidor, sin datos personales.
 
@@ -160,7 +160,7 @@ confianza (las cuentas están bien), ganas de jugar.
 ## Tecnología y publicación
 
 - **HTML + CSS + JavaScript sin build** (módulos ES), datos de reglas en **JSON**.
-  Sin npm en producción. pdf-lib desde CDN con versión exacta (o copiada en el repo).
+  Sin npm en producción ni librerías externas.
 - **GitHub Pages** (gratis). El repo de GitHub es el respaldo.
   - El usuario ya tiene cuenta y un repo **vacío** llamado
     "Against the Darkmaster - Generador de PJ". Pedir la URL exacta antes de
@@ -176,7 +176,6 @@ index.html
 css/        estilos, tema claro/oscuro, impresión
 js/engine/  reglas puras: cálculos, validación, aleatorio (sin DOM)
 js/ui/      pasos del asistente, hoja, biblioteca
-js/pdf/     relleno de la hoja oficial
 data/       JSON de reglas
 assets/     hoja-pj.pdf, fuentes, iconos
 tests/      pruebas del motor
@@ -374,18 +373,11 @@ página del PDF de la Guía (pág. impresa 14 = página 3 del PDF).
     rombo como en la hoja, Revelaciones) y la lista de logros. Resumen con nivel y PX.
   - `app.js` captura errores al pintar un paso y muestra un aviso en vez de
     dejarlo en blanco.
-- [~] Fase 6 (salidas), **a medias**:
-  - Hecho: `js/ui/biblioteca.js` (botón «Mis personajes»: guardar/abrir/duplicar/
-    borrar con deshacer en localStorage `vsd-biblioteca`, exportar/importar JSON)
-    y `js/ui/hoja.js` (botón «Ver hoja»: 3 páginas A4 con la estructura oficial +
-    grimorio, imprimir o guardar PDF desde el navegador; estilos `.h-*` al final
-    de `estilos.css`). Probado solo por encima: falta revisar a fondo la hoja con
-    un PJ completo, impresión real y móvil.
-  - Pendiente: relleno del PDF oficial (`assets/hoja-pj.pdf`, solo imagen) con
-    pdf-lib desde CDN con versión exacta; calibrar coordenadas con PyMuPDF
-    (rejilla sobre la página renderizada, probar con Syndel) y pasarlas a
-    `js/pdf/campos.js`; botón «PDF oficial rellenado» en la barra de la hoja
-    (`pintarHoja` ya acepta `alPdfOficial`).
+- [x] Fase 6 (salidas): `js/ui/biblioteca.js` («Mis personajes»: guardar/abrir/
+  duplicar/borrar con deshacer en localStorage `vsd-biblioteca`, exportar/importar
+  JSON) y `js/ui/hoja.js` («Ver hoja»: 3 páginas A4 con la estructura oficial +
+  grimorio; imprimir o guardar PDF desde el navegador; estilos `.h-*`). El usuario
+  la probó en local y funciona. El relleno del PDF oficial se descartó.
 - [ ] Fase 7 (acabado; alojar fuentes) y 8 (GitHub Pages): ver PLAN.md.
 
 Actualiza esta sección al cerrar cada fase.
