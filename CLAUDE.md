@@ -374,6 +374,18 @@ página del PDF de la Guía (pág. impresa 14 = página 3 del PDF).
     rombo como en la hoja, Revelaciones) y la lista de logros. Resumen con nivel y PX.
   - `app.js` captura errores al pintar un paso y muestra un aviso en vez de
     dejarlo en blanco.
-- [ ] Fase 6 en adelante: ver PLAN.md.
+- [~] Fase 6 (salidas), **a medias**:
+  - Hecho: `js/ui/biblioteca.js` (botón «Mis personajes»: guardar/abrir/duplicar/
+    borrar con deshacer en localStorage `vsd-biblioteca`, exportar/importar JSON)
+    y `js/ui/hoja.js` (botón «Ver hoja»: 3 páginas A4 con la estructura oficial +
+    grimorio, imprimir o guardar PDF desde el navegador; estilos `.h-*` al final
+    de `estilos.css`). Probado solo por encima: falta revisar a fondo la hoja con
+    un PJ completo, impresión real y móvil.
+  - Pendiente: relleno del PDF oficial (`assets/hoja-pj.pdf`, solo imagen) con
+    pdf-lib desde CDN con versión exacta; calibrar coordenadas con PyMuPDF
+    (rejilla sobre la página renderizada, probar con Syndel) y pasarlas a
+    `js/pdf/campos.js`; botón «PDF oficial rellenado» en la barra de la hoja
+    (`pintarHoja` ya acepta `alPdfOficial`).
+- [ ] Fase 7 (acabado; alojar fuentes) y 8 (GitHub Pages): ver PLAN.md.
 
 Actualiza esta sección al cerrar cada fase.

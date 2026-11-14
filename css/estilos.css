@@ -426,3 +426,65 @@ select:hover, input[type="text"]:hover, textarea:hover { border-color: var(--tin
 .hito.lleno::before { background: var(--rubrica); border-color: var(--rubrica); }
 .logros { margin-top: var(--space-md); }
 .logros summary { cursor: pointer; font-size: var(--t-s); color: var(--tinta-2); margin-bottom: var(--space-sm); }
+
+/* Biblioteca de personajes */
+.lista-pjs { list-style: none; margin: var(--space-lg) 0 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--linea); max-width: 900px; }
+.lista-pjs li { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-sm) var(--space-md); padding: var(--space-sm) 0; border-bottom: 1px solid var(--linea); }
+.lista-pjs li.actual b { color: var(--rubrica); }
+.lista-pjs b { font-family: var(--f-titulo); font-weight: 400; font-size: var(--t-l); }
+.lista-pjs small { display: block; color: var(--tinta-2); font-size: var(--t-xs); }
+.lista-pjs-acciones { display: flex; gap: var(--space-xs); }
+label.btn { position: relative; }
+
+/* ---------- Hoja imprimible (fase 6) ---------- */
+body.modo-hoja .marco, body.modo-hoja .mesa, body.modo-hoja .pie { display: none !important; }
+.vista-hoja { padding: var(--space-md) 12px var(--space-3xl); }
+.hoja-paginas {
+  --papel: oklch(0.985 0.006 86); --tinta: oklch(0.22 0.02 52); --tinta-2: oklch(0.42 0.02 56); --tinta-3: oklch(0.58 0.02 62);
+  --linea: oklch(0.78 0.015 76); --linea-fuerte: oklch(0.55 0.02 66); --rubrica: oklch(0.47 0.15 31); --sobre-rubrica: oklch(0.98 0.01 86);
+}
+.hoja-barra { display: flex; flex-wrap: wrap; gap: var(--space-sm) var(--space-md); align-items: center; justify-content: space-between; max-width: 820px; margin: 0 auto var(--space-md); }
+.hoja-barra-nota { font-size: var(--t-s); color: var(--tinta-2); }
+.hoja-barra-acciones { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
+.hoja-paginas { display: grid; gap: var(--space-lg); justify-content: center; zoom: var(--zoom-hoja, 1); }
+.h-pagina { width: 210mm; min-height: 297mm; padding: 10mm 11mm 8mm; background: var(--papel); color: var(--tinta); box-shadow: 0 2px 18px -6px oklch(0 0 0 / 0.45); display: flex; flex-direction: column; gap: 3.2mm; font-size: 8.6pt; line-height: 1.25; }
+.h-pagina .h-bloque { break-inside: avoid; }
+.h-titulo { font-family: var(--f-titulo); font-size: 12pt; background: oklch(0.9 0.008 80); padding: 0.6mm 2mm; margin: 0 0 1.2mm; }
+.h-cabecera { display: grid; grid-template-columns: 40mm 1fr; gap: 4mm; align-items: center; border-bottom: 2px solid var(--tinta); padding-bottom: 2mm; }
+.h-marca { font-family: var(--f-titulo); line-height: 1; } .h-marca span { display: block; font-size: 8pt; } .h-marca b { font-weight: 400; font-size: 17pt; }
+.h-fila { display: flex; gap: 3mm; align-items: end; }
+.h-campo { flex: 1; display: grid; min-width: 0; } .h-campo.ancho { flex: 3; } .h-campo.grande .h-valor { font-size: 14pt; font-weight: 700; }
+.h-valor { min-height: 5mm; border-bottom: 1px solid var(--linea-fuerte); font-weight: 700; font-size: 10pt; padding: 0 1mm; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.h-etiqueta { font-size: 7pt; color: var(--tinta-2); }
+.h-pasiones { display: grid; gap: 1mm; border: 1px solid var(--linea-fuerte); padding: 1.5mm 2mm; }
+.h-linea { display: grid; grid-template-columns: 20mm 1fr; gap: 2mm; align-items: end; } .h-linea .h-texto { border-bottom: 1px solid var(--linea); min-height: 4.5mm; }
+.h-dos { display: grid; grid-template-columns: 74mm 1fr; gap: 5mm; align-items: start; }
+.h-col { display: flex; flex-direction: column; gap: 3mm; min-width: 0; }
+.h-en-linea { display: flex; align-items: center; gap: 3mm; } .h-en-linea .h-titulo { margin: 0; }
+.h-rombos { display: inline-flex; gap: 1.6mm; } .h-rombo { width: 3.6mm; height: 3.6mm; border: 1px solid var(--tinta); transform: rotate(45deg); } .h-rombo.lleno { background: var(--tinta); }
+.h-senda { display: grid; gap: 0.8mm; } .h-senda-fila { display: flex; gap: 0.8mm; align-items: center; }
+.h-casilla { width: 2.6mm; height: 2.6mm; border: 1px solid var(--linea-fuerte); } .h-casilla.llena { background: var(--tinta); }
+.h-hito { font-size: 5.5pt; min-width: 5mm; text-align: center; border: 1px solid var(--tinta-2); transform: rotate(45deg) scale(0.75); } .h-hito.lleno { background: var(--rubrica); color: var(--sobre-rubrica); }
+.h-tabla { width: 100%; border-collapse: collapse; font-size: 8pt; } .h-tabla caption { text-align: left; }
+.h-tabla th { font-weight: 700; font-size: 6.8pt; color: var(--tinta-2); padding: 0.4mm 0.8mm; border-bottom: 1px solid var(--linea-fuerte); }
+.h-tabla td { padding: 0.5mm 0.8mm; border-bottom: 1px solid var(--linea); text-align: center; height: 4.4mm; }
+.h-tabla td.h-hab { text-align: left; } .h-total { font-weight: 700; }
+.h-cat td { background: oklch(0.92 0.008 80); font-family: var(--f-titulo); font-size: 9.5pt; text-align: left; } .h-cat td.h-pd { text-align: center; font-family: var(--f-texto); font-weight: 700; border: 1px solid var(--linea-fuerte); }
+.h-lista { margin: 0; padding-left: 3.5mm; display: grid; gap: 0.6mm; font-size: 7.6pt; }
+.h-sup { gap: 5mm; } .h-recuadro { flex: 1; display: flex; gap: 3mm; align-items: end; } .h-recuadro .h-titulo { margin: 0; white-space: nowrap; }
+.h-logros { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1.2mm 5mm; }
+.h-logros li { display: flex; gap: 1.5mm; align-items: end; } .h-circulo { width: 2.6mm; height: 2.6mm; border: 1px solid var(--tinta); border-radius: 50%; flex: none; } .h-logros .h-texto { flex: 1; border-bottom: 1px solid var(--linea); min-height: 4mm; font-size: 7.4pt; }
+.h-grim-cols { columns: 2; column-gap: 6mm; } .h-grim-escuela { break-inside: avoid; margin-bottom: 3mm; }
+.h-grim-escuela h3 { font-size: 11pt; border-bottom: 1px solid var(--linea-fuerte); margin-bottom: 1mm; } .h-grim-escuela h3 small { font-family: var(--f-texto); font-size: 7.5pt; color: var(--tinta-2); }
+.h-grim-escuela ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.8mm; font-size: 7.4pt; } .h-param { color: var(--tinta-3); }
+.h-nota { font-size: 7.6pt; color: var(--tinta-2); }
+.h-pie { margin-top: auto; font-size: 6.5pt; color: var(--tinta-3); text-align: center; }
+@media print {
+  @page { size: A4; margin: 0; }
+  body.modo-hoja { background: #fff; }
+  body.modo-hoja > :not(#vista-hoja) { display: none !important; }
+  .hoja-barra, .tostada { display: none !important; }
+  .vista-hoja { padding: 0; }
+  .hoja-paginas { zoom: 1; gap: 0; display: block; }
+  .h-pagina { box-shadow: none; break-after: page; height: 297mm; overflow: hidden; }
+}

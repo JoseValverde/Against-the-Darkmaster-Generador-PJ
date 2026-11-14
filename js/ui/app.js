@@ -5,6 +5,8 @@ import { NOMBRES_PASO, problemasDelPaso } from './comun.js';
 import * as estado from './estado.js';
 import { pintarResumen } from './resumen.js';
 import { pintarMesa } from './mesa.js';
+import { pintarBiblioteca } from './biblioteca.js';
+import { pintarHoja, ajustarZoom } from './hoja.js';
 import pasoCaracteristicas from './pasos/caracteristicas.js';
 import pasoLinaje from './pasos/linaje.js';
 import pasoVocacion from './pasos/vocacion.js';
@@ -60,6 +62,7 @@ const ctx = {
   azarPaso(paso) {
     ctx.reemplazar(pasoAleatorio(ctx.D, rng, ctx.pj, ctx.mesa, paso), `${NOMBRES_PASO[paso]}: rehecho al azar.`);
   },
+  avisar(texto, deshacer) { avisar(texto, deshacer); },
   cambiarMesa(mesa) {
     ctx.mesa = mesa;
     estado.guardarMesa(mesa);
@@ -139,13 +142,22 @@ function enlazarCabecera() {
     ctx.reemplazar(pjVacio(), 'Hoja en blanco.');
     ctx.irA(PASOS[0]);
   });
-  const bMesa = $('btn-mesa');
-  bMesa.addEventListener('click', () => {
-    const abierto = bMesa.getAttribute('aria-expanded') === 'true';
-    bMesa.setAttribute('aria-expanded', String(!abierto));
-    $('mesa').hidden = abierto;
-    if (!abierto) pintarMesa($('mesa'), ctx);
-  });
+  // Paneles desplegables bajo la cabecera (solo uno abierto a la vez)
+  const paneles = [['btn-mesa', 'mesa', pintarMesa], ['btn-biblioteca', 'biblioteca', pintarBiblioteca]];
+  for (const [boton, panel, pintarPanel] of paneles) {
+    $(boton).addEventListener('click', () => {
+      const abierto = $(boton).getAttribute('aria-expanded') === 'true';
+      for (const [b, p] of paneles) { $(b).setAttribute('aria-expanded', 'false'); $(p).hidden = true; }
+      if (!abierto) { $(boton).setAttribute('aria-expanded', 'true'); $(panel).hidden = false; pintarPanel($(panel), ctx); }
+    });
+  }
+  const verHoja = (si) => {
+    document.body.classList.toggle('modo-hoja', si);
+    $('vista-hoja').hidden = !si;
+    if (si) { ctx.hoja = calcular(ctx.pj, ctx.D, ctx.mesa); pintarHoja($('vista-hoja'), ctx, { alVolver: () => verHoja(false), alImprimir: () => window.print() }); window.scrollTo(0, 0); }
+  };
+  $('btn-hoja').addEventListener('click', () => verHoja(true));
+  window.addEventListener('resize', () => { if (!$('vista-hoja').hidden) ajustarZoom($('vista-hoja')); });
   $('btn-tema').addEventListener('click', () => {
     const t = estado.alternarTema();
     $('btn-tema').setAttribute('aria-label', t === 'dark' ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');

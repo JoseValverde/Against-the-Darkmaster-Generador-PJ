@@ -27,6 +27,8 @@
     <nav class="acciones" aria-label="Acciones">
       <button type="button" class="btn btn-tinta" id="btn-aleatorio">Personaje al azar</button>
       <button type="button" class="btn" id="btn-nuevo">Empezar de cero</button>
+      <button type="button" class="btn" id="btn-biblioteca" aria-expanded="false" aria-controls="biblioteca">Mis personajes</button>
+      <button type="button" class="btn" id="btn-hoja">Ver hoja</button>
       <button type="button" class="btn" id="btn-mesa" aria-expanded="false" aria-controls="mesa">Mesa</button>
       <button type="button" class="btn btn-icono" id="btn-tema" aria-label="Cambiar tema">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
@@ -34,7 +36,9 @@
     </nav>
   </header>
 
+  <section id="biblioteca" class="mesa" hidden aria-labelledby="biblioteca-titulo"></section>
   <section id="mesa" class="mesa" hidden aria-labelledby="mesa-titulo"></section>
+  <div id="vista-hoja" class="vista-hoja" hidden></div>
 
   <div class="marco">
     <nav class="pasos" aria-label="Pasos de creación">
