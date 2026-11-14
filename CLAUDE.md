@@ -334,7 +334,7 @@ página del PDF de la Guía (pág. impresa 14 = página 3 del PDF).
 - [x] Requisitos cerrados con el usuario (noviembre 2026).
 - [x] Plan de trabajo: [PLAN.md](PLAN.md).
 - [x] Fase 0: repo git en esta carpeta, conectado a
-  https://github.com/JoseValverde/Against-the-Darkmaster---Generador-de-PJ
+  https://github.com/JoseValverde/Against-the-Darkmaster-Generador-PJ
   (rama `main`). GitHub Pages se activa cuando exista `index.html`.
   El usuario tiene GitHub Desktop; las subidas desde aquí funcionan
   (credenciales en el llavero de macOS).
@@ -388,6 +388,16 @@ página del PDF de la Guía (pág. impresa 14 = página 3 del PDF).
 - [x] Fase 7 (acabado): fuentes propias (sin Google), contraste AA revisado en
   ambos temas (`--tinta-3` claro oscurecido a L 0,51 → 5,1:1), todos los controles
   con nombre accesible, hoja revisada en móvil.
-- [ ] Fase 8 (publicación en GitHub Pages): ver PLAN.md.
+- [x] Fase 8 (publicación): repo **público** y renombrado a
+  `Against-the-Darkmaster-Generador-PJ`; GitHub Pages desde `main` / raíz.
+  Web: https://josevalverde.github.io/Against-the-Darkmaster-Generador-PJ/
+  Comprobada en producción: carga datos y fuentes, personaje al azar, hoja
+  imprimible y créditos; sin peticiones a terceros ni errores en consola.
+- **Dónde se trabaja**: esta carpeta (`rolApp/Against-the-Darkmaster-Generador-PJ`)
+  es el clon que el usuario sube con **GitHub Desktop**. Claude edita archivos
+  aquí y **no hace commit ni push**: lo hace el usuario desde GitHub Desktop (su
+  firma usa el correo privado de GitHub; con el Gmail el push se rechaza por la
+  protección de privacidad del correo).
+- Mantenimiento: cada subida a `main` republica la web en 1-2 minutos.
 
 Actualiza esta sección al cerrar cada fase.

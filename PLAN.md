@@ -25,7 +25,7 @@ Solo se publica el PDF de la hoja de personaje, que es de libre distribución.
 ## Estructura prevista
 
 ```
-Generador pj - Against the Darkmaster/
+Against-the-Darkmaster-Generador-PJ/
   index.html
   css/            estilos, tema claro/oscuro, impresión
   js/
@@ -84,7 +84,7 @@ errores esperados y 400 PJ aleatorios válidos.
 ### 7 · Acabado — ✅ hecha
 - Tema claro (hoja) y oscuro, responsive móvil/ordenador, accesibilidad (teclado, contraste), revisión de textos.
 
-### 8 · Publicación
+### 8 · Publicación — ✅ hecha
 - Despliegue en GitHub Pages y prueba en móvil y ordenador.
 
 ## Hitos
