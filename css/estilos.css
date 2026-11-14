@@ -365,7 +365,7 @@ select:hover, input[type="text"]:hover, textarea:hover { border-color: var(--tin
 
 /* El paso decide sus columnas según su propio ancho, no el de la ventana */
 .paso { container-type: inline-size; container-name: paso; }
-@container paso (max-width: 720px) {
+@container paso (max-width: 660px) {
   .col-opc { display: none; }
 }
 @container paso (max-width: 560px) {
@@ -375,3 +375,35 @@ select:hover, input[type="text"]:hover, textarea:hover { border-color: var(--tin
   .contador-num button { height: 30px; }
 }
 .tabla-hoja td.total { white-space: nowrap; min-width: 3.2em; }
+
+/* Equipo y armas (fase 4) */
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.atuendo-equipo { display: grid; gap: var(--space-ms); padding: var(--space-md); background: var(--papel-2); border-radius: var(--radio); justify-items: start; }
+.atuendo-equipo .fila-campos { width: 100%; }
+.notas-equipo { margin: 0; padding-left: 1.1em; font-size: var(--t-xs); color: var(--tinta-2); }
+.tabla-armas td small.tenue { color: var(--tinta-3); }
+
+/* Grimorio */
+.grimorio { display: grid; gap: var(--space-sm); }
+.escuela-g { border: 1px solid var(--linea); border-radius: var(--radio); background: var(--papel); }
+.escuela-g > summary { cursor: pointer; list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-md); align-items: baseline; justify-content: space-between; padding: var(--space-ms) var(--space-md); }
+.escuela-g > summary::-webkit-details-marker { display: none; }
+.escuela-g > summary::before { content: '▸'; color: var(--tinta-3); margin-right: var(--space-xs); }
+.escuela-g[open] > summary::before { content: '▾'; }
+.escuela-g[open] > summary { border-bottom: 1px solid var(--linea); }
+.escuela-g .esc-nombre { font-family: var(--f-titulo); font-size: var(--t-l); flex: 1 1 auto; }
+.escuela-g .esc-datos { font-size: var(--t-s); color: var(--tinta-2); }
+.escuela-g .esc-datos b { color: var(--tinta); }
+.sortilegios { list-style: none; margin: 0; padding: var(--space-sm) var(--space-md) var(--space-md); display: grid; gap: var(--space-ms); }
+.sortilegio { display: grid; grid-template-columns: 2.4em 1fr auto; gap: 2px var(--space-ms); align-items: baseline; }
+.sortilegio .urd { font-family: var(--f-titulo); color: var(--tinta-3); }
+.sortilegio.lanzable .urd { color: var(--rubrica); }
+.sortilegio .s-nombre { font-weight: 700; }
+.sortilegio .s-nombre .inst { font-weight: 400; font-size: var(--t-xs); color: var(--tinta-2); margin-left: var(--space-xs); }
+.sortilegio .s-pm { font-size: var(--t-s); white-space: nowrap; }
+.sortilegio .s-cuerpo { grid-column: 2 / -1; font-size: var(--t-s); color: var(--tinta-2); display: grid; gap: 2px; }
+.sortilegio .s-params { font-size: var(--t-xs); color: var(--tinta-3); }
+.sortilegio.bloqueado .s-nombre { color: var(--tinta-2); font-weight: 500; }
+.sortilegio .s-estado { font-size: var(--t-xs); color: var(--tinta-3); font-style: italic; }
+.distorsiones { margin: 2px 0 0; padding: 0; list-style: none; font-size: var(--t-xs); display: grid; gap: 1px; }
+.distorsiones b { font-weight: 700; color: var(--tinta); }

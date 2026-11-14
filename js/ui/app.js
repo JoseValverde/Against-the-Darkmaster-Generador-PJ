@@ -117,7 +117,8 @@ let temporizador;
 function avisar(texto, deshacer) {
   let t = $('tostada');
   if (!t) { t = h('div', { id: 'tostada', class: 'tostada', role: 'status' }); document.body.append(t); }
-  vaciar(t).append(h('span', null, texto), deshacer ? h('button', { type: 'button', class: 'btn btn-pequeno', onclick: () => { deshacer(); t.hidden = true; } }, 'Deshacer') : null);
+  vaciar(t).append(h('span', null, texto));
+  if (deshacer) t.append(h('button', { type: 'button', class: 'btn btn-pequeno', onclick: () => { deshacer(); t.hidden = true; } }, 'Deshacer'));
   t.hidden = false;
   clearTimeout(temporizador);
   temporizador = setTimeout(() => { t.hidden = true; }, 7000);

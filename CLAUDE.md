@@ -209,7 +209,7 @@ El motor (`js/engine`) no toca el DOM: así se prueba con Node y la UI solo lo l
   **Pendiente fase 7**: alojarlas en `assets/fonts/` (privacidad de visitantes
   en la UE; pedir permiso al usuario para descargarlas).
 - Tablas anchas: `.paso` es contenedor (`container-type`); las columnas `.col-opc`
-  se ocultan cuando el paso mide menos de 720 px. TOTAL siempre visible.
+  se ocultan cuando el paso mide menos de 660 px. TOTAL siempre visible.
 
 ## Fuentes de reglas (carpeta REF)
 
@@ -339,22 +339,21 @@ página del PDF de la Guía (pág. impresa 14 = página 3 del PDF).
 - [x] Fase 2: motor de reglas con 35 pruebas en verde (`npm test`).
 - [x] Fase 3: asistente de 7 pasos en `index.html` + `js/ui/` + `css/estilos.css`,
   con aleatorio por paso, PJ de un clic, mesa por enlace, borrador y tema.
-- [~] Fase 4 (magia y equipo): **datos y motor hechos** (Opus).
-  - `escuelas.json`: 185 sortilegios con `distorsion` [{urdimbre, texto}],
-    265 opciones condensadas o reescritas con palabras propias.
-  - `data/atuendo_equipo.json`: qué armas/protecciones da cada opción de atuendo
-    (53 de 112); `{ elige: [...] }` para las alternativas «o»; `nota` cuando se
-    usa un arma de la tabla en lugar de la del texto (arco de caza → arco corto…).
-  - `js/engine/equipo.js`: `equipoSugerido`, `equipoDesdeAtuendo`, `filasArmas`
-    (BC = mejor habilidad + su penalizador + penalizador de armadura al BC),
-    `sortilegiosConocidos`. La hoja trae `armas` y `grimorio`. Afinidad Mágica
-    mayor da +1 nivel para lanzar de la escuela predilecta. El generador equipa
-    según el atuendo y añade un arma auxiliar si no lleva ninguna corta.
-  - **Pendiente (Sonnet)**: interfaz de la fase 4 → en el paso IV, tabla «Armas y
-    Ataques» con añadir/quitar armas (arma auxiliar a elegir), botón «Equiparme
-    con mi atuendo» con selector para las alternativas y sus notas; un bloque
-    «Grimorio» (paso V o III) con los sortilegios conocidos por escuela, cuáles se
-    pueden lanzar ya, coste en PM y opciones de distorsión en un desplegable.
+- [x] Fase 4 (magia y equipo).
+  - Datos (Opus): `escuelas.json` con 185 sortilegios con `distorsion`
+    [{urdimbre, texto}] (265 opciones condensadas o reescritas con palabras
+    propias); `data/atuendo_equipo.json` con las armas/protecciones de cada
+    opción de atuendo (53 de 112), `{ elige: [...] }` para las alternativas «o» y
+    `nota` cuando se usa un arma equivalente de la tabla.
+  - Motor: `js/engine/equipo.js` (`equipoSugerido`, `equipoDesdeAtuendo`,
+    `filasArmas`, `sortilegiosConocidos`); la hoja trae `armas` (BC = mejor
+    habilidad + penalizador del arma + penalizador de armadura al BC) y
+    `grimorio`. Afinidad Mágica mayor: +1 nivel para lanzar de la predilecta.
+    El generador equipa según el atuendo y añade un arma auxiliar.
+  - UI (Sonnet): paso IV con «Armas y Ataques» (añadir/quitar) y «Equiparme con
+    mi atuendo» (elige en las alternativas, conserva armas añadidas a mano);
+    paso V con el Grimorio plegable por escuela (lanzable ya o a qué nivel,
+    PM, parámetros, resumen y distorsiones).
 - [ ] Fase 5 en adelante: ver PLAN.md.
 
 Actualiza esta sección al cerrar cada fase.

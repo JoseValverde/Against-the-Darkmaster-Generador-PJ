@@ -71,7 +71,7 @@ errores esperados y 400 PJ aleatorios válidos.
 - Configuración de mesa en la URL (método, linajes, opcionales).
 - Sugerencias de Pasiones según cultura.
 
-### 4 · Magia y equipo — datos y motor ✅, interfaz pendiente
+### 4 · Magia y equipo — ✅ hecha
 - Escuelas sortílegas permitidas por vocación, rangos y sortilegios accesibles.
 - Atuendo cultural, equipo inicial, armas/armaduras con sus columnas de la hoja (Torpeza, Tabla de ataque, Críticos, AGI máx. en DEF, penalizadores…).
 

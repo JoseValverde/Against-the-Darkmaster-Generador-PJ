@@ -69,7 +69,7 @@ export function segmentos(opciones, actual, alCambiar, etiqueta, foco) {
 export function selector({ valor, opciones, alCambiar, etiqueta, vacio = '— Elige —', foco }) {
   return h('label', { class: 'campo' }, h('span', null, etiqueta),
     h('select', { 'data-foco': foco, onchange: (e) => alCambiar(e.target.value || null) },
-      h('option', { value: '' }, vacio),
+      vacio === null ? null : h('option', { value: '' }, vacio),
       opciones.map((o) => h('option', { value: o.valor, selected: o.valor === valor, disabled: o.deshabilitado }, o.etiqueta))));
 }
 
